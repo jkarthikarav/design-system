@@ -1,0 +1,10 @@
+.project-image-grid {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.project-image-grid img {
+  display: block;
+  max-width: 100%;
+}

@@ -1,0 +1,160 @@
+
+.typography {
+  margin: 0;
+  color: var(--color-text-primary);
+  text-align: left;
+}
+
+.typography--left {
+  text-align: left;
+}
+
+.typography--center {
+  text-align: center;
+}
+
+/* Hero heading */
+.typography--hero-heading {
+  font-family: var(--font-display);
+  font-size: var(--font-size-700);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Section heading */
+.typography--section-heading {
+  font-family: var(--font-display);
+  font-size: var(--font-size-600);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+}
+
+/* Card heading */
+.typography--card-heading {
+  font-family: var(--font-display);
+  font-size: var(--font-size-400);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+/* Hero subheading */
+.typography--hero-subheading {
+  font-family: var(--font-body);
+  font-size: var(--font-size-400);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+}
+
+/* Section subheading */
+.typography--section-subheading {
+  font-family: var(--font-body);
+  font-size: var(--font-size-300);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+/* Opening paragraph */
+.typography--description-large {
+  font-family: var(--font-body);
+  font-size: var(--font-size-400);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+}
+
+/* Remaining paragraphs */
+.typography--description-medium {
+  font-family: var(--font-body);
+  font-size: var(--font-size-300);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+}
+
+/* Project card description */
+.typography--card-description {
+  font-family: var(--font-body);
+  font-size: var(--font-size-200);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+}
+
+/* Image caption */
+.typography--image-caption {
+  font-family: var(--font-label);
+  font-size: var(--font-size-200);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  color: var(--color-text-muted);
+}
+
+/* Eyebrow */
+.typography--eyebrow {
+  font-family: var(--font-label);
+  font-size: var(--font-size-200);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Description widths */
+.typography--width-full {
+  width: 100%;
+}
+
+.typography--width-wide {
+  width: 75%;
+}
+
+.typography--width-narrow {
+  width: 50%;
+}
+
+/* Center narrower descriptions within their available container */
+.typography--center.typography--width-wide,
+.typography--center.typography--width-narrow {
+  margin-inline: auto;
+}
+
+/* Responsive sizing */
+@media (max-width: 900px) {
+  .typography--hero-heading {
+    font-size: var(--font-size-600);
+  }
+
+  .typography--section-heading {
+    font-size: var(--font-size-500);
+  }
+
+  .typography--width-wide {
+    width: 85%;
+  }
+
+  .typography--width-narrow {
+    width: 70%;
+  }
+}
+
+@media (max-width: 650px) {
+  .typography--hero-heading {
+    font-size: var(--font-size-500);
+  }
+
+  .typography--section-heading {
+    font-size: var(--font-size-400);
+  }
+
+  .typography--hero-subheading,
+  .typography--description-large {
+    font-size: var(--font-size-300);
+  }
+
+  .typography--width-wide,
+  .typography--width-narrow {
+    width: 100%;
+  }
+}

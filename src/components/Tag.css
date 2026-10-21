@@ -1,0 +1,32 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  font-family: var(--font-label);
+  font-size: var(--font-size-200);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.tag--default {
+  color: var(--color-text-primary);
+  background: var(--color-bg-subtle);
+  border-color: var(--color-border-subtle);
+}
+
+.tag--accent {
+  color: var(--color-text-primary);
+  background: var(--amber-100);
+  border-color: var(--amber-500);
+}
+
+.tag--inverse {
+  color: var(--color-text-inverse);
+  background: transparent;
+  border-color: rgb(255 255 255 / 55%);
+}

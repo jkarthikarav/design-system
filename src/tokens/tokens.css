@@ -1,0 +1,133 @@
+
+:root {
+  /* ========================================
+     COLORS — Primitive tokens
+     ======================================== */
+
+  --green-900: #1B3618;
+  --amber-500: #E8A800;
+
+  --neutral-0: #FFFFFF;
+  --neutral-50: #FAFAF7;
+  --neutral-200: #E5E5DD;
+  --neutral-300: #D4D5CA;
+  --neutral-500: #77786F;
+  --neutral-700: #4A4A43;
+
+  --red-700: #A12B22;
+  --red-100: #F8E7E4;
+  --green-100: #E7EFE4;
+  --amber-100: #FFF2CC;
+
+
+  /* ========================================
+     COLORS — Semantic tokens
+     ======================================== */
+
+  --color-bg-canvas: var(--neutral-50);
+  --color-bg-raised: var(--neutral-0);
+  --color-bg-inverse: var(--green-900);
+  --color-bg-subtle: #F1F1EB;
+
+  --color-text-primary: var(--green-900);
+  --color-text-secondary: var(--neutral-700);
+  --color-text-inverse: var(--neutral-50);
+  --color-text-muted: #686960;
+
+  --color-border-subtle: #E1E2D9;
+  --color-border-strong: #A6A89C;
+
+  --color-action-primary: var(--green-900);
+  --color-action-primary-hover: #294B25;
+  --color-action-accent: var(--amber-500);
+
+  --color-focus: #A66F00;
+
+  --color-status-success: #315D2A;
+  --color-status-warning: #765400;
+  --color-status-error: var(--red-700);
+
+
+  /* ========================================
+     TYPOGRAPHY — Font families
+     ======================================== */
+
+  --font-display: 'League Spartan', sans-serif;
+  --font-body: 'Lexend', sans-serif;
+  --font-label: 'Atkinson Hyperlegible Next', sans-serif;
+
+
+  /* ========================================
+     TYPOGRAPHY — Perfect Fourth scale
+     Base: 18px
+     Ratio: 1.333
+     ======================================== */
+
+  --font-size-100: 10px;
+  --font-size-200: 14px;
+  --font-size-300: 18px;
+  --font-size-400: 24px;
+  --font-size-500: 32px;
+  --font-size-600: 43px;
+  --font-size-700: 57px;
+  --font-size-800: 76px;
+  --font-size-900: 101px;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-body: 1.4;
+  --line-height-heading: 1.2;
+
+
+  /* ========================================
+     SPACING — 8px grid
+     ======================================== */
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+
+
+  /* ========================================
+     RADII
+     ======================================== */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+
+  --shadow-1: 0 1px 3px rgb(27 54 24 / 8%);
+  --shadow-2: 0 8px 24px rgb(27 54 24 / 9%);
+  --shadow-3: 0 16px 48px rgb(27 54 24 / 14%);
+
+
+  /* ========================================
+     LAYOUT
+     ======================================== */
+
+  --content-width: 1180px;
+
+
+  /* ========================================
+     TRANSITIONS
+     ======================================== */
+
+  --transition-fast: 140ms ease;
+  --transition-base: 220ms ease;
+}
