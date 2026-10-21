@@ -1,6 +1,6 @@
-
-/* Import the design system tokens */
+/* Import design tokens and token-based utility classes */
 @import './tokens/tokens.css';
+@import './utilities.css';
 
 /* ========================================
    Global foundation
@@ -60,25 +60,12 @@ h6 {
   line-height: var(--line-height-heading);
 }
 
-h1 {
-  font-size: var(--font-size-700);
-}
+h1 { font-size: var(--font-size-700); }
+h2 { font-size: var(--font-size-600); }
+h3 { font-size: var(--font-size-500); }
+h4 { font-size: var(--font-size-400); }
 
-h2 {
-  font-size: var(--font-size-600);
-}
-
-h3 {
-  font-size: var(--font-size-500);
-}
-
-h4 {
-  font-size: var(--font-size-400);
-}
-
-p {
-  margin: 0;
-}
+p { margin: 0; }
 
 small {
   font-size: var(--font-size-200);
@@ -88,9 +75,7 @@ small {
    Links and controls
    ======================================== */
 
-a {
-  color: inherit;
-}
+a { color: inherit; }
 
 button,
 input,
@@ -99,9 +84,7 @@ select {
   font: inherit;
 }
 
-button {
-  cursor: pointer;
-}
+button { cursor: pointer; }
 
 :focus-visible {
   outline: 3px solid var(--color-focus);
@@ -156,27 +139,14 @@ video {
    ======================================== */
 
 @media (max-width: 900px) {
-  h1 {
-    font-size: var(--font-size-600);
-  }
-
-  h2 {
-    font-size: var(--font-size-500);
-  }
+  h1 { font-size: var(--font-size-600); }
+  h2 { font-size: var(--font-size-500); }
 }
 
 @media (max-width: 650px) {
-  h1 {
-    font-size: var(--font-size-500);
-  }
-
-  h2 {
-    font-size: var(--font-size-400);
-  }
-
-  h3 {
-    font-size: var(--font-size-400);
-  }
+  h1 { font-size: var(--font-size-500); }
+  h2 { font-size: var(--font-size-400); }
+  h3 { font-size: var(--font-size-400); }
 }
 
 /* ========================================
