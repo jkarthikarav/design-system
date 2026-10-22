@@ -1146,7 +1146,7 @@
 .jakpot-root .jakpot-case-study-card__top{
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
+  align-items: center;
   gap: var(--jakpot-space-3) var(--jakpot-space-6);
 }
 
