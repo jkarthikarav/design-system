@@ -80,6 +80,9 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
+  font-size: var(--font-size-200);
+  line-height: 1.35;
+  color: var(--color-text-secondary);
 }
 
 .case-study-card__date {
