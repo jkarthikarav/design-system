@@ -23,6 +23,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+export const SizingAndRatioOptions: Story = {
+  render: () => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 'var(--space-4)' }}>
+      {(['full', 'wide', 'narrow'] as const).map((imageWidth) => (['auto', 'landscape', 'square'] as const).map((aspectRatio) => (
+        <ImageCaption key={imageWidth + aspectRatio} src="https://placehold.co/900x600" alt={`Example ${imageWidth} width and ${aspectRatio} aspect ratio`} imageWidth={imageWidth} aspectRatio={aspectRatio} caption={`${imageWidth} · ${aspectRatio}`} />
+      )))}
+    </div>
+  ),
+};
+
 export const Landscape: Story = {
   args: {
     src: 'https://placehold.co/1200x675',
