@@ -158,3 +158,19 @@
     width: 100%;
   }
 }
+
+
+/* Refinements: keep display type readable when headings wrap. */
+.typography--section-heading {
+  line-height: 1.22;
+  text-wrap: balance;
+}
+
+.typography--card-heading {
+  line-height: 1.32;
+  text-wrap: pretty;
+}
+
+.typography--eyebrow {
+  line-height: 1.35;
+}
