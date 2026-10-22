@@ -29,3 +29,14 @@
     gap: var(--space-3);
   }
 }
+
+/* Give the eyebrow and heading a deliberate, consistent separation. */
+.section-header__main {
+  gap: var(--space-3);
+}
+
+@media (max-width: 600px) {
+  .section-header__main {
+    gap: var(--space-2);
+  }
+}
