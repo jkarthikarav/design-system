@@ -26,6 +26,21 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+export const ColumnLayouts: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
+      {[1, 2, 3].map((columns) => (
+        <div key={columns}>
+          <Typography variant="eyebrow">{columns} column{columns > 1 ? 's' : ''}</Typography>
+          <Grid columns={columns as 1 | 2 | 3} gap={3}>
+            {[1, 2, 3].slice(0, columns).map((item) => <div key={item} style={{ background: 'var(--color-bg-subtle)', padding: 'var(--space-4)' }}>Grid item {item}</div>)}
+          </Grid>
+        </div>
+      ))}
+    </div>
+  ),
+};
+
 export const ProjectCards: Story = {
   args: {
     columns: 3,
