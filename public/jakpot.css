@@ -1144,10 +1144,24 @@
 }
 
 .jakpot-root .jakpot-case-study-card__top{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--jakpot-space-3) var(--jakpot-space-6);
+}
+
+.jakpot-root .jakpot-case-study-card__content{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--jakpot-space-3);
+  min-width: 0;
+}
+
+.jakpot-root .jakpot-case-study-card__top > .jakpot-case-study-card__action{
+  grid-column: 2;
+  grid-row: 1;
+  white-space: nowrap;
 }
 
 /* Use standard description sizing for the card summary, not intro sizing. */
@@ -1235,6 +1249,15 @@
 }
 
 @media (max-width: 600px){
+  .jakpot-root .jakpot-case-study-card__top{
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .jakpot-root .jakpot-case-study-card__top > .jakpot-case-study-card__action{
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   .jakpot-root .jakpot-case-study-card{
     padding: var(--jakpot-space-3);
     gap: var(--jakpot-space-4);
