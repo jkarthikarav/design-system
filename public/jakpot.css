@@ -1204,6 +1204,9 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--jakpot-space-4);
+  font-size: var(--jakpot-font-size-200);
+  line-height: 1.35;
+  color: var(--jakpot-color-text-secondary);
 }
 
 .jakpot-root .jakpot-case-study-card__date{
