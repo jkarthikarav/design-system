@@ -1328,3 +1328,100 @@
 .jakpot-root .jakpot-outcome-card{background:var(--jakpot-color-bg-raised);border:1px solid var(--jakpot-color-border-subtle);border-radius:var(--jakpot-radius-md);padding:var(--jakpot-space-4);display:flex;flex-direction:column;gap:var(--jakpot-space-3)}
 .jakpot-root .jakpot-grid--columns-1{grid-template-columns:1fr}.jakpot-root .jakpot-grid--columns-2{grid-template-columns:repeat(2,minmax(0,1fr))}.jakpot-root .jakpot-grid--columns-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .jakpot-root .jakpot-gap-1{gap:var(--jakpot-space-1)}.jakpot-root .jakpot-gap-2{gap:var(--jakpot-space-2)}.jakpot-root .jakpot-gap-3{gap:var(--jakpot-space-3)}.jakpot-root .jakpot-gap-4{gap:var(--jakpot-space-4)}.jakpot-root .jakpot-gap-5{gap:var(--jakpot-space-5)}.jakpot-root .jakpot-gap-6{gap:var(--jakpot-space-6)}
+
+
+/* ==========================================================
+   RESPONSIVE SPACING & TYPOGRAPHY REFINEMENTS
+   ========================================================== */
+
+/* Keep wrapped headings readable and maintain consistent eyebrow rhythm. */
+.jakpot-root h1,
+.jakpot-root h2,
+.jakpot-root h3,
+.jakpot-root h4,
+.jakpot-root h5,
+.jakpot-root h6 {
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.jakpot-root .jakpot-typography--section-heading {
+  line-height: 1.22;
+}
+
+.jakpot-root .jakpot-typography--card-heading,
+.jakpot-root .jakpot-project-link-card__title {
+  line-height: 1.32;
+  text-wrap: pretty;
+}
+
+.jakpot-root .jakpot-typography--eyebrow,
+.jakpot-root .jakpot-project-link-card__eyebrow {
+  line-height: 1.35;
+}
+
+/* Layout containers own spacing between sibling content blocks. */
+.jakpot-root .jakpot-section-header__main {
+  gap: var(--jakpot-space-3);
+}
+
+.jakpot-root .jakpot-section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--jakpot-space-6);
+}
+
+.jakpot-root .jakpot-project-link-card__top {
+  gap: var(--jakpot-space-3);
+}
+
+.jakpot-root .jakpot-project-link-card__action {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.jakpot-root .jakpot-project-image-grid {
+  display: block;
+}
+
+.jakpot-root .jakpot-project-image-grid > .jakpot-grid {
+  width: 100%;
+}
+
+/* The builder's actions + media pattern uses this wrapper to separate rows. */
+.jakpot-root .jakpot-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--jakpot-space-6);
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .jakpot-root .jakpot-section__content,
+  .jakpot-root .jakpot-flow {
+    gap: var(--jakpot-space-5);
+  }
+
+  .jakpot-root .jakpot-grid--columns-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .jakpot-root .jakpot-section-header__main {
+    gap: var(--jakpot-space-2);
+  }
+
+  .jakpot-root .jakpot-section__content,
+  .jakpot-root .jakpot-flow {
+    gap: var(--jakpot-space-4);
+  }
+
+  .jakpot-root .jakpot-grid--columns-2,
+  .jakpot-root .jakpot-grid--columns-3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
