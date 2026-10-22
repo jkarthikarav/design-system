@@ -8,7 +8,7 @@ import { CaseStudyCard, type CaseStudyCardProps } from '../components/CaseStudyC
 import { StructuredList } from '../components/StructuredList';
 
 const meta = {
-  title: 'Patterns/Case Study Sections',
+  title: 'Patterns/Sections',
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -80,7 +80,7 @@ const outcomes: CaseStudyCardProps[] = [
   },
 ];
 
-export const OverviewSection: Story = {
+export const HeadingWithSupportingContent: Story = {
   render: () => (
     <Section
       background="white"
@@ -98,7 +98,7 @@ export const OverviewSection: Story = {
   ),
 };
 
-export const StandardContentSection: Story = {
+export const HeadingWithBodyContent: Story = {
   render: () => (
     <Section
       background="beige"
@@ -116,7 +116,7 @@ export const StandardContentSection: Story = {
   ),
 };
 
-export const ButtonsThenImages: Story = {
+export const ActionsThenMedia: Story = {
   render: () => (
     <Section
       background="white"
@@ -139,7 +139,7 @@ export const ButtonsThenImages: Story = {
   ),
 };
 
-export const BeforeAfterComparison: Story = {
+export const TwoColumnMediaComparison: Story = {
   render: () => (
     <Section
       background="beige"
@@ -151,7 +151,7 @@ export const BeforeAfterComparison: Story = {
   ),
 };
 
-export const OutcomesSection: Story = {
+export const OutcomeCardGrid: Story = {
   render: () => (
     <Section
       background="beige"
@@ -167,7 +167,7 @@ export const OutcomesSection: Story = {
   ),
 };
 
-export const ReflectionsSection: Story = {
+export const NarrowHeadingWideContent: Story = {
   render: () => (
     <Section
       background="white"
@@ -187,7 +187,7 @@ export const ReflectionsSection: Story = {
   ),
 };
 
-export const InformationArchitectureSequence: Story = {
+export const OrderedContentList: Story = {
   render: () => (
     <Section
       background="white"
