@@ -1,0 +1,380 @@
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <pre class="sk-entry__code" hidden></pre>
+</article>
+
+<!-- ===== 1310 · Section · white · header without-eyebrow · description · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1310" data-key="1310 section · white · header without-eyebrow · description · content narrow · actions then media (descriptiongroup + buttons + projectimagegrid)">
+  <header class="sk-entry__head">
+    <span class="sk-entry__num">1310</span>
+    <h2 class="sk-entry__name">Section · white · header without-eyebrow · description · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
+    <button type="button" class="sk-btn" data-act="code">HTML</button>
+    <button type="button" class="sk-btn" data-act="copy">Copy</button>
+  </header>
+  <div class="sk-entry__preview">
+    <section class="section section--white section--content-narrow">
+      <div class="section__inner">
+        <div class="section-header section-header--without-eyebrow">
+          <div class="section-header__main">
+            <h2 class="typography typography--section-heading typography--left typography--width-full">Section title</h2>
+          </div>
+          <div class="section-header__description">
+            <p class="typography typography--description-medium typography--left typography--width-full">A supporting description that introduces the content below.</p>
+          </div>
+        </div>
+        <div class="section__content">
+          <div class="flex flex-col gap-6">
+            <div class="description-group description-group--narrow">
+              <p class="typography typography--description-large typography--left typography--width-full">A lead paragraph that introduces the main idea in one clear statement.</p>
+              <div class="description-group__supporting">
+                <p class="typography typography--description-medium typography--left typography--width-full">Supporting paragraph 1 adds context while keeping a comfortable reading width.</p>
+              </div>
+            </div>
+            <div class="grid grid--columns-2 grid--gap-3">
+              <button type="button" class="button button-primary">Primary action</button>
+              <button type="button" class="button button-secondary">Secondary action</button>
+            </div>
+            <div class="project-image-grid">
+              <div class="grid grid--columns-2 grid--gap-3">
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 1.</figcaption>
+                </figure>
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 2.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <pre class="sk-entry__code" hidden></pre>
+</article>
+
+<!-- ===== 1311 · Section · white · header without-eyebrow · title only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1311" data-key="1311 section · white · header without-eyebrow · title only · content full · actions then media (descriptiongroup + buttons + projectimagegrid)">
+  <header class="sk-entry__head">
+    <span class="sk-entry__num">1311</span>
+    <h2 class="sk-entry__name">Section · white · header without-eyebrow · title only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
+    <button type="button" class="sk-btn" data-act="code">HTML</button>
+    <button type="button" class="sk-btn" data-act="copy">Copy</button>
+  </header>
+  <div class="sk-entry__preview">
+    <section class="section section--white section--content-full">
+      <div class="section__inner">
+        <div class="section-header section-header--without-eyebrow">
+          <div class="section-header__main">
+            <h2 class="typography typography--section-heading typography--left typography--width-full">Section title</h2>
+          </div>
+        </div>
+        <div class="section__content">
+          <div class="flex flex-col gap-6">
+            <div class="description-group description-group--narrow">
+              <p class="typography typography--description-large typography--left typography--width-full">A lead paragraph that introduces the main idea in one clear statement.</p>
+              <div class="description-group__supporting">
+                <p class="typography typography--description-medium typography--left typography--width-full">Supporting paragraph 1 adds context while keeping a comfortable reading width.</p>
+              </div>
+            </div>
+            <div class="grid grid--columns-2 grid--gap-3">
+              <button type="button" class="button button-primary">Primary action</button>
+              <button type="button" class="button button-secondary">Secondary action</button>
+            </div>
+            <div class="project-image-grid">
+              <div class="grid grid--columns-2 grid--gap-3">
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 1.</figcaption>
+                </figure>
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 2.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <pre class="sk-entry__code" hidden></pre>
+</article>
+
+<!-- ===== 1312 · Section · white · header without-eyebrow · title only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1312" data-key="1312 section · white · header without-eyebrow · title only · content wide · actions then media (descriptiongroup + buttons + projectimagegrid)">
+  <header class="sk-entry__head">
+    <span class="sk-entry__num">1312</span>
+    <h2 class="sk-entry__name">Section · white · header without-eyebrow · title only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
+    <button type="button" class="sk-btn" data-act="code">HTML</button>
+    <button type="button" class="sk-btn" data-act="copy">Copy</button>
+  </header>
+  <div class="sk-entry__preview">
+    <section class="section section--white section--content-wide">
+      <div class="section__inner">
+        <div class="section-header section-header--without-eyebrow">
+          <div class="section-header__main">
+            <h2 class="typography typography--section-heading typography--left typography--width-full">Section title</h2>
+          </div>
+        </div>
+        <div class="section__content">
+          <div class="flex flex-col gap-6">
+            <div class="description-group description-group--narrow">
+              <p class="typography typography--description-large typography--left typography--width-full">A lead paragraph that introduces the main idea in one clear statement.</p>
+              <div class="description-group__supporting">
+                <p class="typography typography--description-medium typography--left typography--width-full">Supporting paragraph 1 adds context while keeping a comfortable reading width.</p>
+              </div>
+            </div>
+            <div class="grid grid--columns-2 grid--gap-3">
+              <button type="button" class="button button-primary">Primary action</button>
+              <button type="button" class="button button-secondary">Secondary action</button>
+            </div>
+            <div class="project-image-grid">
+              <div class="grid grid--columns-2 grid--gap-3">
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 1.</figcaption>
+                </figure>
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 2.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <pre class="sk-entry__code" hidden></pre>
+</article>
+
+<!-- ===== 1313 · Section · white · header without-eyebrow · title only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1313" data-key="1313 section · white · header without-eyebrow · title only · content narrow · actions then media (descriptiongroup + buttons + projectimagegrid)">
+  <header class="sk-entry__head">
+    <span class="sk-entry__num">1313</span>
+    <h2 class="sk-entry__name">Section · white · header without-eyebrow · title only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
+    <button type="button" class="sk-btn" data-act="code">HTML</button>
+    <button type="button" class="sk-btn" data-act="copy">Copy</button>
+  </header>
+  <div class="sk-entry__preview">
+    <section class="section section--white section--content-narrow">
+      <div class="section__inner">
+        <div class="section-header section-header--without-eyebrow">
+          <div class="section-header__main">
+            <h2 class="typography typography--section-heading typography--left typography--width-full">Section title</h2>
+          </div>
+        </div>
+        <div class="section__content">
+          <div class="flex flex-col gap-6">
+            <div class="description-group description-group--narrow">
+              <p class="typography typography--description-large typography--left typography--width-full">A lead paragraph that introduces the main idea in one clear statement.</p>
+              <div class="description-group__supporting">
+                <p class="typography typography--description-medium typography--left typography--width-full">Supporting paragraph 1 adds context while keeping a comfortable reading width.</p>
+              </div>
+            </div>
+            <div class="grid grid--columns-2 grid--gap-3">
+              <button type="button" class="button button-primary">Primary action</button>
+              <button type="button" class="button button-secondary">Secondary action</button>
+            </div>
+            <div class="project-image-grid">
+              <div class="grid grid--columns-2 grid--gap-3">
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 1.</figcaption>
+                </figure>
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 2.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <pre class="sk-entry__code" hidden></pre>
+</article>
+
+<!-- ===== 1314 · Section · white · header title-only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1314" data-key="1314 section · white · header title-only · content full · actions then media (descriptiongroup + buttons + projectimagegrid)">
+  <header class="sk-entry__head">
+    <span class="sk-entry__num">1314</span>
+    <h2 class="sk-entry__name">Section · white · header title-only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
+    <button type="button" class="sk-btn" data-act="code">HTML</button>
+    <button type="button" class="sk-btn" data-act="copy">Copy</button>
+  </header>
+  <div class="sk-entry__preview">
+    <section class="section section--white section--content-full">
+      <div class="section__inner">
+        <div class="section-header section-header--title-only">
+          <div class="section-header__main">
+            <h2 class="typography typography--section-heading typography--left typography--width-full">Section title</h2>
+          </div>
+        </div>
+        <div class="section__content">
+          <div class="flex flex-col gap-6">
+            <div class="description-group description-group--narrow">
+              <p class="typography typography--description-large typography--left typography--width-full">A lead paragraph that introduces the main idea in one clear statement.</p>
+              <div class="description-group__supporting">
+                <p class="typography typography--description-medium typography--left typography--width-full">Supporting paragraph 1 adds context while keeping a comfortable reading width.</p>
+              </div>
+            </div>
+            <div class="grid grid--columns-2 grid--gap-3">
+              <button type="button" class="button button-primary">Primary action</button>
+              <button type="button" class="button button-secondary">Secondary action</button>
+            </div>
+            <div class="project-image-grid">
+              <div class="grid grid--columns-2 grid--gap-3">
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 1.</figcaption>
+                </figure>
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 2.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <pre class="sk-entry__code" hidden></pre>
+</article>
+
+<!-- ===== 1315 · Section · white · header title-only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1315" data-key="1315 section · white · header title-only · content wide · actions then media (descriptiongroup + buttons + projectimagegrid)">
+  <header class="sk-entry__head">
+    <span class="sk-entry__num">1315</span>
+    <h2 class="sk-entry__name">Section · white · header title-only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
+    <button type="button" class="sk-btn" data-act="code">HTML</button>
+    <button type="button" class="sk-btn" data-act="copy">Copy</button>
+  </header>
+  <div class="sk-entry__preview">
+    <section class="section section--white section--content-wide">
+      <div class="section__inner">
+        <div class="section-header section-header--title-only">
+          <div class="section-header__main">
+            <h2 class="typography typography--section-heading typography--left typography--width-full">Section title</h2>
+          </div>
+        </div>
+        <div class="section__content">
+          <div class="flex flex-col gap-6">
+            <div class="description-group description-group--narrow">
+              <p class="typography typography--description-large typography--left typography--width-full">A lead paragraph that introduces the main idea in one clear statement.</p>
+              <div class="description-group__supporting">
+                <p class="typography typography--description-medium typography--left typography--width-full">Supporting paragraph 1 adds context while keeping a comfortable reading width.</p>
+              </div>
+            </div>
+            <div class="grid grid--columns-2 grid--gap-3">
+              <button type="button" class="button button-primary">Primary action</button>
+              <button type="button" class="button button-secondary">Secondary action</button>
+            </div>
+            <div class="project-image-grid">
+              <div class="grid grid--columns-2 grid--gap-3">
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 1.</figcaption>
+                </figure>
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 2.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <pre class="sk-entry__code" hidden></pre>
+</article>
+
+<!-- ===== 1316 · Section · white · header title-only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1316" data-key="1316 section · white · header title-only · content narrow · actions then media (descriptiongroup + buttons + projectimagegrid)">
+  <header class="sk-entry__head">
+    <span class="sk-entry__num">1316</span>
+    <h2 class="sk-entry__name">Section · white · header title-only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
+    <button type="button" class="sk-btn" data-act="code">HTML</button>
+    <button type="button" class="sk-btn" data-act="copy">Copy</button>
+  </header>
+  <div class="sk-entry__preview">
+    <section class="section section--white section--content-narrow">
+      <div class="section__inner">
+        <div class="section-header section-header--title-only">
+          <div class="section-header__main">
+            <h2 class="typography typography--section-heading typography--left typography--width-full">Section title</h2>
+          </div>
+        </div>
+        <div class="section__content">
+          <div class="flex flex-col gap-6">
+            <div class="description-group description-group--narrow">
+              <p class="typography typography--description-large typography--left typography--width-full">A lead paragraph that introduces the main idea in one clear statement.</p>
+              <div class="description-group__supporting">
+                <p class="typography typography--description-medium typography--left typography--width-full">Supporting paragraph 1 adds context while keeping a comfortable reading width.</p>
+              </div>
+            </div>
+            <div class="grid grid--columns-2 grid--gap-3">
+              <button type="button" class="button button-primary">Primary action</button>
+              <button type="button" class="button button-secondary">Secondary action</button>
+            </div>
+            <div class="project-image-grid">
+              <div class="grid grid--columns-2 grid--gap-3">
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 1.</figcaption>
+                </figure>
+                <figure class="image-caption image-caption--full image-caption--auto">
+                  <img class="image-caption__image" src="placeholder.svg" alt="Describe this image" loading="lazy">
+                  <figcaption class="image-caption__text">Image caption 2.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <pre class="sk-entry__code" hidden></pre>
+</article>
+
+</div>
+<script>
+(function () {
+  var q = document.getElementById('sk-q'), count = document.getElementById('sk-count');
+  var entries = [].slice.call(document.querySelectorAll('.sk-entry'));
+  var toc = [].slice.call(document.querySelectorAll('.sk-toc li'));
+  function dedent(s) {
+    var lines = s.replace(/^\n+|\s+$/g, '').split('\n');
+    var min = Math.min.apply(null, lines.filter(function (l) { return l.trim(); }).map(function (l) { return l.match(/^ */)[0].length; }));
+    return lines.map(function (l) { return l.slice(min); }).join('\n').replace(/=""/g, '');
+  }
+  q.addEventListener('input', function () {
+    var v = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean), n = 0;
+    entries.forEach(function (e, i) {
+      var ok = v.every(function (t) { return e.dataset.key.indexOf(t) > -1; });
+      e.hidden = !ok; toc[i].hidden = !ok; if (ok) n++;
+    });
+    count.textContent = n + ' of ' + entries.length;
+  });
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest('.sk-entry__preview a[href="#"]');
+    if (a) { ev.preventDefault(); return; }
+    var b = ev.target.closest('[data-act]');
+    if (!b) return;
+    var en = b.closest('.sk-entry'), pv = en.querySelector('.sk-entry__preview'), code = en.querySelector('.sk-entry__code');
+    var src = dedent(pv.innerHTML);
+    if (b.dataset.act === 'code') { if (!code.textContent) code.textContent = src; code.hidden = !code.hidden; }
+    else { navigator.clipboard.writeText(src).then(function () { var t = b.textContent; b.textContent = 'Copied'; setTimeout(function () { b.textContent = t; }, 1200); }); }
+  });
+})();
+</script>
+</body>
+</html>
