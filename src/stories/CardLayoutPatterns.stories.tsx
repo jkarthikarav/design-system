@@ -37,7 +37,7 @@ export const OutcomeCardGrid: Story = {
       title="Outcomes"
       description="The redesign makes key information easier to discover, simplifies the path to access, and establishes reusable patterns for future content."
     >
-      <Grid columns={3} gap={4}>
+      <Grid columns={2} gap={4}>
         {outcomes.map((outcome) => (
           <ProjectLinkCard
             key={outcome.eyebrow}
