@@ -37,25 +37,27 @@ export function CaseStudyCard({
   return (
     <article className={`case-study-card case-study-card--${variant}`}>
       <div className="case-study-card__top">
-        <Typography variant="eyebrow">
-          {eyebrow}
-        </Typography>
-
-        <div className="case-study-card__title-row">
-          <Typography variant="card-heading" as="h2">
-            {title}
+        <div className="case-study-card__content">
+          <Typography variant="eyebrow">
+            {eyebrow}
           </Typography>
 
-          {!isOutcome && (
-            <Button variant="primary" onClick={onExplore}>
-              {buttonLabel} →
-            </Button>
-          )}
+          <div className="case-study-card__title-row">
+            <Typography variant="card-heading" as="h2">
+              {title}
+            </Typography>
+          </div>
+
+          <Typography variant="description-large" width="wide">
+            {description}
+          </Typography>
         </div>
 
-        <Typography variant="description-large" width="wide">
-          {description}
-        </Typography>
+        {!isOutcome && (
+          <Button variant="primary" onClick={onExplore}>
+            {buttonLabel} →
+          </Button>
+        )}
       </div>
 
       <div className="case-study-card__highlights">
