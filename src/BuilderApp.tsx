@@ -85,7 +85,6 @@ function transformSkeleton(raw: string) {
     'class="' + classes.split(/\s+/).map((name) => name.startsWith('jakpot-') ? name : 'jakpot-' + name).join(' ') + '"');
 }
 function renderNode(node: BuilderNode): string {
-  const p = node.props;
   const children = node.children.map(renderNode).join('\n');
   switch (node.type) {
     case 'section':
