@@ -73,6 +73,51 @@
   --font-size-800: 76px;
   --font-size-900: 101px;
 
+  /* ========================================
+     TYPOGRAPHY — Responsive semantic roles
+     Primitive scale stays fixed; these role
+     tokens adapt by viewport.
+     ======================================== */
+
+  --type-hero-heading: var(--font-size-700);
+  --type-section-heading: var(--font-size-600);
+  --type-card-heading: var(--font-size-400);
+  --type-hero-subheading: var(--font-size-400);
+  --type-section-subheading: var(--font-size-300);
+  --type-description-large: var(--font-size-400);
+  --type-description-medium: var(--font-size-300);
+  --type-card-description: var(--font-size-200);
+  --type-image-caption: var(--font-size-200);
+  --type-eyebrow: var(--font-size-200);
+
+  /* Tablet: compact display type, preserve body readability. */
+  @media (max-width: 900px) {
+    --type-hero-heading: var(--font-size-600);
+    --type-section-heading: var(--font-size-500);
+    --type-card-heading: 22px;
+    --type-hero-subheading: 22px;
+    --type-section-subheading: var(--font-size-300);
+    --type-description-large: 22px;
+    --type-description-medium: var(--font-size-300);
+    --type-card-description: var(--font-size-200);
+    --type-image-caption: 13px;
+    --type-eyebrow: 13px;
+  }
+
+  /* Mobile: tighter hierarchy while keeping body copy comfortable. */
+  @media (max-width: 650px) {
+    --type-hero-heading: var(--font-size-500);
+    --type-section-heading: var(--font-size-400);
+    --type-card-heading: 20px;
+    --type-hero-subheading: var(--font-size-300);
+    --type-section-subheading: 16px;
+    --type-description-large: var(--font-size-300);
+    --type-description-medium: 16px;
+    --type-card-description: 14px;
+    --type-image-caption: 12px;
+    --type-eyebrow: 12px;
+  }
+
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
