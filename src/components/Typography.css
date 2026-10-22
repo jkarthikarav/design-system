@@ -1,4 +1,3 @@
-
 .typography {
   margin: 0;
   color: var(--color-text-primary);
@@ -16,32 +15,35 @@
 /* Hero heading */
 .typography--hero-heading {
   font-family: var(--font-display);
-  font-size: var(--font-size-700);
+  font-size: var(--type-hero-heading);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 /* Section heading */
 .typography--section-heading {
   font-family: var(--font-display);
-  font-size: var(--font-size-600);
+  font-size: var(--type-section-heading);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-heading);
+  line-height: 1.22;
+  text-wrap: balance;
 }
 
 /* Card heading */
 .typography--card-heading {
   font-family: var(--font-display);
-  font-size: var(--font-size-400);
+  font-size: var(--type-card-heading);
   font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-heading);
+  line-height: 1.32;
+  text-wrap: pretty;
 }
 
 /* Hero subheading */
 .typography--hero-subheading {
   font-family: var(--font-body);
-  font-size: var(--font-size-400);
+  font-size: var(--type-hero-subheading);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
   color: var(--color-text-secondary);
@@ -50,7 +52,7 @@
 /* Section subheading */
 .typography--section-subheading {
   font-family: var(--font-body);
-  font-size: var(--font-size-300);
+  font-size: var(--type-section-subheading);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-body);
 }
@@ -58,7 +60,7 @@
 /* Opening paragraph */
 .typography--description-large {
   font-family: var(--font-body);
-  font-size: var(--font-size-400);
+  font-size: var(--type-description-large);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
   color: var(--color-text-secondary);
@@ -67,7 +69,7 @@
 /* Remaining paragraphs */
 .typography--description-medium {
   font-family: var(--font-body);
-  font-size: var(--font-size-300);
+  font-size: var(--type-description-medium);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
   color: var(--color-text-secondary);
@@ -76,7 +78,7 @@
 /* Project card description */
 .typography--card-description {
   font-family: var(--font-body);
-  font-size: var(--font-size-200);
+  font-size: var(--type-card-description);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
   color: var(--color-text-secondary);
@@ -85,7 +87,7 @@
 /* Image caption */
 .typography--image-caption {
   font-family: var(--font-label);
-  font-size: var(--font-size-200);
+  font-size: var(--type-image-caption);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
   color: var(--color-text-muted);
@@ -94,9 +96,9 @@
 /* Eyebrow */
 .typography--eyebrow {
   font-family: var(--font-label);
-  font-size: var(--font-size-200);
+  font-size: var(--type-eyebrow);
   font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-heading);
+  line-height: 1.35;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -120,16 +122,8 @@
   margin-inline: auto;
 }
 
-/* Responsive sizing */
+/* Responsive content widths */
 @media (max-width: 900px) {
-  .typography--hero-heading {
-    font-size: var(--font-size-600);
-  }
-
-  .typography--section-heading {
-    font-size: var(--font-size-500);
-  }
-
   .typography--width-wide {
     width: 85%;
   }
@@ -140,37 +134,8 @@
 }
 
 @media (max-width: 650px) {
-  .typography--hero-heading {
-    font-size: var(--font-size-500);
-  }
-
-  .typography--section-heading {
-    font-size: var(--font-size-400);
-  }
-
-  .typography--hero-subheading,
-  .typography--description-large {
-    font-size: var(--font-size-300);
-  }
-
   .typography--width-wide,
   .typography--width-narrow {
     width: 100%;
   }
-}
-
-
-/* Refinements: keep display type readable when headings wrap. */
-.typography--section-heading {
-  line-height: 1.22;
-  text-wrap: balance;
-}
-
-.typography--card-heading {
-  line-height: 1.32;
-  text-wrap: pretty;
-}
-
-.typography--eyebrow {
-  line-height: 1.35;
 }
