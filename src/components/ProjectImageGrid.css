@@ -8,3 +8,12 @@
   display: block;
   max-width: 100%;
 }
+
+/* Keep the grid a predictable block so parent layouts can control its spacing. */
+.project-image-grid {
+  display: block;
+}
+
+.project-image-grid > .grid {
+  width: 100%;
+}
