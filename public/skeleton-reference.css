@@ -1348,3 +1348,74 @@ video {
     font-size: var(--font-size-400);
   }
 }
+
+/* ==========================================================
+   RESPONSIVE SPACING & TYPOGRAPHY REFINEMENTS
+   ========================================================== */
+
+/* Keep wrapped headings readable and maintain consistent eyebrow rhythm. */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.typography--section-heading {
+  line-height: 1.22;
+}
+
+.typography--card-heading,
+.project-link-card__title {
+  line-height: 1.32;
+  text-wrap: pretty;
+}
+
+.typography--eyebrow,
+.project-link-card__eyebrow {
+  line-height: 1.35;
+}
+
+/* Use layout gaps instead of relying on margins on individual elements. */
+.section-header__main {
+  gap: var(--space-3);
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-6);
+}
+
+.project-link-card__top {
+  gap: var(--space-3);
+}
+
+.project-link-card__action {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.project-image-grid {
+  display: block;
+}
+
+.project-image-grid > .grid {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .section__content {
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 600px) {
+  .section-header__main {
+    gap: var(--space-2);
+  }
+
+  .section__content {
+    gap: var(--space-4);
+  }
+}
