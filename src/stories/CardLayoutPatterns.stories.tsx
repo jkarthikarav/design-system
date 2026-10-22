@@ -33,8 +33,9 @@ export const OutcomeCardGrid: Story = {
   render: () => (
     <Section
       background="beige"
-      headerVariant="title-only"
-      title="Outcome card grid"
+      headerVariant="without-eyebrow"
+      title="Outcomes"
+      description="The redesign makes key information easier to discover, simplifies the path to access, and establishes reusable patterns for future content."
     >
       <Grid columns={3} gap={4}>
         {outcomes.map((outcome) => (
