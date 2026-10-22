@@ -1150,6 +1150,12 @@
   gap: var(--jakpot-space-3);
 }
 
+/* Use standard description sizing for the card summary, not intro sizing. */
+.jakpot-root .jakpot-case-study-card__top > .jakpot-typography--description-large{
+  font-size: var(--jakpot-font-size-300);
+  line-height: 1.5;
+}
+
 .jakpot-root .jakpot-case-study-card__title-row{
   display: flex;
   align-items: center;
@@ -1180,6 +1186,17 @@
 
 .jakpot-root .jakpot-case-study-card__highlight + .jakpot-case-study-card__highlight{
   border-left: 1px solid var(--jakpot-color-border-subtle);
+}
+
+/* Keep highlight headings and descriptions compact inside case-study cards. */
+.jakpot-root .jakpot-case-study-card__highlights .jakpot-typography--section-subheading{
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.jakpot-root .jakpot-case-study-card__highlights .jakpot-typography--description-medium{
+  font-size: var(--jakpot-font-size-200);
+  line-height: 1.45;
 }
 
 .jakpot-root .jakpot-case-study-card__footer{
