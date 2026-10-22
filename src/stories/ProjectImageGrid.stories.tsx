@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ProjectImageGrid } from '../components/ProjectImageGrid';
 
 const meta = {
-  title: 'Components/ProjectImageGrid',
+  title: 'Layouts/ProjectImageGrid',
   component: ProjectImageGrid,
   parameters: {
     layout: 'padded',
