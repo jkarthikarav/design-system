@@ -34,7 +34,7 @@ const starterProps: Record<ElementType, NodeProps> = {
   tag: { label: 'Category', variant: 'default' },
   grid: { columns: 2, gap: 3 },
   'project-link-card': { eyebrow: 'PROJECT TYPE', title: 'Project title', description: 'A short description of the project and its value.', actionLabel: 'Explore project', href: '#', variant: 'neutral' },
-  'case-study-card': { eyebrow: 'CASE STUDY', title: 'Case study title', description: 'A concise summary of the work.', highlights: 'Research | Understand user needs\nDesign | Explore and test solutions\nDelivery | Ship the experience', date: '2026', role: 'Product design' },
+  'case-study-card': { eyebrow: 'CASE STUDY', title: 'Case study title', description: 'A concise summary of the work.', highlights: 'Research | Understand user needs\nDesign | Explore and test solutions\nDelivery | Ship the experience', date: '2026', role: 'Product design', variant: 'default', actionLabel: 'Explore', href: '#' },
   'structured-list': { items: 'Discover | Understand the offer\nExplore | Review the available options\nContinue | Take the next step', ordered: 'true' },
   'image-caption': { src: 'https://placehold.co/1200x800?text=Preview+image', alt: 'Describe the image', caption: 'Image caption', ratio: 'landscape', width: 'full' },
   'project-image-grid': { columns: 2, gap: 3 },
@@ -112,7 +112,10 @@ function renderNode(node: BuilderNode): string {
         const [heading, ...rest] = line.split('|');
         return `<div class="jakpot-case-study-card__highlight"><h4 class="jakpot-typography jakpot-typography--section-subheading">${esc(heading.trim())}</h4><p class="jakpot-typography jakpot-typography--description-medium">${esc(rest.join('|').trim())}</p></div>`;
       }).join('');
-      return `<article class="jakpot-case-study-card"><div class="jakpot-case-study-card__top"><p class="jakpot-typography jakpot-typography--eyebrow">${esc(val(node, 'eyebrow'))}</p><div class="jakpot-case-study-card__title-row"><h3 class="jakpot-typography jakpot-typography--card-heading">${esc(val(node, 'title'))}</h3></div><p class="jakpot-typography jakpot-typography--description-large">${esc(val(node, 'description'))}</p></div><div class="jakpot-case-study-card__highlights">${highlights}</div><footer class="jakpot-case-study-card__footer"><span class="jakpot-case-study-card__date">${esc(val(node, 'date'))}</span><span class="jakpot-case-study-card__role">${esc(val(node, 'role'))}</span></footer></article>`;
+      const isOutcome = val(node, 'variant', 'default') === 'outcome';
+      const action = isOutcome ? '' : `<a class="jakpot-button jakpot-button--primary jakpot-case-study-card__action" href="${esc(val(node, 'href', '#'))}">${esc(val(node, 'actionLabel', 'Explore'))}</a>`;
+      const footer = isOutcome ? '' : `<footer class="jakpot-case-study-card__footer"><span class="jakpot-case-study-card__date">${esc(val(node, 'date'))}</span><span class="jakpot-case-study-card__role">${esc(val(node, 'role'))}</span></footer>`;
+      return `<article class="jakpot-case-study-card jakpot-case-study-card--${esc(val(node, 'variant', 'default'))}"><div class="jakpot-case-study-card__top"><div class="jakpot-case-study-card__content"><p class="jakpot-typography jakpot-typography--eyebrow">${esc(val(node, 'eyebrow'))}</p><div class="jakpot-case-study-card__title-row"><h3 class="jakpot-typography jakpot-typography--card-heading">${esc(val(node, 'title'))}</h3></div><p class="jakpot-typography jakpot-typography--description-large">${esc(val(node, 'description'))}</p></div>${action}</div><div class="jakpot-case-study-card__highlights">${highlights}</div>${footer}</article>`;
     }
     case 'structured-list': {
       const items = val(node, 'items').split('\n').filter(Boolean).map((line, index) => {
@@ -257,7 +260,7 @@ ${html}
             {selected.type === 'tag' && <>{field('Label', 'label')}{field('Style', 'variant', ['default', 'accent', 'inverse'])}</>}
             {selected.type === 'grid' && <>{field('Columns', 'columns', ['1', '2', '3'])}{field('Gap', 'gap', ['1', '2', '3', '4', '5', '6'])}</>}
             {selected.type === 'project-link-card' && <>{field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Action label', 'actionLabel')}{field('Link URL', 'href')}{field('Card style', 'variant', ['neutral', 'inverse'])}</>}
-            {selected.type === 'case-study-card' && <>{field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Highlights (Heading | description per line)', 'highlights', undefined, 'textarea')}{field('Date', 'date')}{field('Role', 'role')}</>}
+            {selected.type === 'case-study-card' && <>{field('Card variant', 'variant', ['default', 'outcome'])}{field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Explore label', 'actionLabel')}{field('Explore URL', 'href')}{field('Highlights (Heading | description per line)', 'highlights', undefined, 'textarea')}{val(selected, 'variant', 'default') !== 'outcome' && <>{field('Date', 'date')}{field('Role', 'role')}</>}</>}
             {selected.type === 'structured-list' && <>{field('Items (Title | description per line)', 'items', undefined, 'textarea')}{field('Numbering', 'ordered', ['true', 'false'])}</>}
             {selected.type === 'image-caption' && <>{field('Image URL', 'src')}{field('Alt text', 'alt')}{field('Caption', 'caption')}{field('Aspect ratio', 'ratio', ['landscape', 'square', 'auto'])}{field('Image width', 'width', ['full', 'wide', 'narrow'])}</>}
             {selected.type === 'project-image-grid' && <>{field('Columns', 'columns', ['1', '2', '3'])}{field('Gap', 'gap', ['1', '2', '3', '4', '5', '6'])}<p className="builder-field-note">Select this grid and use “Add child” to add image-caption elements.</p></>}
