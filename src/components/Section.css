@@ -67,3 +67,23 @@
     max-width: 100%;
   }
 }
+
+/* Section content owns the vertical rhythm between sibling content blocks. */
+.section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-6);
+}
+
+@media (max-width: 900px) {
+  .section__content {
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 600px) {
+  .section__content {
+    gap: var(--space-4);
+  }
+}
