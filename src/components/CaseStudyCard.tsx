@@ -7,6 +7,8 @@ export interface CaseStudyHighlight {
   description: string;
 }
 
+export type CaseStudyCardVariant = 'default' | 'outcome';
+
 export interface CaseStudyCardProps {
   eyebrow: string;
   title: string;
@@ -14,6 +16,7 @@ export interface CaseStudyCardProps {
   highlights: [CaseStudyHighlight, CaseStudyHighlight, CaseStudyHighlight];
   date: string;
   role: string;
+  variant?: CaseStudyCardVariant;
   buttonLabel?: string;
   onExplore?: () => void;
 }
@@ -25,11 +28,14 @@ export function CaseStudyCard({
   highlights,
   date,
   role,
+  variant = 'default',
   buttonLabel = 'Explore',
   onExplore,
 }: CaseStudyCardProps) {
+  const isOutcome = variant === 'outcome';
+
   return (
-    <article className="case-study-card">
+    <article className={`case-study-card case-study-card--${variant}`}>
       <div className="case-study-card__top">
         <Typography variant="eyebrow">
           {eyebrow}
@@ -40,9 +46,11 @@ export function CaseStudyCard({
             {title}
           </Typography>
 
-          <Button variant="primary" onClick={onExplore}>
-            {buttonLabel} →
-          </Button>
+          {!isOutcome && (
+            <Button variant="primary" onClick={onExplore}>
+              {buttonLabel} →
+            </Button>
+          )}
         </div>
 
         <Typography variant="description-large" width="wide">
@@ -67,21 +75,23 @@ export function CaseStudyCard({
         ))}
       </div>
 
-      <footer className="case-study-card__footer">
-        <Typography
-          variant="eyebrow"
-          className="case-study-card__date"
-        >
-          {date}
-        </Typography>
+      {!isOutcome && (
+        <footer className="case-study-card__footer">
+          <Typography
+            variant="eyebrow"
+            className="case-study-card__date"
+          >
+            {date}
+          </Typography>
 
-        <Typography
-          variant="image-caption"
-          className="case-study-card__role"
-        >
-          {role}
-        </Typography>
-      </footer>
+          <Typography
+            variant="image-caption"
+            className="case-study-card__role"
+          >
+            {role}
+          </Typography>
+        </footer>
+      )}
     </article>
   );
 }
