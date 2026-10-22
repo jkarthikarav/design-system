@@ -4,26 +4,18 @@ import { ImageCaption } from '../components/ImageCaption';
 const meta = {
   title: 'Components/ImageCaption',
   component: ImageCaption,
-  parameters: {
-    layout: 'padded',
-  },
+  parameters: { layout: 'padded' },
   argTypes: {
-    imageWidth: {
-      control: 'radio',
-      options: ['full', 'wide', 'narrow'],
-    },
-    aspectRatio: {
-      control: 'radio',
-      options: ['auto', 'landscape', 'square'],
-    },
+    imageWidth: { control: 'radio', options: ['full', 'wide', 'narrow'] },
+    aspectRatio: { control: 'radio', options: ['auto', 'landscape', 'square'] },
   },
 } satisfies Meta<typeof ImageCaption>;
 
 export default meta;
-
 type Story = StoryObj<typeof meta>;
 
 export const SizingAndRatioOptions: Story = {
+  args: { src: 'https://placehold.co/900x600', alt: 'Placeholder preview image', caption: 'Sizing and aspect ratio examples' },
   render: () => (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 'var(--space-4)' }}>
       {(['full', 'wide', 'narrow'] as const).map((imageWidth) => (['auto', 'landscape', 'square'] as const).map((aspectRatio) => (
@@ -33,31 +25,6 @@ export const SizingAndRatioOptions: Story = {
   ),
 };
 
-export const Landscape: Story = {
-  args: {
-    src: 'https://placehold.co/1200x675',
-    alt: 'Placeholder landscape image representing a project interface.',
-    caption: 'Figure 1. An overview of the project interface.',
-    imageWidth: 'full',
-    aspectRatio: 'landscape',
-  },
-};
-
-export const Narrow: Story = {
-  args: {
-    src: 'https://placehold.co/800x800',
-    alt: 'Placeholder square image representing a design detail.',
-    caption: 'Figure 2. A detail from the design exploration.',
-    imageWidth: 'narrow',
-    aspectRatio: 'square',
-  },
-};
-
-export const WithoutCaption: Story = {
-  args: {
-    src: 'https://placehold.co/1200x675',
-    alt: 'Placeholder image representing a project outcome.',
-    imageWidth: 'full',
-    aspectRatio: 'auto',
-  },
-};
+export const Landscape: Story = { args: { src: 'https://placehold.co/1200x675', alt: 'Placeholder landscape image representing a project interface.', caption: 'Figure 1. An overview of the project interface.', imageWidth: 'full', aspectRatio: 'landscape' } };
+export const Narrow: Story = { args: { src: 'https://placehold.co/800x800', alt: 'Placeholder square image representing a design detail.', caption: 'Figure 2. A detail from the design exploration.', imageWidth: 'narrow', aspectRatio: 'square' } };
+export const WithoutCaption: Story = { args: { src: 'https://placehold.co/1200x675', alt: 'Placeholder image representing a project outcome.', imageWidth: 'full', aspectRatio: 'auto' } };
