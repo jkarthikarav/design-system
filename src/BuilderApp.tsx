@@ -120,7 +120,8 @@ function renderNode(node: BuilderNode): string {
         const [title, ...rest] = line.split('|');
         return `<li class="jakpot-structured-list__item"><div class="jakpot-structured-list__row"><span class="jakpot-structured-list__index">${String(index + 1).padStart(2, '0')}</span><span class="jakpot-structured-list__content"><span class="jakpot-structured-list__title">${esc(title.trim())}</span><span class="jakpot-structured-list__description">${esc(rest.join('|').trim())}</span></span></div></li>`;
       }).join('');
-      return `<ol class="jakpot-structured-list">${items}</ol>`;
+      const listTag = val(node, 'ordered', 'true') === 'true' ? 'ol' : 'ul';
+      return `<${listTag} class="jakpot-structured-list">${items}</${listTag}>`;
     }
     case 'image-caption':
       return `<figure class="jakpot-image-caption jakpot-image-caption--${esc(val(node, 'width', 'full'))} jakpot-image-caption--${esc(val(node, 'ratio', 'landscape'))}"><img class="jakpot-image-caption__image" src="${esc(val(node, 'src'))}" alt="${esc(val(node, 'alt'))}" loading="lazy"><figcaption class="jakpot-image-caption__text">${esc(val(node, 'caption'))}</figcaption></figure>`;
@@ -225,7 +226,7 @@ ${html}
         <div className="builder-section-heading"><div><p className="builder-eyebrow">SKELETON LIBRARY</p><h2>All reviewed skeletons</h2></div><p>{skeletons.length ? `${skeletons.length.toLocaleString()} loaded` : 'Loading catalogue…'}</p></div>
         <input className="builder-search" placeholder="Search by number, name, or component…" value={query} onChange={(event) => { setQuery(event.target.value); setVisibleCount(100); }} />
         <div className="builder-catalogue-grid">{matches.slice(0, visibleCount).map((item) => <article className="builder-catalogue-card" key={item.key}>
-          <span className="builder-card-kicker">{item.key}</span><strong>{item.title}</strong><div className="builder-skeleton-preview" dangerouslySetInnerHTML={{ __html: transformSkeleton(item.html) }} />
+          <span className="builder-card-kicker">{item.key}</span><strong>{item.title}</strong><div className="builder-skeleton-preview jakpot-root" dangerouslySetInnerHTML={{ __html: transformSkeleton(item.html) }} />
           <div className="builder-skeleton-actions"><button className="builder-secondary-button" onClick={() => { const node = makeNode('skeleton'); node.props.title = item.title; node.props.rawHtml = item.html; setNodes((old) => addToTree(old, null, node)); setSelectedId(node.id); setTab('builder'); }}>Add skeleton to canvas</button></div>
         </article>)}</div>
         {skeletons.length === 0 && <p>Could not load the skeleton files. Check that all 13 files in public/skeleton-parts are deployed.</p>}
