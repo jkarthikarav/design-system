@@ -51,6 +51,19 @@ type Story = StoryObj<typeof meta>;
 
 // Interactive preview: use Controls to change the style,
 // alignment, width, and sample text.
+export const VariantCatalog: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
+      {(['hero-heading', 'section-heading', 'card-heading', 'hero-subheading', 'section-subheading', 'description-large', 'description-medium', 'card-description', 'image-caption', 'eyebrow'] as const).map((variant) => (
+        <div key={variant} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+          <Typography variant="eyebrow">{variant}</Typography>
+          <Typography variant={variant}>A sample of the {variant.replaceAll('-', ' ')} style.</Typography>
+        </div>
+      ))}
+    </div>
+  ),
+};
+
 export const Playground: Story = {
   args: {
     variant: 'hero-heading',
