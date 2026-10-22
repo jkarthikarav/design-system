@@ -4,7 +4,7 @@ import { DescriptionGroup } from '../components/DescriptionGroup';
 import { Grid } from '../components/Grid';
 import { Button } from '../components/Button';
 import { ProjectImageGrid } from '../components/ProjectImageGrid';
-import { CaseStudyCard } from '../components/CaseStudyCard';
+import { CaseStudyCard, type CaseStudyCardProps } from '../components/CaseStudyCard';
 import { StructuredList } from '../components/StructuredList';
 
 const meta = {
@@ -38,7 +38,7 @@ const placeholderImages = [
   },
 ];
 
-const outcomes = [
+const outcomes: CaseStudyCardProps[] = [
   {
     eyebrow: 'OUTCOME 01',
     title: 'Improved Information Discovery',
@@ -78,7 +78,7 @@ const outcomes = [
     date: 'Nov 2024 – Mar 2025',
     role: 'UX research · Information architecture · UI design',
   },
-] as const;
+];
 
 export const OverviewSection: Story = {
   render: () => (
@@ -123,7 +123,7 @@ export const ButtonsThenImages: Story = {
       headerVariant="title-only"
       title="Explore the TNFC experience"
     >
-      <div className="portfolio-pattern-stack">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
         <DescriptionGroup
           width="narrow"
           lead="Separate the explanation, actions, and supporting visuals into clear rows."
