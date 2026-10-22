@@ -1,50 +1,273 @@
 import { useEffect, useMemo, useState } from 'react';
 import './BuilderApp.css';
 
-const templates = [
-  ['section','Section','Sections'],['section-description','Heading with supporting content','Section patterns'],['section-body','Heading with body content','Section patterns'],['section-narrow-wide','Narrow heading, wide content','Section patterns'],
-  ['project-cards','Project cards with actions','Card patterns'],['project-cards-plain','Project cards without actions','Card patterns'],['outcomes','Outcome card grid','Card patterns'],['actions-media','Actions then media','Media patterns'],['media-comparison','Two-column media comparison','Media patterns'],['ordered-list','Ordered content list','Content patterns'],
-  ['button','Button','Components'],['typography','Typography','Components'],['tag','Tag','Components'],['section-header','Section header','Components'],['description-group','Description group','Components'],['grid','Grid','Components'],['project-link-card','Project link card','Components'],['case-study-card','Case study card','Components'],['structured-list','Structured list','Components'],['image-caption','Image with caption','Components'],['project-image-grid','Project image grid','Components']
-] as const;
-type C = {template:string;title:string;eyebrow:string;description:string;body:string;buttonLabel:string;secondaryLabel:string;background:string;contentWidth:string;headerVariant:string;variant:string;columns:number;gap:number;imageCount:number;imageSrc:string;imageAlt:string;caption:string;stylesheetUrl:string};
-const initial:C={template:'section-description',title:'A section heading',eyebrow:'SECTION EYEBROW',description:'A concise introduction that gives visitors the context they need.',body:'Supporting content begins in the second row, below the section heading.',buttonLabel:'Primary action',secondaryLabel:'Secondary action',background:'beige',contentWidth:'wide',headerVariant:'title-only',variant:'primary',columns:2,gap:3,imageCount:2,imageSrc:'https://placehold.co/1200x800?text=Preview+image',imageAlt:'Describe the image',caption:'Image caption',stylesheetUrl:typeof window==='undefined'?'/jakpot.css':new URL('jakpot.css',window.location.href).href};
-const esc=(s:string)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const allowed=(s:string,a:string[],fallback:string)=>a.includes(s)?s:fallback;
-function header(c:C,variant=c.headerVariant){const eyebrow=variant==='with-description'&&c.eyebrow?'<p class="jakpot-typography jakpot-typography--eyebrow">'+esc(c.eyebrow)+'</p>':'';const desc=variant!=='title-only'&&c.description?'<div class="jakpot-section-header__description"><p class="jakpot-typography jakpot-typography--description-medium">'+esc(c.description)+'</p></div>':'';return '<header class="jakpot-section-header jakpot-section-header--'+esc(variant)+'"><div class="jakpot-section-header__main">'+eyebrow+'<h2 class="jakpot-typography jakpot-typography--section-heading">'+esc(c.title)+'</h2></div>'+desc+'</header>';}
-function figure(c:C,i:number){return '<figure class="jakpot-image-caption"><img class="jakpot-image-caption__image" src="'+esc(c.imageSrc)+'" alt="'+esc(c.imageAlt)+'" loading="lazy">'+(c.caption?'<figcaption class="jakpot-image-caption__text">'+esc(c.caption+(c.imageCount>1?' '+(i+1):''))+'</figcaption>':'')+'</figure>';}
-function buildContent(c:C){const btn=(label:string,v:string)=>'<a class="jakpot-button jakpot-button--'+v+'" href="#">'+esc(label)+'</a>';const grid=(items:string[])=>'<div class="jakpot-grid jakpot-grid--columns-'+c.columns+' jakpot-grid--gap-'+c.gap+'">'+items.join('')+'</div>';const imgs=()=>'<div class="jakpot-project-image-grid">'+grid(Array.from({length:c.imageCount},(_,i)=>figure(c,i)))+'</div>';const card=(n:number,outcome=false)=>'<article class="jakpot-'+(outcome?'outcome-card':'project-link-card')+'"><p class="jakpot-typography jakpot-typography--eyebrow">'+esc(outcome?'OUTCOME 0'+n:c.eyebrow||'PROJECT TYPE')+'</p><h3 class="jakpot-card-heading">'+esc(c.title)+' '+n+'</h3><p class="jakpot-typography jakpot-typography--description-medium">'+esc(c.description)+'</p>'+(outcome?'':btn(c.buttonLabel,'primary'))+'</article>';
-switch(c.template){
-case 'button':return btn(c.buttonLabel,allowed(c.variant,['primary','secondary','tertiary'],'primary'));
-case 'typography':return '<p class="jakpot-typography jakpot-typography--'+esc(allowed(c.variant,['hero-heading','section-heading','card-heading','hero-subheading','section-subheading','description-large','description-medium','card-description','image-caption','eyebrow'],'description-large'))+'">'+esc(c.body)+'</p>';
-case 'tag':return '<span class="jakpot-tag jakpot-tag--'+esc(allowed(c.variant,['default','accent','inverse'],'default'))+'">'+esc(c.buttonLabel)+'</span>';
-case 'section-header':return header(c);
-case 'description-group':return '<div class="jakpot-description-group jakpot-description-group--'+(c.contentWidth==='narrow'?'narrow':'wide')+'"><p class="jakpot-typography jakpot-typography--description-large">'+esc(c.body)+'</p><p class="jakpot-typography jakpot-typography--description-medium">'+esc(c.description)+'</p></div>';
-case 'grid':return grid([1,2,3].slice(0,c.columns).map(n=>'<div class="jakpot-demo-item">Grid item '+n+'</div>'));
-case 'project-link-card':case 'project-cards':return grid([card(1),card(2)]);
-case 'project-cards-plain':return grid([1,2].map(n=>'<article class="jakpot-project-link-card"><p class="jakpot-typography jakpot-typography--eyebrow">'+esc(c.eyebrow)+'</p><h3 class="jakpot-card-heading">'+esc(c.title)+' '+n+'</h3><p class="jakpot-typography jakpot-typography--description-medium">'+esc(c.description)+'</p></article>'));
-case 'outcomes':return grid([card(1,true),card(2,true)]);
-case 'case-study-card':return '<article class="jakpot-case-study-card jakpot-case-study-card--'+(c.variant==='outcome'?'outcome':'default')+'"><p class="jakpot-typography jakpot-typography--eyebrow">'+esc(c.eyebrow)+'</p><h3 class="jakpot-card-heading">'+esc(c.title)+'</h3><p class="jakpot-typography jakpot-typography--description-large">'+esc(c.description)+'</p>'+grid([1,2,3].map(n=>'<div><h4 class="jakpot-section-subheading">Highlight '+n+'</h4><p class="jakpot-typography jakpot-typography--description-medium">'+esc(c.body)+'</p></div>'))+(c.variant==='outcome'?'':'<footer class="jakpot-case-study-card__footer">Date · Role</footer>')+'</article>';
-case 'structured-list':case 'ordered-list':return '<ol class="jakpot-structured-list">'+[1,2,3].map((n)=>'<li class="jakpot-structured-list__item"><span class="jakpot-structured-list__index">'+String(n).padStart(2,'0')+'</span><span><strong class="jakpot-structured-list__title">'+esc(c.template==='ordered-list'?['Discover','Access','Continue'][n-1]:c.title+' '+n)+'</strong><span class="jakpot-structured-list__description">'+esc(c.body)+'</span></span></li>').join('')+'</ol>';
-case 'image-caption':return figure(c,0);
-case 'project-image-grid':return imgs();
-case 'media-comparison':return grid([0,1].map(n=>'<figure class="jakpot-image-caption"><img class="jakpot-image-caption__image" src="'+esc(c.imageSrc)+'" alt="'+esc(c.imageAlt)+'"><figcaption class="jakpot-image-caption__text">'+(n===0?'Before — ':'After — ')+esc(c.caption||c.description)+'</figcaption></figure>'));
-case 'actions-media':return '<div class="jakpot-flow"><div class="jakpot-description-group jakpot-description-group--narrow"><p class="jakpot-typography jakpot-typography--description-large">'+esc(c.body)+'</p><p class="jakpot-typography jakpot-typography--description-medium">'+esc(c.description)+'</p></div>'+grid([btn(c.buttonLabel,'primary'),btn(c.secondaryLabel,'secondary')])+imgs()+'</div>';
-default:return '<div class="jakpot-description-group"><p class="jakpot-typography jakpot-typography--description-large">'+esc(c.body)+'</p><p class="jakpot-typography jakpot-typography--description-medium">'+esc(c.description)+'</p></div>';
-}}
-function generate(c:C){const standalone=['button','typography','tag','section-header','description-group','grid','project-link-card','case-study-card','structured-list','image-caption','project-image-grid'].includes(c.template);if(standalone)return buildContent(c);const head=c.template==='section-body'?header(c,'with-description'):c.template==='section-description'||c.template==='section-narrow-wide'?header(c,'title-only'):header(c);return '<section class="jakpot-section jakpot-section--'+esc(allowed(c.background,['beige','white'],'beige'))+' jakpot-section--content-'+esc(allowed(c.contentWidth,['full','wide','narrow'],'wide'))+'"><div class="jakpot-section__inner">'+head+'<div class="jakpot-section__content">'+buildContent(c)+'</div></div></section>';}
+type ElementType =
+  | 'section' | 'section-header' | 'description-group' | 'typography'
+  | 'button' | 'tag' | 'grid' | 'project-link-card' | 'case-study-card'
+  | 'structured-list' | 'image-caption' | 'project-image-grid' | 'skeleton';
+
+type NodeProps = Record<string, string | number>;
+type BuilderNode = { id: string; type: ElementType; props: NodeProps; children: BuilderNode[] };
 type Skeleton = { key: string; title: string; html: string };
-function transformSkeleton(raw: string, c: C) {
- let result = raw;
- const replacements: Array<[string,string]> = [
-  ['Section title',esc(c.title)],['Section heading',esc(c.title)],['A section heading',esc(c.title)],
-  ['SECTION EYEBROW',esc(c.eyebrow)],['Primary action',esc(c.buttonLabel)],['Secondary action',esc(c.secondaryLabel)],
-  ['A lead paragraph that introduces the main idea in one clear statement.',esc(c.body)],
-  ['Supporting paragraph 1 adds context while keeping a comfortable reading width.',esc(c.description)],
-  ['Describe this image',esc(c.imageAlt)],['Image caption',esc(c.caption)],['placeholder.svg',esc(c.imageSrc)]
- ];
- for(const [from,to] of replacements) result=result.split(from).join(to);
- return result.replace(/class="([^"]+)"/g,(_match,value:string)=>'class="'+value.split(/\s+/).map(name=>name.startsWith('jakpot-')?name:'jakpot-'+name).join(' ')+'"');
+
+const elementOptions: { value: ElementType; label: string; group: string }[] = [
+  { value: 'section', label: 'Section', group: 'Structure' },
+  { value: 'section-header', label: 'Section header', group: 'Structure' },
+  { value: 'description-group', label: 'Description group', group: 'Content' },
+  { value: 'typography', label: 'Typography / text', group: 'Content' },
+  { value: 'grid', label: 'Grid', group: 'Structure' },
+  { value: 'button', label: 'Button', group: 'Actions' },
+  { value: 'tag', label: 'Tag', group: 'Content' },
+  { value: 'project-link-card', label: 'Project link card', group: 'Cards' },
+  { value: 'case-study-card', label: 'Case study card', group: 'Cards' },
+  { value: 'structured-list', label: 'Structured list', group: 'Content' },
+  { value: 'image-caption', label: 'Image with caption', group: 'Media' },
+  { value: 'project-image-grid', label: 'Project image grid', group: 'Media' },
+];
+
+const starterProps: Record<ElementType, NodeProps> = {
+  section: { background: 'beige', width: 'wide' },
+  'section-header': { eyebrow: 'SECTION EYEBROW', title: 'Section heading', description: 'A separate description belonging to the section header.', variant: 'with-description' },
+  'description-group': { lead: 'A leading statement for this content group.', supporting: 'Supporting description for this group.\nA second independent supporting paragraph.', width: 'wide' },
+  typography: { text: 'Write your text here.', variant: 'description-medium', align: 'left', width: 'full' },
+  button: { label: 'Primary action', href: '#', variant: 'primary' },
+  tag: { label: 'Category', variant: 'default' },
+  grid: { columns: 2, gap: 3 },
+  'project-link-card': { eyebrow: 'PROJECT TYPE', title: 'Project title', description: 'A short description of the project and its value.', actionLabel: 'Explore project', href: '#', variant: 'neutral' },
+  'case-study-card': { eyebrow: 'CASE STUDY', title: 'Case study title', description: 'A concise summary of the work.', highlights: 'Research | Understand user needs\nDesign | Explore and test solutions\nDelivery | Ship the experience', date: '2026', role: 'Product design' },
+  'structured-list': { items: 'Discover | Understand the offer\nExplore | Review the available options\nContinue | Take the next step', ordered: 'true' },
+  'image-caption': { src: 'https://placehold.co/1200x800?text=Preview+image', alt: 'Describe the image', caption: 'Image caption', ratio: 'landscape', width: 'full' },
+  'project-image-grid': { columns: 2, gap: 3 },
+  skeleton: { title: 'Imported skeleton', rawHtml: '' },
+};
+
+const esc = (value: unknown) => String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const val = (node: BuilderNode, key: string, fallback = '') => String(node.props[key] ?? fallback);
+const nodeLabel = (node: BuilderNode) => elementOptions.find((item) => item.value === node.type)?.label ?? 'Skeleton HTML';
+const canContain = (type: ElementType) => ['section', 'grid', 'project-image-grid'].includes(type);
+const makeNode = (type: ElementType): BuilderNode => ({ id: `el-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`, type, props: { ...starterProps[type] }, children: [] });
+
+function updateInTree(nodes: BuilderNode[], id: string, updater: (node: BuilderNode) => BuilderNode): BuilderNode[] {
+  return nodes.map((node) => node.id === id ? updater(node) : { ...node, children: updateInTree(node.children, id, updater) });
 }
-export default function BuilderApp(){const [c,setC]=useState<C>(initial);const [tab,setTab]=useState('builder');const [query,setQuery]=useState('');const [copied,setCopied]=useState(false);const [skeletons,setSkeletons]=useState<Skeleton[]>([]);const [selectedSkeleton,setSelectedSkeleton]=useState<Skeleton|null>(null);const [customHtml,setCustomHtml]=useState('');const [visibleCount,setVisibleCount]=useState(100);useEffect(()=>{let active=true;Promise.all(Array.from({length:13},(_,i)=>fetch(new URL('skeleton-parts/part-'+String(i+1).padStart(2,'0')+'.html.txt',window.location.href)).then(r=>{if(!r.ok)throw new Error('Skeleton source unavailable');return r.text()}))).then(parts=>{const doc=new DOMParser().parseFromString(parts.join('\n'),'text/html');const rows=Array.from(doc.querySelectorAll('.sk-entry')).map(entry=>({key:entry.getAttribute('data-key')||'',title:entry.querySelector('.sk-entry__name')?.textContent?.trim()||'',html:entry.querySelector('.sk-entry__preview')?.innerHTML||''}));if(active)setSkeletons(rows)}).catch(()=>{});return()=>{active=false}},[]);const html=useMemo(()=>customHtml?transformSkeleton(customHtml,c):generate(c),[c,customHtml]);const matches=skeletons.filter(item=>(item.title+' '+item.key).toLowerCase().includes(query.toLowerCase()));const set=(k:keyof C,v:string|number)=>setC(old=>({...old,[k]:v} as C));const exportHtml='<!doctype html>\n<html lang="en">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <link rel="stylesheet" href="'+esc(c.stylesheetUrl)+'">\n  <title>'+esc(c.title)+'</title>\n</head>\n<body>\n<main class="jakpot-root">\n'+html+'\n</main>\n</body>\n</html>';const copy=async()=>{try{await navigator.clipboard.writeText(exportHtml);setCopied(true);window.setTimeout(()=>setCopied(false),1400)}catch{setTab('export')}};const download=()=>{const u=URL.createObjectURL(new Blob([exportHtml],{type:'text/html;charset=utf-8'}));const a=document.createElement('a');a.href=u;a.download='jakpot-component.html';a.click();URL.revokeObjectURL(u)};const field=(label:string,k:keyof C,v:string,opts?:string[])=> <label className="builder-field" key={k}><span>{label}</span>{opts?<select value={v} onChange={e=>set(k,e.target.value)}>{opts.map(o=><option key={o} value={o}>{o.replace(/-/g,' ')}</option>)}</select>:<input value={v} onChange={e=>set(k,e.target.value)}/>}</label>;const group=templates.find(t=>t[0]===c.template)?.[2];const variants=c.template==='tag'?['default','accent','inverse']:c.template==='typography'?['hero-heading','section-heading','card-heading','hero-subheading','section-subheading','description-large','description-medium','card-description','image-caption','eyebrow']:c.template==='case-study-card'?['default','outcome']:['primary','secondary','tertiary'];
-return <div className="builder-app"><header className="builder-topbar"><a className="builder-brand" href="./"><span className="builder-mark">J</span><span>JAKpot<small>DESIGN SYSTEM</small></span></a><nav className="builder-tabs"><button className={tab==='builder'?'active':''} onClick={()=>setTab('builder')}>Builder</button><button className={tab==='catalogue'?'active':''} onClick={()=>setTab('catalogue')}>Catalogue <span>1,316</span></button><button className={tab==='export'?'active':''} onClick={()=>setTab('export')}>Export HTML</button></nav><a className="builder-storybook-link" href="https://jkarthikarav.github.io/design-system/" target="_blank" rel="noreferrer">Storybook ↗</a></header><main className="builder-main"><section className="builder-intro"><div><p className="builder-eyebrow">DESIGN SYSTEM WORKSPACE</p><h1>Build with JAKpot.</h1><p>Choose a component or layout, edit the content, and export semantic HTML that stays connected to the live stylesheet.</p></div><div className="builder-intro-note"><span className="builder-status-dot"></span> Live preview · HTML export · Shared CSS</div></section>
-{tab==='catalogue'?<section className="builder-catalogue"><div className="builder-section-heading"><div><p className="builder-eyebrow">THE LIBRARY</p><h2>Choose a starting point</h2></div><p>{matches.length} available starting points</p></div><input className="builder-search" placeholder="Search components and patterns…" value={query} onChange={e=>setQuery(e.target.value)}/><div className="builder-catalogue-grid">{matches.slice(0,visibleCount).map(item=><button className="builder-catalogue-card" key={item.key} onClick={()=>{setSelectedSkeleton(item);setCustomHtml(item.html);setC(old=>({...old,title:item.title}));setTab('builder')}}><span className="builder-card-kicker">{item.key.split(' · ').slice(1,3).join(' · ')}</span><strong>{item.title}</strong><span>Load this skeleton, then edit its content or HTML.</span><span className="builder-card-arrow">Use this skeleton ↗</span></button>)}</div>{skeletons.length===0&&<p>Loading the complete skeleton catalogue…</p>}{matches.length>visibleCount&&<button className="builder-secondary-button" onClick={()=>setVisibleCount(n=>n+100)}>Show next 100 ({matches.length-visibleCount} remaining)</button>}</section>:tab==='export'?<section className="builder-export"><div className="builder-section-heading"><div><p className="builder-eyebrow">READY TO USE</p><h2>Export semantic HTML</h2><p>The HTML references a shared stylesheet. CSS is not bundled into the export.</p></div></div>{field('Live stylesheet URL','stylesheetUrl',c.stylesheetUrl)}<div className="builder-export-actions"><button className="builder-primary-button" onClick={copy}>{copied?'Copied ✓':'Copy full HTML'}</button><button className="builder-secondary-button" onClick={download}>Download HTML file</button><button className="builder-secondary-button" onClick={()=>setTab('builder')}>Back to builder</button></div><pre className="builder-code"><code>{exportHtml}</code></pre></section>:<div className="builder-workspace"><aside className="builder-controls"><div className="builder-section-heading"><div><p className="builder-eyebrow">CONFIGURE</p><h2>Component settings</h2></div><button className="builder-reset" onClick={()=>{setC(initial);setCustomHtml('');setSelectedSkeleton(null)}}>Reset</button></div><label className="builder-field"><span>Component or layout</span><select value={c.template} onChange={e=>{setC(old=>({...old,template:e.target.value}));setCustomHtml('');setSelectedSkeleton(null)}}>{['Sections','Section patterns','Content patterns','Media patterns','Card patterns','Components'].map(g=><optgroup key={g} label={g}>{templates.filter(t=>t[2]===g).map(t=><option key={t[0]} value={t[0]}>{t[1]}</option>)}</optgroup>)}</select></label><div className="builder-field-grid">{field('Title','title',c.title)}{field('Eyebrow','eyebrow',c.eyebrow)}</div>{field('Description','description',c.description)}{field('Supporting content','body',c.body)}{['button','tag','project-link-card','project-cards','project-cards-plain','outcomes','actions-media'].includes(c.template)&&<div className="builder-field-grid">{field('Action label','buttonLabel',c.buttonLabel)}{c.template==='actions-media'?field('Second action','secondaryLabel',c.secondaryLabel):null}</div>}{group!=='Components'&&<div className="builder-field-grid">{field('Background','background',c.background,['beige','white'])}{field('Content width','contentWidth',c.contentWidth,['full','wide','narrow'])}</div>}{['section','section-body','section-description','section-narrow-wide','section-header'].includes(c.template)&&field('Header variant','headerVariant',c.headerVariant,['with-description','without-eyebrow','title-only'])}{['button','tag','typography','case-study-card'].includes(c.template)&&field('Variant','variant',c.variant,variants)}{['grid','project-image-grid','media-comparison','actions-media'].includes(c.template)&&<div className="builder-field-grid">{field('Columns','columns',String(c.columns),['1','2','3'])}{field('Gap','gap',String(c.gap),['1','2','3','4','5','6'])}</div>}{['image-caption','project-image-grid','media-comparison','actions-media'].includes(c.template)&&<><div className="builder-field-grid">{field('Image count','imageCount',String(c.imageCount),['1','2','3','4','5','6'])}{field('Image ratio','variant',c.variant,['auto','square'])}</div>{field('Image URL','imageSrc',c.imageSrc)}{field('Image alt text','imageAlt',c.imageAlt)}{field('Caption','caption',c.caption)}</>}{selectedSkeleton&&<label className="builder-field"><span>Selected skeleton HTML (editable)</span><textarea rows={10} value={customHtml} onChange={e=>setCustomHtml(e.target.value)}/></label>}<div className="builder-control-footer"><button className="builder-primary-button" onClick={()=>setTab('export')}>Review HTML export <span>→</span></button><p>Exported HTML uses semantic elements and stable .jakpot-* classes.</p></div></aside><section className="builder-preview-panel"><div className="builder-preview-heading"><div><p className="builder-eyebrow">PREVIEW</p><h2>{templates.find(t=>t[0]===c.template)?.[1]}</h2></div><span className="builder-preview-badge"><span></span> Updated live</span></div><div className="builder-preview-canvas"><div className="builder-preview-content jakpot-root" dangerouslySetInnerHTML={{__html:html}}/></div><div className="builder-preview-footer"><span>Responsive preview</span><button onClick={copy}>{copied?'Copied HTML ✓':'Copy HTML'}</button></div></section></div>}<footer className="builder-footer"><span>JAKpot Design System</span><span>Built for reusable, accessible web experiences.</span></footer></main></div>}
+function addToTree(nodes: BuilderNode[], parentId: string | null, child: BuilderNode): BuilderNode[] {
+  if (!parentId) return [...nodes, child];
+  return nodes.map((node) => node.id === parentId
+    ? { ...node, children: [...node.children, child] }
+    : { ...node, children: addToTree(node.children, parentId, child) });
+}
+function removeFromTree(nodes: BuilderNode[], id: string): BuilderNode[] {
+  return nodes.filter((node) => node.id !== id).map((node) => ({ ...node, children: removeFromTree(node.children, id) }));
+}
+function findNode(nodes: BuilderNode[], id: string | null): BuilderNode | null {
+  if (!id) return null;
+  for (const node of nodes) {
+    if (node.id === id) return node;
+    const nested = findNode(node.children, id);
+    if (nested) return nested;
+  }
+  return null;
+}
+function flatten(nodes: BuilderNode[], depth = 0): { node: BuilderNode; depth: number }[] {
+  return nodes.flatMap((node) => [{ node, depth }, ...flatten(node.children, depth + 1)]);
+}
+function className(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9-]+/g, '-');
+}
+function typography(text: string, variant: string, align = 'left', width = 'full') {
+  const allowedVariants = ['hero-heading', 'section-heading', 'card-heading', 'hero-subheading', 'section-subheading', 'description-large', 'description-medium', 'card-description', 'image-caption', 'eyebrow'];
+  const safeVariant = allowedVariants.includes(variant) ? variant : 'description-medium';
+  const tag = ['hero-heading', 'section-heading'].includes(safeVariant) ? (safeVariant === 'hero-heading' ? 'h1' : 'h2') : safeVariant === 'card-heading' ? 'h3' : 'p';
+  return `<${tag} class="jakpot-typography jakpot-typography--${safeVariant} jakpot-typography--${className(align)} jakpot-typography--width-${className(width)}">${esc(text)}</${tag}>`;
+}
+function transformSkeleton(raw: string) {
+  return raw.replace(/class="([^"]+)"/g, (_match, classes: string) =>
+    'class="' + classes.split(/\s+/).map((name) => name.startsWith('jakpot-') ? name : 'jakpot-' + name).join(' ') + '"');
+}
+function renderNode(node: BuilderNode): string {
+  const p = node.props;
+  const children = node.children.map(renderNode).join('\n');
+  switch (node.type) {
+    case 'section':
+      return `<section class="jakpot-section jakpot-section--${esc(val(node, 'background', 'beige'))} jakpot-section--content-${esc(val(node, 'width', 'wide'))}"><div class="jakpot-section__inner"><div class="jakpot-section__content">${children || '<!-- Add child elements from the builder to populate this section. -->'}</div></div></section>`;
+    case 'section-header': {
+      const variant = val(node, 'variant', 'with-description');
+      const eyebrow = variant === 'with-description' && val(node, 'eyebrow') ? typography(val(node, 'eyebrow'), 'eyebrow') : '';
+      const description = variant !== 'title-only' && val(node, 'description') ? `<div class="jakpot-section-header__description">${typography(val(node, 'description'), 'description-medium')}</div>` : '';
+      return `<header class="jakpot-section-header jakpot-section-header--${esc(variant)}"><div class="jakpot-section-header__main">${eyebrow}${typography(val(node, 'title', 'Section heading'), 'section-heading')}</div>${description}</header>`;
+    }
+    case 'description-group':
+      return `<div class="jakpot-description-group jakpot-description-group--${esc(val(node, 'width', 'wide'))}">${typography(val(node, 'lead'), 'description-large')}<div class="jakpot-description-group__supporting">${val(node, 'supporting').split('\n').filter(Boolean).map((line) => typography(line, 'description-medium')).join('')}</div></div>`;
+    case 'typography':
+      return typography(val(node, 'text'), val(node, 'variant', 'description-medium'), val(node, 'align', 'left'), val(node, 'width', 'full'));
+    case 'button':
+      return `<a class="jakpot-button jakpot-button--${esc(val(node, 'variant', 'primary'))}" href="${esc(val(node, 'href', '#'))}">${esc(val(node, 'label', 'Action'))}</a>`;
+    case 'tag':
+      return `<span class="jakpot-tag jakpot-tag--${esc(val(node, 'variant', 'default'))}">${esc(val(node, 'label', 'Category'))}</span>`;
+    case 'grid':
+      return `<div class="jakpot-grid jakpot-grid--columns-${esc(val(node, 'columns', '2'))} jakpot-grid--gap-${esc(val(node, 'gap', '3'))}">${children || '<!-- Add child elements to this grid. -->'}</div>`;
+    case 'project-link-card':
+      return `<article class="jakpot-project-link-card jakpot-project-link-card--${esc(val(node, 'variant', 'neutral'))}"><div class="jakpot-project-link-card__top"><p class="jakpot-project-link-card__eyebrow">${esc(val(node, 'eyebrow'))}</p><h3 class="jakpot-typography jakpot-typography--card-heading jakpot-project-link-card__title">${esc(val(node, 'title'))}</h3><p class="jakpot-typography jakpot-typography--card-description jakpot-project-link-card__description">${esc(val(node, 'description'))}</p></div><div class="jakpot-project-link-card__action"><a class="jakpot-button jakpot-button--primary" href="${esc(val(node, 'href', '#'))}">${esc(val(node, 'actionLabel', 'Explore project'))}</a></div></article>`;
+    case 'case-study-card': {
+      const highlights = val(node, 'highlights').split('\n').filter(Boolean).map((line) => {
+        const [heading, ...rest] = line.split('|');
+        return `<div class="jakpot-case-study-card__highlight"><h4 class="jakpot-typography jakpot-typography--section-subheading">${esc(heading.trim())}</h4><p class="jakpot-typography jakpot-typography--description-medium">${esc(rest.join('|').trim())}</p></div>`;
+      }).join('');
+      return `<article class="jakpot-case-study-card"><div class="jakpot-case-study-card__top"><p class="jakpot-typography jakpot-typography--eyebrow">${esc(val(node, 'eyebrow'))}</p><div class="jakpot-case-study-card__title-row"><h3 class="jakpot-typography jakpot-typography--card-heading">${esc(val(node, 'title'))}</h3></div><p class="jakpot-typography jakpot-typography--description-large">${esc(val(node, 'description'))}</p></div><div class="jakpot-case-study-card__highlights">${highlights}</div><footer class="jakpot-case-study-card__footer"><span class="jakpot-case-study-card__date">${esc(val(node, 'date'))}</span><span class="jakpot-case-study-card__role">${esc(val(node, 'role'))}</span></footer></article>`;
+    }
+    case 'structured-list': {
+      const items = val(node, 'items').split('\n').filter(Boolean).map((line, index) => {
+        const [title, ...rest] = line.split('|');
+        return `<li class="jakpot-structured-list__item"><div class="jakpot-structured-list__row"><span class="jakpot-structured-list__index">${String(index + 1).padStart(2, '0')}</span><span class="jakpot-structured-list__content"><span class="jakpot-structured-list__title">${esc(title.trim())}</span><span class="jakpot-structured-list__description">${esc(rest.join('|').trim())}</span></span></div></li>`;
+      }).join('');
+      return `<ol class="jakpot-structured-list">${items}</ol>`;
+    }
+    case 'image-caption':
+      return `<figure class="jakpot-image-caption jakpot-image-caption--${esc(val(node, 'width', 'full'))} jakpot-image-caption--${esc(val(node, 'ratio', 'landscape'))}"><img class="jakpot-image-caption__image" src="${esc(val(node, 'src'))}" alt="${esc(val(node, 'alt'))}" loading="lazy"><figcaption class="jakpot-image-caption__text">${esc(val(node, 'caption'))}</figcaption></figure>`;
+    case 'project-image-grid':
+      return `<div class="jakpot-project-image-grid"><div class="jakpot-grid jakpot-grid--columns-${esc(val(node, 'columns', '2'))} jakpot-grid--gap-${esc(val(node, 'gap', '3'))}">${children || '<!-- Add image-caption elements to this image grid. -->'}</div></div>`;
+    case 'skeleton':
+      return transformSkeleton(val(node, 'rawHtml'));
+    default:
+      return children;
+  }
+}
+
+export default function BuilderApp() {
+  const [nodes, setNodes] = useState<BuilderNode[]>([makeNode('section')]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [newType, setNewType] = useState<ElementType>('section-header');
+  const [tab, setTab] = useState<'builder' | 'catalogue' | 'export'>('builder');
+  const [query, setQuery] = useState('');
+  const [copied, setCopied] = useState(false);
+  const [skeletons, setSkeletons] = useState<Skeleton[]>([]);
+  const [visibleCount, setVisibleCount] = useState(100);
+  const [stylesheetUrl, setStylesheetUrl] = useState(typeof window === 'undefined' ? '/jakpot.css' : new URL('jakpot.css', window.location.href).href);
+
+  useEffect(() => {
+    let active = true;
+    Promise.all(Array.from({ length: 13 }, (_, i) =>
+      fetch(new URL(`skeleton-parts/part-${String(i + 1).padStart(2, '0')}.html.txt`, window.location.href))
+        .then((response) => { if (!response.ok) throw new Error('Skeleton source unavailable'); return response.text(); })
+    )).then((parts) => {
+      const doc = new DOMParser().parseFromString(parts.join('\n'), 'text/html');
+      const rows = Array.from(doc.querySelectorAll('.sk-entry')).map((entry) => ({
+        key: entry.getAttribute('data-key') || '',
+        title: entry.querySelector('.sk-entry__name')?.textContent?.trim() || '',
+        html: entry.querySelector('.sk-entry__preview')?.innerHTML || '',
+      }));
+      if (active) setSkeletons(rows);
+    }).catch(() => { if (active) setSkeletons([]); });
+    return () => { active = false; };
+  }, []);
+
+  const selected = findNode(nodes, selectedId);
+  const html = useMemo(() => nodes.map(renderNode).join('\n'), [nodes]);
+  const exportHtml = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="${esc(stylesheetUrl)}">
+  <title>JAKpot component</title>
+</head>
+<body>
+<main class="jakpot-root">
+${html}
+</main>
+</body>
+</html>`;
+  const matches = skeletons.filter((item) => (item.title + ' ' + item.key).toLowerCase().includes(query.toLowerCase()));
+  const addNode = (type: ElementType, parentId: string | null = null) => {
+    const node = makeNode(type);
+    setNodes((old) => addToTree(old, parentId, node));
+    setSelectedId(node.id);
+    setTab('builder');
+  };
+  const setProp = (key: string, value: string | number) => {
+    if (!selected) return;
+    setNodes((old) => updateInTree(old, selected.id, (node) => ({ ...node, props: { ...node.props, [key]: value } })));
+  };
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(exportHtml); setCopied(true); window.setTimeout(() => setCopied(false), 1400); }
+    catch { setTab('export'); }
+  };
+  const download = () => {
+    const url = URL.createObjectURL(new Blob([exportHtml], { type: 'text/html;charset=utf-8' }));
+    const link = document.createElement('a');
+    link.href = url; link.download = 'jakpot-component.html'; link.click(); URL.revokeObjectURL(url);
+  };
+  const field = (label: string, key: string, options?: string[], kind: 'input' | 'textarea' = 'input') => {
+    if (!selected) return null;
+    const value = val(selected, key);
+    return <label className="builder-field" key={key}><span>{label}</span>{options
+      ? <select value={value} onChange={(event) => setProp(key, event.target.value)}>{options.map((option) => <option key={option} value={option}>{option.replace(/-/g, ' ')}</option>)}</select>
+      : kind === 'textarea'
+        ? <textarea rows={key === 'rawHtml' ? 12 : 4} value={value} onChange={(event) => setProp(key, event.target.value)} />
+        : <input value={value} onChange={(event) => setProp(key, event.target.value)} />}</label>;
+  };
+  const flattened = flatten(nodes);
+
+  return <div className="builder-app">
+    <header className="builder-topbar">
+      <a className="builder-brand" href="./"><span className="builder-mark">J</span><span>JAKpot<small>DESIGN SYSTEM</small></span></a>
+      <nav className="builder-tabs">
+        <button className={tab === 'builder' ? 'active' : ''} onClick={() => setTab('builder')}>Builder</button>
+        <button className={tab === 'catalogue' ? 'active' : ''} onClick={() => setTab('catalogue')}>Skeletons <span>{skeletons.length || '1,316'}</span></button>
+        <button className={tab === 'export' ? 'active' : ''} onClick={() => setTab('export')}>Export HTML</button>
+      </nav>
+      <a className="builder-storybook-link" href="https://jkarthikarav.github.io/design-system/" target="_blank" rel="noreferrer">Storybook ↗</a>
+    </header>
+    <main className="builder-main">
+      <section className="builder-intro"><div><p className="builder-eyebrow">DESIGN SYSTEM WORKSPACE</p><h1>Build with JAKpot.</h1><p>Compose any supported design-system element, configure its own properties, and export semantic HTML using the shared stylesheet.</p></div><div className="builder-intro-note"><span className="builder-status-dot"></span> Live preview · Element-level controls · HTML export</div></section>
+
+      {tab === 'catalogue' ? <section className="builder-catalogue">
+        <div className="builder-section-heading"><div><p className="builder-eyebrow">SKELETON LIBRARY</p><h2>All reviewed skeletons</h2></div><p>{skeletons.length ? `${skeletons.length.toLocaleString()} loaded` : 'Loading catalogue…'}</p></div>
+        <input className="builder-search" placeholder="Search by number, name, or component…" value={query} onChange={(event) => { setQuery(event.target.value); setVisibleCount(100); }} />
+        <div className="builder-catalogue-grid">{matches.slice(0, visibleCount).map((item) => <article className="builder-catalogue-card" key={item.key}>
+          <span className="builder-card-kicker">{item.key}</span><strong>{item.title}</strong><div className="builder-skeleton-preview" dangerouslySetInnerHTML={{ __html: transformSkeleton(item.html) }} />
+          <div className="builder-skeleton-actions"><button className="builder-secondary-button" onClick={() => { const node = makeNode('skeleton'); node.props.title = item.title; node.props.rawHtml = item.html; addNode('skeleton'); setNodes((old) => addToTree(old, null, node)); setSelectedId(node.id); setTab('builder'); }}>Add skeleton to canvas</button></div>
+        </article>)}</div>
+        {skeletons.length === 0 && <p>Could not load the skeleton files. Check that all 13 files in public/skeleton-parts are deployed.</p>}
+        {matches.length > visibleCount && <button className="builder-secondary-button" onClick={() => setVisibleCount((count) => count + 100)}>Show next 100 ({matches.length - visibleCount} remaining)</button>}
+        {matches.length === 0 && skeletons.length > 0 && <p>No skeletons match that search.</p>}
+      </section> : tab === 'export' ? <section className="builder-export">
+        <div className="builder-section-heading"><div><p className="builder-eyebrow">READY TO USE</p><h2>Export semantic HTML</h2><p>The export contains your composed elements and references the shared stylesheet.</p></div></div>
+        <label className="builder-field"><span>Live stylesheet URL</span><input value={stylesheetUrl} onChange={(event) => setStylesheetUrl(event.target.value)} /></label>
+        <div className="builder-export-actions"><button className="builder-primary-button" onClick={copy}>{copied ? 'Copied ✓' : 'Copy full HTML'}</button><button className="builder-secondary-button" onClick={download}>Download HTML file</button><button className="builder-secondary-button" onClick={() => setTab('builder')}>Back to builder</button></div>
+        <pre className="builder-code"><code>{exportHtml}</code></pre>
+      </section> : <div className="builder-workspace">
+        <aside className="builder-controls">
+          <div className="builder-section-heading"><div><p className="builder-eyebrow">ELEMENT TREE</p><h2>Compose</h2></div><button className="builder-reset" onClick={() => { setNodes([]); setSelectedId(null); }}>Clear</button></div>
+          <div className="builder-add-row"><label className="builder-field"><span>Element to add</span><select value={newType} onChange={(event) => setNewType(event.target.value as ElementType)}>{Object.entries(elementOptions.reduce<Record<string, typeof elementOptions>>((groups, item) => { (groups[item.group] ||= []).push(item); return groups; }, {})).map(([group, items]) => <optgroup key={group} label={group}>{items.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</optgroup>)}</select></label><button className="builder-primary-button" onClick={() => addNode(newType)}>Add element +</button></div>
+          {selected && canContain(selected.type) && <button className="builder-secondary-button builder-add-child" onClick={() => addNode(newType, selected.id)}>Add child to selected {nodeLabel(selected).toLowerCase()} +</button>}
+          <div className="builder-element-tree">{flattened.map(({ node, depth }) => <div className="builder-tree-row" key={node.id} style={{ paddingLeft: 10 + depth * 18 }}><button className={selectedId === node.id ? 'builder-tree-item selected' : 'builder-tree-item'} onClick={() => setSelectedId(node.id)}><span className="builder-tree-type">{nodeLabel(node)}</span><span className="builder-tree-name">{val(node, 'title') || val(node, 'label') || val(node, 'lead') || val(node, 'text') || val(node, 'eyebrow') || 'Untitled element'}</span></button><button className="builder-tree-remove" aria-label={`Remove ${nodeLabel(node)}`} onClick={() => { setNodes((old) => removeFromTree(old, node.id)); if (selectedId === node.id) setSelectedId(null); }}>×</button></div>)}</div>
+          {selected ? <div className="builder-selected-controls">
+            <div className="builder-section-heading"><div><p className="builder-eyebrow">SELECTED ELEMENT</p><h2>{nodeLabel(selected)}</h2></div><button className="builder-reset" onClick={() => setNodes((old) => updateInTree(old, selected.id, (node) => ({ ...node, props: { ...starterProps[node.type] } })))}>Reset</button></div>
+            {selected.type === 'section' && <>{field('Background', 'background', ['beige', 'white'])}{field('Content width', 'width', ['full', 'wide', 'narrow'])}</>}
+            {selected.type === 'section-header' && <>{field('Eyebrow', 'eyebrow')}{field('Heading', 'title')}{field('Header description', 'description', undefined, 'textarea')}{field('Header layout', 'variant', ['with-description', 'without-eyebrow', 'title-only'])}<p className="builder-field-note">This description belongs only to the SectionHeader. DescriptionGroup content is edited independently.</p></>}
+            {selected.type === 'description-group' && <>{field('Leading text', 'lead', undefined, 'textarea')}{field('Supporting descriptions (one per line)', 'supporting', undefined, 'textarea')}{field('Content width', 'width', ['wide', 'narrow'])}</>}
+            {selected.type === 'typography' && <>{field('Text', 'text', undefined, 'textarea')}{field('Typography style', 'variant', ['hero-heading', 'section-heading', 'card-heading', 'hero-subheading', 'section-subheading', 'description-large', 'description-medium', 'card-description', 'image-caption', 'eyebrow'])}{field('Alignment', 'align', ['left', 'center'])}{field('Text width', 'width', ['full', 'wide', 'narrow'])}</>}
+            {selected.type === 'button' && <>{field('Label', 'label')}{field('Link URL', 'href')}{field('Style', 'variant', ['primary', 'secondary', 'tertiary'])}</>}
+            {selected.type === 'tag' && <>{field('Label', 'label')}{field('Style', 'variant', ['default', 'accent', 'inverse'])}</>}
+            {selected.type === 'grid' && <>{field('Columns', 'columns', ['1', '2', '3'])}{field('Gap', 'gap', ['1', '2', '3', '4', '5', '6'])}</>}
+            {selected.type === 'project-link-card' && <>{field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Action label', 'actionLabel')}{field('Link URL', 'href')}{field('Card style', 'variant', ['neutral', 'inverse'])}</>}
+            {selected.type === 'case-study-card' && <>{field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Highlights (Heading | description per line)', 'highlights', undefined, 'textarea')}{field('Date', 'date')}{field('Role', 'role')}</>}
+            {selected.type === 'structured-list' && <>{field('Items (Title | description per line)', 'items', undefined, 'textarea')}{field('Numbering', 'ordered', ['true', 'false'])}</>}
+            {selected.type === 'image-caption' && <>{field('Image URL', 'src')}{field('Alt text', 'alt')}{field('Caption', 'caption')}{field('Aspect ratio', 'ratio', ['landscape', 'square', 'auto'])}{field('Image width', 'width', ['full', 'wide', 'narrow'])}</>}
+            {selected.type === 'project-image-grid' && <>{field('Columns', 'columns', ['1', '2', '3'])}{field('Gap', 'gap', ['1', '2', '3', '4', '5', '6'])}<p className="builder-field-note">Select this grid and use “Add child” to add image-caption elements.</p></>}
+            {selected.type === 'skeleton' && <>{field('Skeleton name', 'title')}{field('Skeleton HTML', 'rawHtml', undefined, 'textarea')}</>}
+            {canContain(selected.type) && <p className="builder-field-note">Container selected. Choose an element above, then use “Add child” to nest it inside this container.</p>}
+          </div> : <p className="builder-empty-selection">Select an element in the tree to see its controls. Add any element above to start composing.</p>}
+          <div className="builder-control-footer"><button className="builder-primary-button" onClick={() => setTab('export')}>Review HTML export <span>→</span></button><p>Only the selected element's relevant controls are shown.</p></div>
+        </aside>
+        <section className="builder-preview-panel">
+          <div className="builder-preview-heading"><div><p className="builder-eyebrow">LIVE CANVAS</p><h2>Composed elements</h2></div><span className="builder-preview-badge"><span></span> Updated live</span></div>
+          <div className="builder-preview-canvas"><div className="builder-preview-content jakpot-root" dangerouslySetInnerHTML={{ __html: html || '<div class="builder-empty-canvas">Add an element to begin building.</div>' }} /></div>
+          <div className="builder-preview-footer"><span>{flattened.length} element{flattened.length === 1 ? '' : 's'} on canvas</span><button onClick={copy}>{copied ? 'Copied HTML ✓' : 'Copy HTML'}</button></div>
+        </section>
+      </div>}
+      <footer className="builder-footer"><span>JAKpot Design System</span><span>Build freely from elements, not predefined Storybook patterns.</span></footer>
+    </main>
+  </div>;
+}
