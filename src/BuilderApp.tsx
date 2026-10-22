@@ -150,13 +150,18 @@ export default function BuilderApp() {
       fetch(new URL(`skeleton-parts/part-${String(i + 1).padStart(2, '0')}.html.txt`, window.location.href))
         .then((response) => { if (!response.ok) throw new Error('Skeleton source unavailable'); return response.text(); })
     )).then((parts) => {
-      const doc = new DOMParser().parseFromString(parts.join('\n'), 'text/html');
-      const rows = Array.from(doc.querySelectorAll('.sk-entry')).map((entry) => ({
-        key: entry.getAttribute('data-key') || '',
-        title: entry.querySelector('.sk-entry__name')?.textContent?.trim() || '',
-        html: entry.querySelector('.sk-entry__preview')?.innerHTML || '',
-      }));
-      if (active) setSkeletons(rows);
+      // Each source file is a complete HTML document. Parse each independently:
+      // concatenating them first makes DOMParser discard all but one document body.
+      const rows = parts.flatMap((part) => {
+        const doc = new DOMParser().parseFromString(part, 'text/html');
+        return Array.from(doc.querySelectorAll('.sk-entry')).map((entry) => ({
+          key: entry.getAttribute('data-key') || '',
+          title: entry.querySelector('.sk-entry__name')?.textContent?.trim() || '',
+          html: entry.querySelector('.sk-entry__preview')?.innerHTML || '',
+        }));
+      });
+      const uniqueRows = Array.from(new Map(rows.map((row) => [row.key, row])).values());
+      if (active) setSkeletons(uniqueRows);
     }).catch(() => { if (active) setSkeletons([]); });
     return () => { active = false; };
   }, []);
