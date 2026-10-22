@@ -34,6 +34,12 @@
   flex: 1;
 }
 
+/* The card summary uses medium description sizing, not intro sizing. */
+.case-study-card__top > .typography--description-large {
+  font-size: var(--type-description-medium);
+  line-height: 1.5;
+}
+
 .case-study-card__highlights {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
