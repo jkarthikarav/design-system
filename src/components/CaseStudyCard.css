@@ -110,3 +110,9 @@
     text-align: left;
   }
 }
+
+/* Improve multi-line card title rhythm without changing the type scale. */
+.case-study-card__title-row .typography--card-heading {
+  line-height: 1.32;
+  text-wrap: pretty;
+}
