@@ -226,7 +226,7 @@ ${html}
         <input className="builder-search" placeholder="Search by number, name, or component…" value={query} onChange={(event) => { setQuery(event.target.value); setVisibleCount(100); }} />
         <div className="builder-catalogue-grid">{matches.slice(0, visibleCount).map((item) => <article className="builder-catalogue-card" key={item.key}>
           <span className="builder-card-kicker">{item.key}</span><strong>{item.title}</strong><div className="builder-skeleton-preview" dangerouslySetInnerHTML={{ __html: transformSkeleton(item.html) }} />
-          <div className="builder-skeleton-actions"><button className="builder-secondary-button" onClick={() => { const node = makeNode('skeleton'); node.props.title = item.title; node.props.rawHtml = item.html; addNode('skeleton'); setNodes((old) => addToTree(old, null, node)); setSelectedId(node.id); setTab('builder'); }}>Add skeleton to canvas</button></div>
+          <div className="builder-skeleton-actions"><button className="builder-secondary-button" onClick={() => { const node = makeNode('skeleton'); node.props.title = item.title; node.props.rawHtml = item.html; setNodes((old) => addToTree(old, null, node)); setSelectedId(node.id); setTab('builder'); }}>Add skeleton to canvas</button></div>
         </article>)}</div>
         {skeletons.length === 0 && <p>Could not load the skeleton files. Check that all 13 files in public/skeleton-parts are deployed.</p>}
         {matches.length > visibleCount && <button className="builder-secondary-button" onClick={() => setVisibleCount((count) => count + 100)}>Show next 100 ({matches.length - visibleCount} remaining)</button>}
