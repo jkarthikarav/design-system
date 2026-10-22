@@ -1,4 +1,5 @@
 import '../src/index.css';
+import '../src/stories/Configure.css';
 
 import type { Preview } from '@storybook/react-vite';
 
