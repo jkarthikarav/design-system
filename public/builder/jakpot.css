@@ -1,0 +1,1470 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=League+Spartan:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap');
+
+
+/* ==========================================================
+   DESIGN SYSTEM · styles.css
+   Sections: tokens · global · utilities · components
+   ========================================================== */
+
+
+/* ==========================================================
+   TOKENS
+   ========================================================== */
+
+.jakpot-root{
+  /* ========================================
+     COLORS — Primitive tokens
+     ======================================== */
+
+  --jakpot-green-900: #1B3618;
+  --jakpot-amber-500: #E8A800;
+
+  --jakpot-neutral-0: #FFFFFF;
+  --jakpot-neutral-50: #FAFAF7;
+  --jakpot-neutral-200: #E5E5DD;
+  --jakpot-neutral-300: #D4D5CA;
+  --jakpot-neutral-500: #77786F;
+  --jakpot-neutral-700: #4A4A43;
+
+  --jakpot-red-700: #A12B22;
+  --jakpot-red-100: #F8E7E4;
+  --jakpot-green-100: #E7EFE4;
+  --jakpot-amber-100: #FFF2CC;
+
+
+  /* ========================================
+     COLORS — Semantic tokens
+     ======================================== */
+
+  --jakpot-color-bg-canvas: var(--jakpot-neutral-50);
+  --jakpot-color-bg-raised: var(--jakpot-neutral-0);
+  --jakpot-color-bg-inverse: var(--jakpot-green-900);
+  --jakpot-color-bg-subtle: #F1F1EB;
+
+  --jakpot-color-text-primary: var(--jakpot-green-900);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-50);
+  --jakpot-color-text-muted: #686960;
+
+  --jakpot-color-border-subtle: #E1E2D9;
+  --jakpot-color-border-strong: #A6A89C;
+
+  --jakpot-color-action-primary: var(--jakpot-green-900);
+  --jakpot-color-action-primary-hover: #294B25;
+  --jakpot-color-action-accent: var(--jakpot-amber-500);
+
+  --jakpot-color-focus: #A66F00;
+
+  --jakpot-color-status-success: #315D2A;
+  --jakpot-color-status-warning: #765400;
+  --jakpot-color-status-error: var(--jakpot-red-700);
+
+
+  /* ========================================
+     TYPOGRAPHY — Font families
+     ======================================== */
+
+  --jakpot-font-display: 'League Spartan', sans-serif;
+  --jakpot-font-body: 'Lexend', sans-serif;
+  --jakpot-font-label: 'Atkinson Hyperlegible Next', sans-serif;
+
+
+  /* ========================================
+     TYPOGRAPHY — Perfect Fourth scale
+     Base: 18px
+     Ratio: 1.333
+     ======================================== */
+
+  --jakpot-font-size-100: 10px;
+  --jakpot-font-size-200: 14px;
+  --jakpot-font-size-300: 18px;
+  --jakpot-font-size-400: 24px;
+  --jakpot-font-size-500: 32px;
+  --jakpot-font-size-600: 43px;
+  --jakpot-font-size-700: 57px;
+  --jakpot-font-size-800: 76px;
+  --jakpot-font-size-900: 101px;
+
+  --jakpot-font-weight-light: 300;
+  --jakpot-font-weight-regular: 400;
+  --jakpot-font-weight-medium: 500;
+  --jakpot-font-weight-semibold: 600;
+  --jakpot-font-weight-bold: 700;
+
+  --jakpot-line-height-body: 1.4;
+  --jakpot-line-height-heading: 1.2;
+
+
+  /* ========================================
+     SPACING — 8px grid
+     ======================================== */
+
+  --jakpot-space-1: 8px;
+  --jakpot-space-2: 16px;
+  --jakpot-space-3: 24px;
+  --jakpot-space-4: 32px;
+  --jakpot-space-5: 40px;
+  --jakpot-space-6: 48px;
+  --jakpot-space-8: 64px;
+  --jakpot-space-10: 80px;
+  --jakpot-space-12: 96px;
+
+
+  /* ========================================
+     RADII
+     ======================================== */
+
+  --jakpot-radius-sm: 4px;
+  --jakpot-radius-md: 8px;
+  --jakpot-radius-lg: 16px;
+  --jakpot-radius-full: 999px;
+
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+
+  --jakpot-shadow-1: 0 1px 3px rgb(27 54 24 / 8%);
+  --jakpot-shadow-2: 0 8px 24px rgb(27 54 24 / 9%);
+  --jakpot-shadow-3: 0 16px 48px rgb(27 54 24 / 14%);
+
+
+  /* ========================================
+     LAYOUT
+     ======================================== */
+
+  --jakpot-content-width: 1180px;
+
+
+  /* ========================================
+     TRANSITIONS
+     ======================================== */
+
+  --jakpot-transition-fast: 140ms ease;
+  --jakpot-transition-base: 220ms ease;
+}
+
+/* ==========================================================
+   GLOBAL FOUNDATION
+   ========================================================== */
+
+/* ========================================
+   Global foundation
+   ======================================== */
+
+.jakpot-root{
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+
+  font-family: var(--jakpot-font-body);
+  font-size: var(--jakpot-font-size-300);
+  line-height: var(--jakpot-line-height-body);
+  font-weight: var(--jakpot-font-weight-regular);
+
+  color: var(--jakpot-color-text-primary);
+  background: var(--jakpot-color-bg-canvas);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.jakpot-root *,.jakpot-root *::before,.jakpot-root *::after{
+  box-sizing: inherit;
+}
+
+.jakpot-root{
+  scroll-behavior: smooth;
+}
+
+.jakpot-root{
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.jakpot-root{
+  min-height: 100vh;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+.jakpot-root h1,.jakpot-root h2,.jakpot-root h3,.jakpot-root h4,.jakpot-root h5,.jakpot-root h6{
+  margin: 0;
+  color: var(--jakpot-color-text-primary);
+  font-family: var(--jakpot-font-display);
+  font-weight: var(--jakpot-font-weight-semibold);
+  line-height: var(--jakpot-line-height-heading);
+}
+
+.jakpot-root h1{ font-size: var(--jakpot-font-size-700); }
+.jakpot-root h2{ font-size: var(--jakpot-font-size-600); }
+.jakpot-root h3{ font-size: var(--jakpot-font-size-500); }
+.jakpot-root h4{ font-size: var(--jakpot-font-size-400); }
+
+.jakpot-root p{ margin: 0; }
+
+.jakpot-root small{
+  font-size: var(--jakpot-font-size-200);
+}
+
+/* ========================================
+   Links and controls
+   ======================================== */
+
+.jakpot-root a{ color: inherit; }
+
+.jakpot-root button,.jakpot-root input,.jakpot-root textarea,.jakpot-root select{
+  font: inherit;
+}
+
+.jakpot-root button{ cursor: pointer; }
+
+.jakpot-root :focus-visible{
+  outline: 3px solid var(--jakpot-color-focus);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   Media
+   ======================================== */
+
+.jakpot-root img,.jakpot-root svg,.jakpot-root video{
+  display: block;
+  max-width: 100%;
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+
+.jakpot-root .jakpot-skip-link{
+  position: absolute;
+  top: var(--jakpot-space-1);
+  left: var(--jakpot-space-1);
+  z-index: 1000;
+  padding: var(--jakpot-space-1) var(--jakpot-space-2);
+  color: var(--jakpot-color-text-inverse);
+  background: var(--jakpot-color-bg-inverse);
+  border-radius: var(--jakpot-radius-sm);
+  transform: translateY(-200%);
+}
+
+.jakpot-root .jakpot-skip-link:focus{
+  transform: translateY(0);
+}
+
+.jakpot-root .jakpot-visually-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========================================
+   Responsive typography
+   ======================================== */
+
+@media (max-width: 900px){
+  .jakpot-root h1{ font-size: var(--jakpot-font-size-600); }
+  .jakpot-root h2{ font-size: var(--jakpot-font-size-500); }
+}
+
+@media (max-width: 650px){
+  .jakpot-root h1{ font-size: var(--jakpot-font-size-500); }
+  .jakpot-root h2{ font-size: var(--jakpot-font-size-400); }
+  .jakpot-root h3{ font-size: var(--jakpot-font-size-400); }
+}
+
+/* ========================================
+   Reduced motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce){
+  .jakpot-root *,.jakpot-root *::before,.jakpot-root *::after{
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================
+   UTILITIES (the .grid utility is renamed .d-grid so it cannot clash with the Grid component)
+   ========================================================== */
+
+/*
+ * Portfolio design-system utility classes.
+ *
+ * These are not Tailwind defaults. Every numbered spacing utility maps
+ * directly to the project's own --space-* token values.
+ *
+ * Examples:
+ *   mt-2  -> margin-top: var(--space-2)  -> 16px
+ *   py-12 -> vertical padding: var(--space-12) -> 96px
+ *   gap-6 -> gap: var(--space-6) -> 48px
+ */
+
+/* Margin */
+.jakpot-root .jakpot-m-1{ margin: var(--jakpot-space-1); }
+.jakpot-root .jakpot-m-2{ margin: var(--jakpot-space-2); }
+.jakpot-root .jakpot-m-3{ margin: var(--jakpot-space-3); }
+.jakpot-root .jakpot-m-4{ margin: var(--jakpot-space-4); }
+.jakpot-root .jakpot-m-5{ margin: var(--jakpot-space-5); }
+.jakpot-root .jakpot-m-6{ margin: var(--jakpot-space-6); }
+.jakpot-root .jakpot-m-8{ margin: var(--jakpot-space-8); }
+.jakpot-root .jakpot-m-10{ margin: var(--jakpot-space-10); }
+.jakpot-root .jakpot-m-12{ margin: var(--jakpot-space-12); }
+
+.jakpot-root .jakpot-mt-1{ margin-top: var(--jakpot-space-1); }
+.jakpot-root .jakpot-mt-2{ margin-top: var(--jakpot-space-2); }
+.jakpot-root .jakpot-mt-3{ margin-top: var(--jakpot-space-3); }
+.jakpot-root .jakpot-mt-4{ margin-top: var(--jakpot-space-4); }
+.jakpot-root .jakpot-mt-5{ margin-top: var(--jakpot-space-5); }
+.jakpot-root .jakpot-mt-6{ margin-top: var(--jakpot-space-6); }
+.jakpot-root .jakpot-mt-8{ margin-top: var(--jakpot-space-8); }
+.jakpot-root .jakpot-mt-10{ margin-top: var(--jakpot-space-10); }
+.jakpot-root .jakpot-mt-12{ margin-top: var(--jakpot-space-12); }
+
+.jakpot-root .jakpot-mb-1{ margin-bottom: var(--jakpot-space-1); }
+.jakpot-root .jakpot-mb-2{ margin-bottom: var(--jakpot-space-2); }
+.jakpot-root .jakpot-mb-3{ margin-bottom: var(--jakpot-space-3); }
+.jakpot-root .jakpot-mb-4{ margin-bottom: var(--jakpot-space-4); }
+.jakpot-root .jakpot-mb-5{ margin-bottom: var(--jakpot-space-5); }
+.jakpot-root .jakpot-mb-6{ margin-bottom: var(--jakpot-space-6); }
+.jakpot-root .jakpot-mb-8{ margin-bottom: var(--jakpot-space-8); }
+.jakpot-root .jakpot-mb-10{ margin-bottom: var(--jakpot-space-10); }
+.jakpot-root .jakpot-mb-12{ margin-bottom: var(--jakpot-space-12); }
+
+.jakpot-root .jakpot-mx-auto{ margin-inline: auto; }
+.jakpot-root .jakpot-mx-1{ margin-inline: var(--jakpot-space-1); }
+.jakpot-root .jakpot-mx-2{ margin-inline: var(--jakpot-space-2); }
+.jakpot-root .jakpot-mx-3{ margin-inline: var(--jakpot-space-3); }
+.jakpot-root .jakpot-mx-4{ margin-inline: var(--jakpot-space-4); }
+
+.jakpot-root .jakpot-my-1{ margin-block: var(--jakpot-space-1); }
+.jakpot-root .jakpot-my-2{ margin-block: var(--jakpot-space-2); }
+.jakpot-root .jakpot-my-3{ margin-block: var(--jakpot-space-3); }
+.jakpot-root .jakpot-my-4{ margin-block: var(--jakpot-space-4); }
+.jakpot-root .jakpot-my-6{ margin-block: var(--jakpot-space-6); }
+
+/* Padding */
+.jakpot-root .jakpot-p-1{ padding: var(--jakpot-space-1); }
+.jakpot-root .jakpot-p-2{ padding: var(--jakpot-space-2); }
+.jakpot-root .jakpot-p-3{ padding: var(--jakpot-space-3); }
+.jakpot-root .jakpot-p-4{ padding: var(--jakpot-space-4); }
+.jakpot-root .jakpot-p-5{ padding: var(--jakpot-space-5); }
+.jakpot-root .jakpot-p-6{ padding: var(--jakpot-space-6); }
+.jakpot-root .jakpot-p-8{ padding: var(--jakpot-space-8); }
+.jakpot-root .jakpot-p-10{ padding: var(--jakpot-space-10); }
+.jakpot-root .jakpot-p-12{ padding: var(--jakpot-space-12); }
+
+.jakpot-root .jakpot-pt-1{ padding-top: var(--jakpot-space-1); }
+.jakpot-root .jakpot-pt-2{ padding-top: var(--jakpot-space-2); }
+.jakpot-root .jakpot-pt-3{ padding-top: var(--jakpot-space-3); }
+.jakpot-root .jakpot-pt-4{ padding-top: var(--jakpot-space-4); }
+.jakpot-root .jakpot-pt-6{ padding-top: var(--jakpot-space-6); }
+.jakpot-root .jakpot-pt-8{ padding-top: var(--jakpot-space-8); }
+.jakpot-root .jakpot-pt-10{ padding-top: var(--jakpot-space-10); }
+.jakpot-root .jakpot-pt-12{ padding-top: var(--jakpot-space-12); }
+
+.jakpot-root .jakpot-pb-1{ padding-bottom: var(--jakpot-space-1); }
+.jakpot-root .jakpot-pb-2{ padding-bottom: var(--jakpot-space-2); }
+.jakpot-root .jakpot-pb-3{ padding-bottom: var(--jakpot-space-3); }
+.jakpot-root .jakpot-pb-4{ padding-bottom: var(--jakpot-space-4); }
+.jakpot-root .jakpot-pb-6{ padding-bottom: var(--jakpot-space-6); }
+.jakpot-root .jakpot-pb-8{ padding-bottom: var(--jakpot-space-8); }
+.jakpot-root .jakpot-pb-10{ padding-bottom: var(--jakpot-space-10); }
+.jakpot-root .jakpot-pb-12{ padding-bottom: var(--jakpot-space-12); }
+
+.jakpot-root .jakpot-px-1{ padding-inline: var(--jakpot-space-1); }
+.jakpot-root .jakpot-px-2{ padding-inline: var(--jakpot-space-2); }
+.jakpot-root .jakpot-px-3{ padding-inline: var(--jakpot-space-3); }
+.jakpot-root .jakpot-px-4{ padding-inline: var(--jakpot-space-4); }
+.jakpot-root .jakpot-px-6{ padding-inline: var(--jakpot-space-6); }
+.jakpot-root .jakpot-px-8{ padding-inline: var(--jakpot-space-8); }
+
+.jakpot-root .jakpot-py-1{ padding-block: var(--jakpot-space-1); }
+.jakpot-root .jakpot-py-2{ padding-block: var(--jakpot-space-2); }
+.jakpot-root .jakpot-py-3{ padding-block: var(--jakpot-space-3); }
+.jakpot-root .jakpot-py-4{ padding-block: var(--jakpot-space-4); }
+.jakpot-root .jakpot-py-5{ padding-block: var(--jakpot-space-5); }
+.jakpot-root .jakpot-py-6{ padding-block: var(--jakpot-space-6); }
+.jakpot-root .jakpot-py-8{ padding-block: var(--jakpot-space-8); }
+.jakpot-root .jakpot-py-10{ padding-block: var(--jakpot-space-10); }
+.jakpot-root .jakpot-py-12{ padding-block: var(--jakpot-space-12); }
+
+/* Gaps and grids */
+.jakpot-root .jakpot-gap-1{ gap: var(--jakpot-space-1); }
+.jakpot-root .jakpot-gap-2{ gap: var(--jakpot-space-2); }
+.jakpot-root .jakpot-gap-3{ gap: var(--jakpot-space-3); }
+.jakpot-root .jakpot-gap-4{ gap: var(--jakpot-space-4); }
+.jakpot-root .jakpot-gap-5{ gap: var(--jakpot-space-5); }
+.jakpot-root .jakpot-gap-6{ gap: var(--jakpot-space-6); }
+.jakpot-root .jakpot-gap-8{ gap: var(--jakpot-space-8); }
+.jakpot-root .jakpot-gap-10{ gap: var(--jakpot-space-10); }
+.jakpot-root .jakpot-gap-12{ gap: var(--jakpot-space-12); }
+
+.jakpot-root .jakpot-d-grid{ display: grid; }
+.jakpot-root .jakpot-grid-cols-2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.jakpot-root .jakpot-grid-cols-3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.jakpot-root .jakpot-flex{ display: flex; }
+.jakpot-root .jakpot-flex-col{ flex-direction: column; }
+.jakpot-root .jakpot-flex-wrap{ flex-wrap: wrap; }
+.jakpot-root .jakpot-items-center{ align-items: center; }
+.jakpot-root .jakpot-justify-between{ justify-content: space-between; }
+
+/* Widths and alignment */
+.jakpot-root .jakpot-w-full{ width: 100%; }
+.jakpot-root .jakpot-w-50{ width: 50%; }
+.jakpot-root .jakpot-w-75{ width: 75%; }
+.jakpot-root .jakpot-max-w-content{ max-width: var(--jakpot-content-width); }
+.jakpot-root .jakpot-text-left{ text-align: left; }
+.jakpot-root .jakpot-text-center{ text-align: center; }
+.jakpot-root .jakpot-text-right{ text-align: right; }
+
+/* Token-backed colors */
+.jakpot-root .jakpot-bg-canvas{ background-color: var(--jakpot-color-bg-canvas); }
+.jakpot-root .jakpot-bg-raised{ background-color: var(--jakpot-color-bg-raised); }
+.jakpot-root .jakpot-bg-subtle{ background-color: var(--jakpot-color-bg-subtle); }
+.jakpot-root .jakpot-bg-inverse{ background-color: var(--jakpot-color-bg-inverse); }
+.jakpot-root .jakpot-text-primary{ color: var(--jakpot-color-text-primary); }
+.jakpot-root .jakpot-text-secondary{ color: var(--jakpot-color-text-secondary); }
+.jakpot-root .jakpot-text-inverse{ color: var(--jakpot-color-text-inverse); }
+
+/* Token-backed radius */
+.jakpot-root .jakpot-rounded-sm{ border-radius: var(--jakpot-radius-sm); }
+.jakpot-root .jakpot-rounded-md{ border-radius: var(--jakpot-radius-md); }
+.jakpot-root .jakpot-rounded-lg{ border-radius: var(--jakpot-radius-lg); }
+.jakpot-root .jakpot-rounded-full{ border-radius: var(--jakpot-radius-full); }
+
+@media (max-width: 900px){
+  .jakpot-root .jakpot-md-grid-cols-1{ grid-template-columns: minmax(0, 1fr); }
+  .jakpot-root .jakpot-md-w-full{ width: 100%; }
+}
+
+@media (max-width: 650px){
+  .jakpot-root .jakpot-sm-grid-cols-1{ grid-template-columns: minmax(0, 1fr); }
+  .jakpot-root .jakpot-sm-w-full{ width: 100%; }
+}
+
+/* ==========================================================
+   COMPONENT · Button
+   ========================================================== */
+
+.jakpot-root .jakpot-button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--jakpot-space-1);
+
+  min-height: 48px;
+  padding: 12px 24px;
+
+  border: 1px solid transparent;
+  border-radius: var(--jakpot-radius-md);
+
+  font-family: var(--jakpot-font-label);
+  font-size: var(--jakpot-font-size-200);
+  font-weight: var(--jakpot-font-weight-semibold);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: normal;
+  text-align: center;
+  max-width: 100%;
+
+  cursor: pointer;
+  transition:
+    background-color var(--jakpot-transition-fast),
+    border-color var(--jakpot-transition-fast),
+    color var(--jakpot-transition-fast),
+    box-shadow var(--jakpot-transition-fast),
+    transform var(--jakpot-transition-fast);
+}
+
+.jakpot-root .jakpot-button:hover:not(:disabled){
+  transform: translateY(-1px);
+}
+
+.jakpot-root .jakpot-button:active:not(:disabled){
+  transform: translateY(0);
+}
+
+.jakpot-root .jakpot-button:focus-visible{
+  outline: 3px solid var(--jakpot-color-focus);
+  outline-offset: 3px;
+}
+
+.jakpot-root .jakpot-button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/*
+ * Variant classes are the shared API for React and vanilla HTML.
+ * Legacy .button--* selectors remain as aliases to avoid breaking
+ * any existing markup that uses the previous class names.
+ */
+
+/* Primary */
+.jakpot-root .jakpot-button-primary,.jakpot-root .jakpot-button--primary{
+  color: var(--jakpot-neutral-0);
+  background: var(--jakpot-color-action-primary);
+  box-shadow: var(--jakpot-shadow-1);
+}
+
+.jakpot-root .jakpot-button-primary:hover:not(:disabled),.jakpot-root .jakpot-button--primary:hover:not(:disabled){
+  background: var(--jakpot-color-action-primary-hover);
+  box-shadow: var(--jakpot-shadow-2);
+}
+
+/* Secondary */
+.jakpot-root .jakpot-button-secondary,.jakpot-root .jakpot-button--secondary{
+  color: var(--jakpot-color-action-primary);
+  background: var(--jakpot-color-bg-raised);
+  border-color: var(--jakpot-color-border-strong);
+}
+
+.jakpot-root .jakpot-button-secondary:hover:not(:disabled),.jakpot-root .jakpot-button--secondary:hover:not(:disabled){
+  background: var(--jakpot-color-bg-subtle);
+  border-color: var(--jakpot-color-action-primary);
+}
+
+/* Tertiary */
+.jakpot-root .jakpot-button-tertiary,.jakpot-root .jakpot-button--tertiary{
+  color: var(--jakpot-color-action-primary);
+  background: transparent;
+}
+
+.jakpot-root .jakpot-button-tertiary:hover:not(:disabled),.jakpot-root .jakpot-button--tertiary:hover:not(:disabled){
+  background: var(--jakpot-color-bg-subtle);
+}
+
+/* ==========================================================
+   COMPONENT · Tag
+   ========================================================== */
+
+.jakpot-root .jakpot-tag{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--jakpot-radius-full);
+  font-family: var(--jakpot-font-label);
+  font-size: var(--jakpot-font-size-200);
+  font-weight: var(--jakpot-font-weight-medium);
+  line-height: 1.2;
+  white-space: normal;
+  text-align: center;
+  max-width: 100%;
+}
+
+.jakpot-root .jakpot-tag--default{
+  color: var(--jakpot-color-text-primary);
+  background: var(--jakpot-color-bg-subtle);
+  border-color: var(--jakpot-color-border-subtle);
+}
+
+.jakpot-root .jakpot-tag--accent{
+  color: var(--jakpot-color-text-primary);
+  background: var(--jakpot-amber-100);
+  border-color: var(--jakpot-amber-500);
+}
+
+.jakpot-root .jakpot-tag--inverse{
+  color: var(--jakpot-color-text-inverse);
+  background: transparent;
+  border-color: rgb(255 255 255 / 55%);
+}
+
+/* ==========================================================
+   COMPONENT · Typography
+   ========================================================== */
+
+.jakpot-root .jakpot-typography{
+  margin: 0;
+  color: var(--jakpot-color-text-primary);
+  text-align: left;
+}
+
+.jakpot-root .jakpot-typography--left{
+  text-align: left;
+}
+
+.jakpot-root .jakpot-typography--center{
+  text-align: center;
+}
+
+/* Hero heading */
+.jakpot-root .jakpot-typography--hero-heading{
+  font-family: var(--jakpot-font-display);
+  font-size: var(--jakpot-font-size-700);
+  font-weight: var(--jakpot-font-weight-bold);
+  line-height: var(--jakpot-line-height-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Section heading */
+.jakpot-root .jakpot-typography--section-heading{
+  font-family: var(--jakpot-font-display);
+  font-size: var(--jakpot-font-size-600);
+  font-weight: var(--jakpot-font-weight-bold);
+  line-height: var(--jakpot-line-height-heading);
+}
+
+/* Card heading */
+.jakpot-root .jakpot-typography--card-heading{
+  font-family: var(--jakpot-font-display);
+  font-size: var(--jakpot-font-size-400);
+  font-weight: var(--jakpot-font-weight-semibold);
+  line-height: var(--jakpot-line-height-heading);
+}
+
+/* Hero subheading */
+.jakpot-root .jakpot-typography--hero-subheading{
+  font-family: var(--jakpot-font-body);
+  font-size: var(--jakpot-font-size-400);
+  font-weight: var(--jakpot-font-weight-regular);
+  line-height: var(--jakpot-line-height-body);
+  color: var(--jakpot-color-text-secondary);
+}
+
+/* Section subheading */
+.jakpot-root .jakpot-typography--section-subheading{
+  font-family: var(--jakpot-font-body);
+  font-size: var(--jakpot-font-size-300);
+  font-weight: var(--jakpot-font-weight-medium);
+  line-height: var(--jakpot-line-height-body);
+}
+
+/* Opening paragraph */
+.jakpot-root .jakpot-typography--description-large{
+  font-family: var(--jakpot-font-body);
+  font-size: var(--jakpot-font-size-400);
+  font-weight: var(--jakpot-font-weight-regular);
+  line-height: var(--jakpot-line-height-body);
+  color: var(--jakpot-color-text-secondary);
+}
+
+/* Remaining paragraphs */
+.jakpot-root .jakpot-typography--description-medium{
+  font-family: var(--jakpot-font-body);
+  font-size: var(--jakpot-font-size-300);
+  font-weight: var(--jakpot-font-weight-regular);
+  line-height: var(--jakpot-line-height-body);
+  color: var(--jakpot-color-text-secondary);
+}
+
+/* Project card description */
+.jakpot-root .jakpot-typography--card-description{
+  font-family: var(--jakpot-font-body);
+  font-size: var(--jakpot-font-size-200);
+  font-weight: var(--jakpot-font-weight-regular);
+  line-height: var(--jakpot-line-height-body);
+  color: var(--jakpot-color-text-secondary);
+}
+
+/* Image caption */
+.jakpot-root .jakpot-typography--image-caption{
+  font-family: var(--jakpot-font-label);
+  font-size: var(--jakpot-font-size-200);
+  font-weight: var(--jakpot-font-weight-regular);
+  line-height: var(--jakpot-line-height-body);
+  color: var(--jakpot-color-text-muted);
+}
+
+/* Eyebrow */
+.jakpot-root .jakpot-typography--eyebrow{
+  font-family: var(--jakpot-font-label);
+  font-size: var(--jakpot-font-size-200);
+  font-weight: var(--jakpot-font-weight-semibold);
+  line-height: var(--jakpot-line-height-heading);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Description widths */
+.jakpot-root .jakpot-typography--width-full{
+  width: 100%;
+}
+
+.jakpot-root .jakpot-typography--width-wide{
+  width: 75%;
+}
+
+.jakpot-root .jakpot-typography--width-narrow{
+  width: 50%;
+}
+
+/* Center narrower descriptions within their available container */
+.jakpot-root .jakpot-typography--center.jakpot-typography--width-wide,.jakpot-root .jakpot-typography--center.jakpot-typography--width-narrow{
+  margin-inline: auto;
+}
+
+/* Responsive sizing */
+@media (max-width: 900px){
+  .jakpot-root .jakpot-typography--hero-heading{
+    font-size: var(--jakpot-font-size-600);
+  }
+
+  .jakpot-root .jakpot-typography--section-heading{
+    font-size: var(--jakpot-font-size-500);
+  }
+
+  .jakpot-root .jakpot-typography--width-wide{
+    width: 85%;
+  }
+
+  .jakpot-root .jakpot-typography--width-narrow{
+    width: 70%;
+  }
+}
+
+@media (max-width: 650px){
+  .jakpot-root .jakpot-typography--hero-heading{
+    font-size: var(--jakpot-font-size-500);
+  }
+
+  .jakpot-root .jakpot-typography--section-heading{
+    font-size: var(--jakpot-font-size-400);
+  }
+
+  .jakpot-root .jakpot-typography--hero-subheading,.jakpot-root .jakpot-typography--description-large{
+    font-size: var(--jakpot-font-size-300);
+  }
+
+  .jakpot-root .jakpot-typography--width-wide,.jakpot-root .jakpot-typography--width-narrow{
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   COMPONENT · Grid
+   ========================================================== */
+
+.jakpot-root .jakpot-grid{
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.jakpot-root .jakpot-grid--columns-1{
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.jakpot-root .jakpot-grid--columns-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.jakpot-root .jakpot-grid--columns-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.jakpot-root .jakpot-grid--gap-1{ gap: var(--jakpot-space-1); }
+.jakpot-root .jakpot-grid--gap-2{ gap: var(--jakpot-space-2); }
+.jakpot-root .jakpot-grid--gap-3{ gap: var(--jakpot-space-3); }
+.jakpot-root .jakpot-grid--gap-4{ gap: var(--jakpot-space-4); }
+.jakpot-root .jakpot-grid--gap-5{ gap: var(--jakpot-space-5); }
+.jakpot-root .jakpot-grid--gap-6{ gap: var(--jakpot-space-6); }
+
+.jakpot-root .jakpot-grid > *{
+  min-width: 0;
+}
+
+@media (max-width: 900px){
+  .jakpot-root .jakpot-grid--columns-3{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px){
+  .jakpot-root .jakpot-grid--columns-2,.jakpot-root .jakpot-grid--columns-3{
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ==========================================================
+   COMPONENT · SectionHeader
+   ========================================================== */
+
+.jakpot-root .jakpot-section-header{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--jakpot-space-4);
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.jakpot-root .jakpot-section-header__main{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--jakpot-space-2);
+  min-width: 0;
+}
+
+.jakpot-root .jakpot-section-header__description{
+  min-width: 0;
+}
+
+.jakpot-root .jakpot-section-header--title-only{
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 600px){
+  .jakpot-root .jakpot-section-header{
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--jakpot-space-3);
+  }
+}
+
+/* ==========================================================
+   COMPONENT · Section
+   ========================================================== */
+
+.jakpot-root .jakpot-section{
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--jakpot-space-10) var(--jakpot-space-4);
+}
+
+.jakpot-root .jakpot-section--beige{
+  background: var(--jakpot-color-bg-subtle);
+  color: var(--jakpot-color-text-primary);
+}
+
+.jakpot-root .jakpot-section--white{
+  background: var(--jakpot-neutral-0);
+  color: var(--jakpot-color-text-primary);
+}
+
+.jakpot-root .jakpot-section__inner{
+  width: 100%;
+  max-width: var(--jakpot-content-width);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--jakpot-space-6);
+}
+
+.jakpot-root .jakpot-section__content{
+  width: 100%;
+  min-width: 0;
+}
+
+.jakpot-root .jakpot-section--content-full .jakpot-section__content{
+  max-width: none;
+}
+
+.jakpot-root .jakpot-section--content-wide .jakpot-section__content{
+  max-width: 75%;
+}
+
+.jakpot-root .jakpot-section--content-narrow .jakpot-section__content{
+  max-width: 50%;
+}
+
+@media (max-width: 900px){
+  .jakpot-root .jakpot-section{
+    padding-block: var(--jakpot-space-8);
+  }
+
+  .jakpot-root .jakpot-section--content-wide .jakpot-section__content{
+    max-width: 100%;
+  }
+
+  .jakpot-root .jakpot-section--content-narrow .jakpot-section__content{
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 600px){
+  .jakpot-root .jakpot-section{
+    padding: var(--jakpot-space-6) var(--jakpot-space-3);
+  }
+
+  .jakpot-root .jakpot-section__inner{
+    gap: var(--jakpot-space-4);
+  }
+
+  .jakpot-root .jakpot-section--content-narrow .jakpot-section__content{
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================
+   COMPONENT · DescriptionGroup
+   ========================================================== */
+
+.jakpot-root .jakpot-description-group{
+  display: flex;
+  flex-direction: column;
+  gap: var(--jakpot-space-3);
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.jakpot-root .jakpot-description-group--wide{
+  max-width: 75%;
+}
+
+.jakpot-root .jakpot-description-group--narrow{
+  max-width: 50%;
+}
+
+.jakpot-root .jakpot-description-group__supporting{
+  display: flex;
+  flex-direction: column;
+  gap: var(--jakpot-space-2);
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 900px){
+  .jakpot-root .jakpot-description-group--wide{
+    max-width: 100%;
+  }
+
+  .jakpot-root .jakpot-description-group--narrow{
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 600px){
+  .jakpot-root .jakpot-description-group--narrow{
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================
+   COMPONENT · ImageCaption
+   ========================================================== */
+
+.jakpot-root .jakpot-image-caption{
+  display: flex;
+  flex-direction: column;
+  gap: var(--jakpot-space-2);
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.jakpot-root .jakpot-image-caption--full{
+  max-width: 100%;
+}
+
+.jakpot-root .jakpot-image-caption--wide{
+  max-width: 75%;
+}
+
+.jakpot-root .jakpot-image-caption--narrow{
+  max-width: 50%;
+}
+
+.jakpot-root .jakpot-image-caption__image{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--jakpot-radius-sm);
+}
+
+.jakpot-root .jakpot-image-caption--landscape .jakpot-image-caption__image{
+  aspect-ratio: 16 / 9;
+}
+
+.jakpot-root .jakpot-image-caption--square .jakpot-image-caption__image{
+  aspect-ratio: 1 / 1;
+}
+
+.jakpot-root .jakpot-image-caption__text{
+  color: var(--jakpot-color-text-secondary);
+  font-family: var(--jakpot-font-label);
+  font-size: var(--jakpot-font-size-200);
+  font-weight: var(--jakpot-font-weight-regular);
+  line-height: var(--jakpot-line-height-body);
+}
+
+@media (max-width: 900px){
+  .jakpot-root .jakpot-image-caption--wide{
+    max-width: 100%;
+  }
+
+  .jakpot-root .jakpot-image-caption--narrow{
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 600px){
+  .jakpot-root .jakpot-image-caption--narrow{
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================
+   COMPONENT · ProjectImageGrid
+   ========================================================== */
+
+.jakpot-root .jakpot-project-image-grid{
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.jakpot-root .jakpot-project-image-grid img{
+  display: block;
+  max-width: 100%;
+}
+
+/* ==========================================================
+   COMPONENT · ProjectLinkCard
+   ========================================================== */
+
+.jakpot-root .jakpot-project-link-card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--jakpot-space-3);
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--jakpot-space-5);
+  border: 1px solid var(--jakpot-color-border-subtle);
+  border-radius: var(--jakpot-radius-lg);
+  box-shadow: var(--jakpot-shadow-1);
+}
+
+.jakpot-root .jakpot-project-link-card--neutral{
+  color: var(--jakpot-color-text-primary);
+  background: var(--jakpot-color-bg-raised);
+}
+
+.jakpot-root .jakpot-project-link-card--inverse{
+  color: var(--jakpot-color-text-inverse);
+  background: var(--jakpot-color-bg-inverse);
+  border-color: var(--jakpot-color-bg-inverse);
+}
+
+.jakpot-root .jakpot-project-link-card__eyebrow{
+  color: var(--jakpot-color-text-secondary);
+}
+
+.jakpot-root .jakpot-project-link-card__title{
+  width: 100%;
+}
+
+.jakpot-root .jakpot-project-link-card--inverse .jakpot-project-link-card__title{
+  color: var(--jakpot-color-text-inverse);
+}
+
+.jakpot-root .jakpot-project-link-card__description{
+  width: 100%;
+}
+
+.jakpot-root .jakpot-project-link-card--inverse .jakpot-project-link-card__description,.jakpot-root .jakpot-project-link-card--inverse .jakpot-project-link-card__eyebrow{
+  color: var(--jakpot-color-text-inverse);
+}
+
+.jakpot-root .jakpot-project-link-card__logo{
+  display: block;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: var(--jakpot-radius-full);
+  object-fit: cover;
+}
+
+/* Added for the vanilla kit: the React version left these unstyled */
+.jakpot-root .jakpot-project-link-card__top{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--jakpot-space-2);
+  width: 100%;
+}
+
+.jakpot-root .jakpot-project-link-card__eyebrow{
+  font-family: var(--jakpot-font-label);
+  font-size: var(--jakpot-font-size-200);
+  font-weight: var(--jakpot-font-weight-semibold);
+  line-height: var(--jakpot-line-height-heading);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.jakpot-root .jakpot-project-link-card__description{
+  font-size: var(--jakpot-font-size-200);
+  line-height: var(--jakpot-line-height-body);
+  color: var(--jakpot-color-text-secondary);
+}
+
+/* Primary button is green-on-green inside an inverse card, so flip it to amber */
+.jakpot-root .jakpot-project-link-card--inverse .jakpot-button-primary{
+  color: var(--jakpot-color-action-primary);
+  background: var(--jakpot-color-action-accent);
+}
+
+.jakpot-root .jakpot-project-link-card--inverse .jakpot-button-primary:hover:not(:disabled){
+  background: var(--jakpot-amber-100);
+}
+
+/* ==========================================================
+   COMPONENT · CaseStudyCard
+   ========================================================== */
+
+.jakpot-root .jakpot-case-study-card{
+  display: flex;
+  flex-direction: column;
+  gap: var(--jakpot-space-6);
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  container-type: inline-size;
+  container-name: case-study-card;
+  padding: var(--jakpot-space-6);
+  color: var(--jakpot-color-text-primary);
+  background: var(--jakpot-color-bg-raised);
+  border: 1px solid var(--jakpot-color-border-subtle);
+  border-radius: var(--jakpot-radius-lg);
+  box-shadow: var(--jakpot-shadow-1);
+}
+
+.jakpot-root .jakpot-case-study-card__top{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--jakpot-space-3) var(--jakpot-space-6);
+}
+
+.jakpot-root .jakpot-case-study-card__content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--jakpot-space-3);
+  min-width: 0;
+}
+
+.jakpot-root .jakpot-case-study-card__top > .jakpot-case-study-card__action{
+  grid-column: 2;
+  grid-row: 1;
+  white-space: nowrap;
+}
+
+/* Use standard description sizing for the card summary, not intro sizing. */
+.jakpot-root .jakpot-case-study-card__top > .jakpot-typography--description-large{
+  font-size: var(--jakpot-font-size-300);
+  line-height: 1.5;
+}
+
+.jakpot-root .jakpot-case-study-card__title-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--jakpot-space-4);
+  width: 100%;
+}
+
+.jakpot-root .jakpot-case-study-card__title-row .jakpot-typography--card-heading{
+  flex: 1;
+}
+
+.jakpot-root .jakpot-case-study-card__highlights{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--jakpot-color-border-subtle);
+  border-bottom: 1px solid var(--jakpot-color-border-subtle);
+}
+
+.jakpot-root .jakpot-case-study-card__highlight{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--jakpot-space-2);
+  padding: var(--jakpot-space-4);
+}
+
+.jakpot-root .jakpot-case-study-card__highlight + .jakpot-case-study-card__highlight{
+  border-left: 1px solid var(--jakpot-color-border-subtle);
+}
+
+/* Keep highlight headings and descriptions compact inside case-study cards. */
+.jakpot-root .jakpot-case-study-card__highlights .jakpot-typography--section-subheading{
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.jakpot-root .jakpot-case-study-card__highlights .jakpot-typography--description-medium{
+  font-size: var(--jakpot-font-size-200);
+  line-height: 1.45;
+}
+
+.jakpot-root .jakpot-case-study-card__footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--jakpot-space-4);
+  font-size: var(--jakpot-font-size-200);
+  line-height: 1.35;
+  color: var(--jakpot-color-text-secondary);
+}
+
+.jakpot-root .jakpot-case-study-card__date{
+  color: var(--jakpot-green-900);
+  font-weight: var(--jakpot-font-weight-bold);
+}
+
+.jakpot-root .jakpot-case-study-card__role{
+  text-align: right;
+}
+
+@container case-study-card (max-width: 600px){
+  .jakpot-root .jakpot-case-study-card__highlights{
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .jakpot-root .jakpot-case-study-card__highlight{
+    padding: var(--jakpot-space-3) 0;
+  }
+
+  .jakpot-root .jakpot-case-study-card__highlight + .jakpot-case-study-card__highlight{
+    border-left: 0;
+    border-top: 1px solid var(--jakpot-color-border-subtle);
+  }
+}
+
+@media (max-width: 600px){
+  .jakpot-root .jakpot-case-study-card__top{
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .jakpot-root .jakpot-case-study-card__top > .jakpot-case-study-card__action{
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .jakpot-root .jakpot-case-study-card{
+    padding: var(--jakpot-space-3);
+    gap: var(--jakpot-space-4);
+  }
+
+  .jakpot-root .jakpot-case-study-card__title-row{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .jakpot-root .jakpot-case-study-card__footer{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .jakpot-root .jakpot-case-study-card__role{
+    text-align: left;
+  }
+}
+
+/* ==========================================================
+   COMPONENT · StructuredList
+   ========================================================== */
+
+.jakpot-root .jakpot-structured-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  counter-reset: none;
+}
+
+.jakpot-root .jakpot-structured-list__item{
+  border-bottom: 1px solid var(--jakpot-color-border-subtle);
+}
+
+.jakpot-root .jakpot-structured-list__item:first-child{
+  border-top: 1px solid var(--jakpot-color-border-subtle);
+}
+
+.jakpot-root .jakpot-structured-list__link,.jakpot-root .jakpot-structured-list__row{
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: var(--jakpot-space-2);
+  align-items: start;
+  padding-block: var(--jakpot-space-3);
+  color: var(--jakpot-color-text-primary);
+  text-decoration: none;
+}
+
+.jakpot-root .jakpot-structured-list__index{
+  color: var(--jakpot-color-action-accent);
+  font-family: var(--jakpot-font-display);
+  font-size: var(--jakpot-font-size-500);
+  font-weight: var(--jakpot-font-weight-bold);
+  line-height: var(--jakpot-line-height-heading);
+  font-variant-numeric: tabular-nums;
+}
+
+.jakpot-root .jakpot-structured-list__content{
+  display: flex;
+  flex-direction: column;
+  gap: var(--jakpot-space-1);
+  min-width: 0;
+}
+
+.jakpot-root .jakpot-structured-list__title{
+  color: var(--jakpot-color-text-primary);
+  font-family: var(--jakpot-font-body);
+  font-size: var(--jakpot-font-size-300);
+  font-weight: var(--jakpot-font-weight-semibold);
+  line-height: var(--jakpot-line-height-heading);
+}
+
+.jakpot-root .jakpot-structured-list__description{
+  color: var(--jakpot-color-text-secondary);
+  font-family: var(--jakpot-font-body);
+  font-size: var(--jakpot-font-size-200);
+  font-weight: var(--jakpot-font-weight-regular);
+  line-height: var(--jakpot-line-height-body);
+}
+
+.jakpot-root .jakpot-structured-list__link:hover .jakpot-structured-list__title{
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.jakpot-root .jakpot-structured-list__link:focus-visible{
+  outline: 2px solid var(--jakpot-color-focus);
+  outline-offset: 4px;
+  border-radius: var(--jakpot-radius-sm);
+}
+
+@media (max-width: 600px){
+  .jakpot-root .jakpot-structured-list__link,.jakpot-root .jakpot-structured-list__row{
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: var(--jakpot-space-2);
+    padding-block: var(--jakpot-space-2);
+  }
+
+  .jakpot-root .jakpot-structured-list__index{
+    font-size: var(--jakpot-font-size-400);
+  }
+}
+/* Generated builder aliases for variant class names */
+.jakpot-root .jakpot-button--primary{background:var(--jakpot-color-action-primary);color:var(--jakpot-color-text-inverse)}
+.jakpot-root .jakpot-button--secondary{background:transparent;color:var(--jakpot-color-text-primary);border:1px solid var(--jakpot-color-action-primary)}
+.jakpot-root .jakpot-button--tertiary{background:transparent;color:var(--jakpot-color-text-primary);border-color:transparent;text-decoration:underline}
+.jakpot-root .jakpot-outcome-card{background:var(--jakpot-color-bg-raised);border:1px solid var(--jakpot-color-border-subtle);border-radius:var(--jakpot-radius-md);padding:var(--jakpot-space-4);display:flex;flex-direction:column;gap:var(--jakpot-space-3)}
+.jakpot-root .jakpot-grid--columns-1{grid-template-columns:1fr}.jakpot-root .jakpot-grid--columns-2{grid-template-columns:repeat(2,minmax(0,1fr))}.jakpot-root .jakpot-grid--columns-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.jakpot-root .jakpot-gap-1{gap:var(--jakpot-space-1)}.jakpot-root .jakpot-gap-2{gap:var(--jakpot-space-2)}.jakpot-root .jakpot-gap-3{gap:var(--jakpot-space-3)}.jakpot-root .jakpot-gap-4{gap:var(--jakpot-space-4)}.jakpot-root .jakpot-gap-5{gap:var(--jakpot-space-5)}.jakpot-root .jakpot-gap-6{gap:var(--jakpot-space-6)}
+
+
+/* ==========================================================
+   RESPONSIVE SPACING & TYPOGRAPHY REFINEMENTS
+   ========================================================== */
+
+/* Keep wrapped headings readable and maintain consistent eyebrow rhythm. */
+.jakpot-root h1,
+.jakpot-root h2,
+.jakpot-root h3,
+.jakpot-root h4,
+.jakpot-root h5,
+.jakpot-root h6 {
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.jakpot-root .jakpot-typography--section-heading {
+  line-height: 1.22;
+}
+
+.jakpot-root .jakpot-typography--card-heading,
+.jakpot-root .jakpot-project-link-card__title {
+  line-height: 1.32;
+  text-wrap: pretty;
+}
+
+.jakpot-root .jakpot-typography--eyebrow,
+.jakpot-root .jakpot-project-link-card__eyebrow {
+  line-height: 1.35;
+}
+
+/* Layout containers own spacing between sibling content blocks. */
+.jakpot-root .jakpot-section-header__main {
+  gap: var(--jakpot-space-3);
+}
+
+.jakpot-root .jakpot-section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--jakpot-space-6);
+}
+
+.jakpot-root .jakpot-project-link-card__top {
+  gap: var(--jakpot-space-3);
+}
+
+.jakpot-root .jakpot-project-link-card__action {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.jakpot-root .jakpot-project-image-grid {
+  display: block;
+}
+
+.jakpot-root .jakpot-project-image-grid > .jakpot-grid {
+  width: 100%;
+}
+
+/* The builder's actions + media pattern uses this wrapper to separate rows. */
+.jakpot-root .jakpot-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--jakpot-space-6);
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .jakpot-root .jakpot-section__content,
+  .jakpot-root .jakpot-flow {
+    gap: var(--jakpot-space-5);
+  }
+
+  .jakpot-root .jakpot-grid--columns-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .jakpot-root .jakpot-section-header__main {
+    gap: var(--jakpot-space-2);
+  }
+
+  .jakpot-root .jakpot-section__content,
+  .jakpot-root .jakpot-flow {
+    gap: var(--jakpot-space-4);
+  }
+
+  .jakpot-root .jakpot-grid--columns-2,
+  .jakpot-root .jakpot-grid--columns-3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
