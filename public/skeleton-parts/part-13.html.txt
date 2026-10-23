@@ -6,10 +6,10 @@
   <pre class="sk-entry__code" hidden></pre>
 </article>
 
-<!-- ===== 1310 · Section · white · header without-eyebrow · description · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
-<article class="sk-entry" id="e1310" data-key="1310 section · white · header without-eyebrow · description · content narrow · actions then media (descriptiongroup + buttons + projectimagegrid)">
+<!-- ===== 1214 · Section · white · header without-eyebrow · description · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1214" data-key="1214 section · white · header without-eyebrow · description · content narrow · actions then media (descriptiongroup + buttons + projectimagegrid)">
   <header class="sk-entry__head">
-    <span class="sk-entry__num">1310</span>
+    <span class="sk-entry__num">1214</span>
     <h2 class="sk-entry__name">Section · white · header without-eyebrow · description · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
     <button type="button" class="sk-btn" data-act="code">HTML</button>
     <button type="button" class="sk-btn" data-act="copy">Copy</button>
@@ -57,10 +57,10 @@
   <pre class="sk-entry__code" hidden></pre>
 </article>
 
-<!-- ===== 1311 · Section · white · header without-eyebrow · title only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
-<article class="sk-entry" id="e1311" data-key="1311 section · white · header without-eyebrow · title only · content full · actions then media (descriptiongroup + buttons + projectimagegrid)">
+<!-- ===== 1215 · Section · white · header without-eyebrow · title only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1215" data-key="1215 section · white · header without-eyebrow · title only · content full · actions then media (descriptiongroup + buttons + projectimagegrid)">
   <header class="sk-entry__head">
-    <span class="sk-entry__num">1311</span>
+    <span class="sk-entry__num">1215</span>
     <h2 class="sk-entry__name">Section · white · header without-eyebrow · title only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
     <button type="button" class="sk-btn" data-act="code">HTML</button>
     <button type="button" class="sk-btn" data-act="copy">Copy</button>
@@ -105,10 +105,10 @@
   <pre class="sk-entry__code" hidden></pre>
 </article>
 
-<!-- ===== 1312 · Section · white · header without-eyebrow · title only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
-<article class="sk-entry" id="e1312" data-key="1312 section · white · header without-eyebrow · title only · content wide · actions then media (descriptiongroup + buttons + projectimagegrid)">
+<!-- ===== 1216 · Section · white · header without-eyebrow · title only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1216" data-key="1216 section · white · header without-eyebrow · title only · content wide · actions then media (descriptiongroup + buttons + projectimagegrid)">
   <header class="sk-entry__head">
-    <span class="sk-entry__num">1312</span>
+    <span class="sk-entry__num">1216</span>
     <h2 class="sk-entry__name">Section · white · header without-eyebrow · title only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
     <button type="button" class="sk-btn" data-act="code">HTML</button>
     <button type="button" class="sk-btn" data-act="copy">Copy</button>
@@ -153,10 +153,10 @@
   <pre class="sk-entry__code" hidden></pre>
 </article>
 
-<!-- ===== 1313 · Section · white · header without-eyebrow · title only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
-<article class="sk-entry" id="e1313" data-key="1313 section · white · header without-eyebrow · title only · content narrow · actions then media (descriptiongroup + buttons + projectimagegrid)">
+<!-- ===== 1217 · Section · white · header without-eyebrow · title only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1217" data-key="1217 section · white · header without-eyebrow · title only · content narrow · actions then media (descriptiongroup + buttons + projectimagegrid)">
   <header class="sk-entry__head">
-    <span class="sk-entry__num">1313</span>
+    <span class="sk-entry__num">1217</span>
     <h2 class="sk-entry__name">Section · white · header without-eyebrow · title only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
     <button type="button" class="sk-btn" data-act="code">HTML</button>
     <button type="button" class="sk-btn" data-act="copy">Copy</button>
@@ -201,10 +201,10 @@
   <pre class="sk-entry__code" hidden></pre>
 </article>
 
-<!-- ===== 1314 · Section · white · header title-only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
-<article class="sk-entry" id="e1314" data-key="1314 section · white · header title-only · content full · actions then media (descriptiongroup + buttons + projectimagegrid)">
+<!-- ===== 1218 · Section · white · header title-only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1218" data-key="1218 section · white · header title-only · content full · actions then media (descriptiongroup + buttons + projectimagegrid)">
   <header class="sk-entry__head">
-    <span class="sk-entry__num">1314</span>
+    <span class="sk-entry__num">1218</span>
     <h2 class="sk-entry__name">Section · white · header title-only · content full · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
     <button type="button" class="sk-btn" data-act="code">HTML</button>
     <button type="button" class="sk-btn" data-act="copy">Copy</button>
@@ -249,10 +249,10 @@
   <pre class="sk-entry__code" hidden></pre>
 </article>
 
-<!-- ===== 1315 · Section · white · header title-only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
-<article class="sk-entry" id="e1315" data-key="1315 section · white · header title-only · content wide · actions then media (descriptiongroup + buttons + projectimagegrid)">
+<!-- ===== 1219 · Section · white · header title-only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1219" data-key="1219 section · white · header title-only · content wide · actions then media (descriptiongroup + buttons + projectimagegrid)">
   <header class="sk-entry__head">
-    <span class="sk-entry__num">1315</span>
+    <span class="sk-entry__num">1219</span>
     <h2 class="sk-entry__name">Section · white · header title-only · content wide · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
     <button type="button" class="sk-btn" data-act="code">HTML</button>
     <button type="button" class="sk-btn" data-act="copy">Copy</button>
@@ -297,10 +297,10 @@
   <pre class="sk-entry__code" hidden></pre>
 </article>
 
-<!-- ===== 1316 · Section · white · header title-only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
-<article class="sk-entry" id="e1316" data-key="1316 section · white · header title-only · content narrow · actions then media (descriptiongroup + buttons + projectimagegrid)">
+<!-- ===== 1220 · Section · white · header title-only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid) ===== -->
+<article class="sk-entry" id="e1220" data-key="1220 section · white · header title-only · content narrow · actions then media (descriptiongroup + buttons + projectimagegrid)">
   <header class="sk-entry__head">
-    <span class="sk-entry__num">1316</span>
+    <span class="sk-entry__num">1220</span>
     <h2 class="sk-entry__name">Section · white · header title-only · content narrow · Actions then media (DescriptionGroup + buttons + ProjectImageGrid)</h2>
     <button type="button" class="sk-btn" data-act="code">HTML</button>
     <button type="button" class="sk-btn" data-act="copy">Copy</button>
