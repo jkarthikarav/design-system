@@ -34,3 +34,8 @@
 .builder-catalogue-card .builder-secondary-button{font-size:11px;min-height:34px;padding:7px 10px}
 .builder-catalogue-card .builder-card-kicker{overflow-wrap:anywhere}
 @media(max-width:760px){.builder-add-row{grid-template-columns:minmax(0,1fr)}.builder-add-row>.builder-primary-button{width:100%}.builder-element-tree{max-height:220px}}
+
+.builder-catalogue-card--full-width{flex:0 0 100%;width:100%}
+.builder-catalogue-card--full-width .builder-skeleton-preview{width:100%}
+.builder-catalogue-card--full-width .builder-skeleton-preview-content{width:100%}
+.builder-catalogue-card--full-width .builder-skeleton-preview-content>.jakpot-case-study-card{width:100%}
