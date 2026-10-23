@@ -403,7 +403,7 @@
 .jakpot-root .jakpot-py-12{ padding-block: var(--jakpot-space-12); }
 
 /* Gaps and grids */
-.jakpot-root .jakpot-gap-1{ gap: 0; }
+.jakpot-root .jakpot-gap-1{ gap: var(--jakpot-space-1); }
 .jakpot-root .jakpot-gap-2{ gap: var(--jakpot-space-2); }
 .jakpot-root .jakpot-gap-3{ gap: var(--jakpot-space-3); }
 .jakpot-root .jakpot-gap-4{ gap: var(--jakpot-space-4); }
@@ -1312,7 +1312,7 @@
   grid-template-columns: 64px minmax(0, 1fr);
   gap: var(--jakpot-space-2);
   align-items: start;
-  padding-block: var(--jakpot-space-3);
+  padding-block: var(--jakpot-space-2);
   color: var(--jakpot-color-text-primary);
   text-decoration: none;
 }
@@ -1320,16 +1320,16 @@
 .jakpot-root .jakpot-structured-list__index{
   color: var(--jakpot-color-action-accent);
   font-family: var(--jakpot-font-display);
-  font-size: var(--jakpot-font-size-500);
+  font-size: var(--jakpot-font-size-300);
   font-weight: var(--jakpot-font-weight-bold);
-  line-height: var(--jakpot-line-height-heading);
+  line-height: 1.3;
   font-variant-numeric: tabular-nums;
 }
 
 .jakpot-root .jakpot-structured-list__content{
   display: flex;
   flex-direction: column;
-  gap: var(--jakpot-space-1);
+  gap: 0;
   min-width: 0;
 }
 
@@ -1368,7 +1368,7 @@
   }
 
   .jakpot-root .jakpot-structured-list__index{
-    font-size: var(--jakpot-font-size-400);
+    font-size: var(--jakpot-font-size-300);
   }
 }
 /* Generated builder aliases for variant class names */
