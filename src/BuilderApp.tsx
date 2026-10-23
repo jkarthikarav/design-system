@@ -218,7 +218,7 @@ ${html}
 
   return <div className="builder-app">
     <header className="builder-topbar">
-      <a className="builder-brand" href="./"><span className="builder-mark">J</span><span>JAKpot<small>DESIGN SYSTEM</small></span></a>
+      <a className="builder-brand" href="./"><img className="builder-logo" src="./JAKpot%20DS%20Logo.png" alt="" /><span>JAKpot<small>DESIGN SYSTEM</small></span></a>
       <nav className="builder-tabs">
         <button className={tab === 'builder' ? 'active' : ''} onClick={() => setTab('builder')}>Builder</button>
         <button className={tab === 'catalogue' ? 'active' : ''} onClick={() => setTab('catalogue')}>Skeletons <span>{skeletons.length || '1,316'}</span></button>
