@@ -284,7 +284,7 @@
           </div>
           <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
         </div>
-        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+        <button type="button" class="button button-primary case-study-card__action">Explore →</button>
       </div>
       <div class="case-study-card__highlights">
         <div class="case-study-card__highlight">
