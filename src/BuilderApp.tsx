@@ -221,6 +221,10 @@ ${html}
         ? <textarea rows={key === 'rawHtml' ? 12 : 4} value={value} onChange={(event) => setProp(key, event.target.value)} />
         : <input value={value} onChange={(event) => setProp(key, event.target.value)} />}</label>;
   };
+  const availableElementOptions = selected && canContain(selected.type)
+    ? elementOptions.filter((item) => canNest(selected.type, item.value))
+    : elementOptions;
+
   const flattened = flatten(nodes);
 
   return <div className="builder-app">
@@ -254,7 +258,7 @@ ${html}
       </section> : <div className="builder-workspace">
         <aside className="builder-controls">
           <div className="builder-section-heading"><div><p className="builder-eyebrow">ELEMENT TREE</p><h2>Compose</h2></div><button className="builder-reset" onClick={() => { setNodes([]); setSelectedId(null); }}>Clear</button></div>
-          <div className="builder-add-row"><label className="builder-field"><span>Element to add</span><select value={newType} onChange={(event) => setNewType(event.target.value as ElementType)}>{Object.entries(elementOptions.reduce<Record<string, typeof elementOptions>>((groups, item) => { (groups[item.group] ||= []).push(item); return groups; }, {})).map(([group, items]) => <optgroup key={group} label={group}>{items.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</optgroup>)}</select></label><button className="builder-primary-button" onClick={() => addNode(newType)}>Add element +</button></div>
+          <div className="builder-add-row"><label className="builder-field"><span>Element to add</span><select value={newType} onChange={(event) => setNewType(event.target.value as ElementType)}>{Object.entries(availableElementOptions.reduce<Record<string, typeof availableElementOptions>>((groups, item) => { (groups[item.group] ||= []).push(item); return groups; }, {})).map(([group, items]) => <optgroup key={group} label={group}>{items.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</optgroup>)}</select></label><button className="builder-primary-button" onClick={() => addNode(newType)}>Add element +</button></div>
           {selected && canContain(selected.type) && <button className="builder-secondary-button builder-add-child" onClick={() => addNode(newType, selected.id)}>Add child to selected {nodeLabel(selected).toLowerCase()} +</button>}
           <div className="builder-element-tree">{flattened.map(({ node, depth }) => <div className="builder-tree-row" key={node.id} style={{ paddingLeft: 10 + depth * 18 }}><button className={selectedId === node.id ? 'builder-tree-item selected' : 'builder-tree-item'} onClick={() => setSelectedId(node.id)}><span className="builder-tree-type">{nodeLabel(node)}</span><span className="builder-tree-name">{val(node, 'title') || val(node, 'label') || val(node, 'lead') || val(node, 'text') || val(node, 'eyebrow') || 'Untitled element'}</span></button><button className="builder-tree-remove" aria-label={`Remove ${nodeLabel(node)}`} onClick={() => { setNodes((old) => removeFromTree(old, node.id)); if (selectedId === node.id) setSelectedId(null); }}>×</button></div>)}</div>
           {selected ? <div className="builder-selected-controls">
