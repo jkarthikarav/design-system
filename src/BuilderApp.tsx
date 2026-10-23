@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import './BuilderApp.css';
 
-type ElementType =
-  | 'section' | 'section-header' | 'description-group' | 'typography'
-  | 'button' | 'tag' | 'grid' | 'project-link-card' | 'case-study-card'
-  | 'structured-list' | 'image-caption' | 'project-image-grid' | 'footer' | 'skeleton';
+import { canContain as schemaCanContain, canNest, type CompositionElementType } from './composition/schema';
+
+type ElementType = CompositionElementType;
 
 type NodeProps = Record<string, string | number>;
 type BuilderNode = { id: string; type: ElementType; props: NodeProps; children: BuilderNode[] };
@@ -46,7 +45,7 @@ const starterProps: Record<ElementType, NodeProps> = {
 const esc = (value: unknown) => String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const val = (node: BuilderNode, key: string, fallback = '') => String(node.props[key] ?? fallback);
 const nodeLabel = (node: BuilderNode) => elementOptions.find((item) => item.value === node.type)?.label ?? 'Skeleton HTML';
-const canContain = (type: ElementType) => ['section', 'grid', 'project-image-grid'].includes(type);
+const canContain = (type: ElementType) => schemaCanContain(type);
 const makeNode = (type: ElementType): BuilderNode => ({ id: `el-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`, type, props: { ...starterProps[type] }, children: [] });
 
 function updateInTree(nodes: BuilderNode[], id: string, updater: (node: BuilderNode) => BuilderNode): BuilderNode[] {
@@ -54,9 +53,13 @@ function updateInTree(nodes: BuilderNode[], id: string, updater: (node: BuilderN
 }
 function addToTree(nodes: BuilderNode[], parentId: string | null, child: BuilderNode): BuilderNode[] {
   if (!parentId) return [...nodes, child];
-  return nodes.map((node) => node.id === parentId
-    ? { ...node, children: [...node.children, child] }
-    : { ...node, children: addToTree(node.children, parentId, child) });
+  return nodes.map((node) => {
+    if (node.id === parentId) {
+      if (!canNest(node.type, child.type)) return node;
+      return { ...node, children: [...node.children, child] };
+    }
+    return { ...node, children: addToTree(node.children, parentId, child) };
+  });
 }
 function removeFromTree(nodes: BuilderNode[], id: string): BuilderNode[] {
   return nodes.filter((node) => node.id !== id).map((node) => ({ ...node, children: removeFromTree(node.children, id) }));
