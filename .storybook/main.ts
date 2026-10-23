@@ -13,7 +13,7 @@ const config: StorybookConfig = {
   ],
   framework: '@storybook/react-vite',
   staticDirs: ['../public'],
-  managerHead: (head) => `${head}\n    <link rel="icon" type="image/x-icon" href="/JAKpot%20DS%20Logo.ico" />`,
+  managerHead: (head) => `${head}\n    <link rel="icon" type="image/x-icon" href="JAKpot%20DS%20Logo.ico" />`,
   viteFinal: async (config) => ({
     ...config,
     base: process.env.STORYBOOK_BASE_PATH || '/',
