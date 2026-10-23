@@ -4208,13 +4208,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4236,13 +4238,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4285,13 +4289,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4313,13 +4319,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4362,13 +4370,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4390,13 +4400,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4448,13 +4460,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4476,13 +4490,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4534,13 +4550,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4562,13 +4580,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4620,13 +4640,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4648,13 +4670,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4703,13 +4727,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4731,13 +4757,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4786,13 +4814,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4814,13 +4844,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4869,13 +4901,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4897,13 +4931,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4954,13 +4990,15 @@
           <div class="grid grid--columns-1 grid--gap-4">
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
@@ -4982,13 +5020,15 @@
             </article>
             <article class="case-study-card case-study-card--default">
               <div class="case-study-card__top">
-                <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
-                <div class="case-study-card__title-row">
-                  <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
-                  <button type="button" class="button button-primary">Explore →</button>
-                </div>
-                <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
-              </div>
+        <div class="case-study-card__content">
+          <p class="typography typography--eyebrow typography--left typography--width-full">Eyebrow text</p>
+          <div class="case-study-card__title-row">
+            <h2 class="typography typography--card-heading typography--left typography--width-full">Case study title goes here</h2>
+          </div>
+          <p class="typography typography--description-large typography--left typography--width-wide">A short overview of the project, the problem and the approach.</p>
+        </div>
+        <button type="button" class="button button-primary case-study-card__action>Explore →</button>
+      </div>
               <div class="case-study-card__highlights">
                 <div class="case-study-card__highlight">
                   <h3 class="typography typography--section-subheading typography--left typography--width-full">Highlight 1 heading</h3>
