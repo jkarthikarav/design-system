@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import './BuilderApp.css';
 
-type ElementType =
-  | 'section' | 'section-header' | 'description-group' | 'typography'
-  | 'button' | 'tag' | 'grid' | 'project-link-card' | 'case-study-card'
-  | 'structured-list' | 'image-caption' | 'project-image-grid' | 'footer' | 'skeleton';
+import { canContain as schemaCanContain, canNest, type CompositionElementType } from './composition/schema';
+
+type ElementType = CompositionElementType;
 
 type NodeProps = Record<string, string | number>;
 type BuilderNode = { id: string; type: ElementType; props: NodeProps; children: BuilderNode[] };
@@ -46,7 +45,7 @@ const starterProps: Record<ElementType, NodeProps> = {
 const esc = (value: unknown) => String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const val = (node: BuilderNode, key: string, fallback = '') => String(node.props[key] ?? fallback);
 const nodeLabel = (node: BuilderNode) => elementOptions.find((item) => item.value === node.type)?.label ?? 'Skeleton HTML';
-const canContain = (type: ElementType) => ['section', 'grid', 'project-image-grid'].includes(type);
+const canContain = (type: ElementType) => schemaCanContain(type);
 const makeNode = (type: ElementType): BuilderNode => ({ id: `el-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`, type, props: { ...starterProps[type] }, children: [] });
 
 function updateInTree(nodes: BuilderNode[], id: string, updater: (node: BuilderNode) => BuilderNode): BuilderNode[] {
@@ -54,9 +53,13 @@ function updateInTree(nodes: BuilderNode[], id: string, updater: (node: BuilderN
 }
 function addToTree(nodes: BuilderNode[], parentId: string | null, child: BuilderNode): BuilderNode[] {
   if (!parentId) return [...nodes, child];
-  return nodes.map((node) => node.id === parentId
-    ? { ...node, children: [...node.children, child] }
-    : { ...node, children: addToTree(node.children, parentId, child) });
+  return nodes.map((node) => {
+    if (node.id === parentId) {
+      if (!canNest(node.type, child.type)) return node;
+      return { ...node, children: [...node.children, child] };
+    }
+    return { ...node, children: addToTree(node.children, parentId, child) };
+  });
 }
 function removeFromTree(nodes: BuilderNode[], id: string): BuilderNode[] {
   return nodes.filter((node) => node.id !== id).map((node) => ({ ...node, children: removeFromTree(node.children, id) }));
@@ -144,6 +147,7 @@ export default function BuilderApp() {
   const [nodes, setNodes] = useState<BuilderNode[]>([makeNode('section')]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [newType, setNewType] = useState<ElementType>('section-header');
+  const [newChildType, setNewChildType] = useState<ElementType>('typography');
   const [tab, setTab] = useState<'builder' | 'catalogue' | 'export'>('builder');
   const [query, setQuery] = useState('');
   const [copied, setCopied] = useState(false);
@@ -218,6 +222,13 @@ ${html}
         ? <textarea rows={key === 'rawHtml' ? 12 : 4} value={value} onChange={(event) => setProp(key, event.target.value)} />
         : <input value={value} onChange={(event) => setProp(key, event.target.value)} />}</label>;
   };
+  const availableChildOptions = selected && canContain(selected.type)
+    ? elementOptions.filter((item) => canNest(selected.type, item.value))
+    : [];
+  const selectedChildType = availableChildOptions.some((item) => item.value === newChildType)
+    ? newChildType
+    : availableChildOptions[0]?.value;
+
   const flattened = flatten(nodes);
 
   return <div className="builder-app">
@@ -252,7 +263,7 @@ ${html}
         <aside className="builder-controls">
           <div className="builder-section-heading"><div><p className="builder-eyebrow">ELEMENT TREE</p><h2>Compose</h2></div><button className="builder-reset" onClick={() => { setNodes([]); setSelectedId(null); }}>Clear</button></div>
           <div className="builder-add-row"><label className="builder-field"><span>Element to add</span><select value={newType} onChange={(event) => setNewType(event.target.value as ElementType)}>{Object.entries(elementOptions.reduce<Record<string, typeof elementOptions>>((groups, item) => { (groups[item.group] ||= []).push(item); return groups; }, {})).map(([group, items]) => <optgroup key={group} label={group}>{items.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</optgroup>)}</select></label><button className="builder-primary-button" onClick={() => addNode(newType)}>Add element +</button></div>
-          {selected && canContain(selected.type) && <button className="builder-secondary-button builder-add-child" onClick={() => addNode(newType, selected.id)}>Add child to selected {nodeLabel(selected).toLowerCase()} +</button>}
+          {selected && canContain(selected.type) && <div className="builder-add-row builder-add-child-row"><label className="builder-field"><span>Child element to add</span><select value={selectedChildType ?? ''} onChange={(event) => setNewChildType(event.target.value as ElementType)}>{Object.entries(availableChildOptions.reduce<Record<string, typeof availableChildOptions>>((groups, item) => { (groups[item.group] ||= []).push(item); return groups; }, {})).map(([group, items]) => <optgroup key={group} label={group}>{items.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</optgroup>)}</select></label><button className="builder-secondary-button" disabled={!selectedChildType} onClick={() => selectedChildType && addNode(selectedChildType, selected.id)}>Add child to selected {nodeLabel(selected).toLowerCase()} +</button></div>}
           <div className="builder-element-tree">{flattened.map(({ node, depth }) => <div className="builder-tree-row" key={node.id} style={{ paddingLeft: 10 + depth * 18 }}><button className={selectedId === node.id ? 'builder-tree-item selected' : 'builder-tree-item'} onClick={() => setSelectedId(node.id)}><span className="builder-tree-type">{nodeLabel(node)}</span><span className="builder-tree-name">{val(node, 'title') || val(node, 'label') || val(node, 'lead') || val(node, 'text') || val(node, 'eyebrow') || 'Untitled element'}</span></button><button className="builder-tree-remove" aria-label={`Remove ${nodeLabel(node)}`} onClick={() => { setNodes((old) => removeFromTree(old, node.id)); if (selectedId === node.id) setSelectedId(null); }}>×</button></div>)}</div>
           {selected ? <div className="builder-selected-controls">
             <div className="builder-section-heading"><div><p className="builder-eyebrow">SELECTED ELEMENT</p><h2>{nodeLabel(selected)}</h2></div><button className="builder-reset" onClick={() => setNodes((old) => updateInTree(old, selected.id, (node) => ({ ...node, props: { ...starterProps[node.type] } })))}>Reset</button></div>
