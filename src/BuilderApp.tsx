@@ -247,7 +247,7 @@ ${html}
       {tab === 'catalogue' ? <section className="builder-catalogue">
         <div className="builder-section-heading"><div><p className="builder-eyebrow">SKELETON LIBRARY</p><h2>All reviewed skeletons</h2></div><p>{skeletons.length ? `${skeletons.length.toLocaleString()} loaded` : 'Loading catalogue…'}</p></div>
         <input className="builder-search" placeholder="Search by number, name, or component…" value={query} onChange={(event) => { setQuery(event.target.value); setVisibleCount(100); }} />
-        <div className="builder-catalogue-grid">{matches.slice(0, visibleCount).map((item) => <article className={`builder-catalogue-card${/^CaseStudyCard · (default|outcome)$/i.test(item.title) ? ' builder-catalogue-card--full-width' : ''}`} key={item.key}>
+        <div className="builder-catalogue-grid">{matches.slice(0, visibleCount).map((item) => <article className={`builder-catalogue-card${/case-study-card/i.test(item.html) ? ' builder-catalogue-card--full-width' : ''}`} key={item.key}>
           <span className="builder-card-kicker">{item.key}</span><strong>{item.title}</strong><div className="builder-skeleton-preview jakpot-root"><div className="builder-skeleton-preview-content" dangerouslySetInnerHTML={{ __html: transformSkeleton(item.html) }} /></div>
           <div className="builder-skeleton-actions"><button className="builder-secondary-button" onClick={() => { const node = makeNode('skeleton'); node.props.title = item.title; node.props.rawHtml = item.html; setNodes((old) => addToTree(old, null, node)); setSelectedId(node.id); setTab('builder'); }}>Add skeleton to canvas</button></div>
         </article>)}</div>
