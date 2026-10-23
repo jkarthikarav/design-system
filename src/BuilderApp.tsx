@@ -4,7 +4,7 @@ import './BuilderApp.css';
 type ElementType =
   | 'section' | 'section-header' | 'description-group' | 'typography'
   | 'button' | 'tag' | 'grid' | 'project-link-card' | 'case-study-card'
-  | 'structured-list' | 'image-caption' | 'project-image-grid' | 'skeleton';
+  | 'structured-list' | 'image-caption' | 'project-image-grid' | 'footer' | 'skeleton';
 
 type NodeProps = Record<string, string | number>;
 type BuilderNode = { id: string; type: ElementType; props: NodeProps; children: BuilderNode[] };
@@ -23,6 +23,7 @@ const elementOptions: { value: ElementType; label: string; group: string }[] = [
   { value: 'structured-list', label: 'Structured list', group: 'Content' },
   { value: 'image-caption', label: 'Image with caption', group: 'Media' },
   { value: 'project-image-grid', label: 'Project image grid', group: 'Media' },
+  { value: 'footer', label: 'Footer', group: 'Structure' },
 ];
 
 const starterProps: Record<ElementType, NodeProps> = {
@@ -38,6 +39,7 @@ const starterProps: Record<ElementType, NodeProps> = {
   'structured-list': { items: 'Discover | Understand the offer\nExplore | Review the available options\nContinue | Take the next step', ordered: 'true' },
   'image-caption': { src: 'https://placehold.co/1200x800?text=Preview+image', alt: 'Describe the image', caption: 'Image caption', ratio: 'landscape', width: 'full' },
   'project-image-grid': { columns: 2, gap: 3 },
+  footer: { leftText: 'Website developed by Karthik', rightText: 'Based in Ontario, Canada.', backToTopLabel: 'Back to top ↑' },
   skeleton: { title: 'Imported skeleton', rawHtml: '' },
 };
 
@@ -129,6 +131,8 @@ function renderNode(node: BuilderNode): string {
       return `<figure class="jakpot-image-caption jakpot-image-caption--${esc(val(node, 'width', 'full'))} jakpot-image-caption--${esc(val(node, 'ratio', 'landscape'))}"><img class="jakpot-image-caption__image" src="${esc(val(node, 'src'))}" alt="${esc(val(node, 'alt'))}" loading="lazy"><figcaption class="jakpot-image-caption__text">${esc(val(node, 'caption'))}</figcaption></figure>`;
     case 'project-image-grid':
       return `<div class="jakpot-project-image-grid"><div class="jakpot-grid jakpot-grid--columns-${esc(val(node, 'columns', '2'))} jakpot-grid--gap-${esc(val(node, 'gap', '3'))}">${children || '<!-- Add image-caption elements to this image grid. -->'}</div></div>`;
+    case 'footer':
+      return `<footer class="jakpot-footer"><p class="jakpot-footer__text">${esc(val(node, 'leftText', 'Website developed by Karthik'))}</p><p class="jakpot-footer__text">${esc(val(node, 'rightText', 'Based in Ontario, Canada.'))}</p><button type="button" class="jakpot-button jakpot-button--tertiary jakpot-footer__button">${esc(val(node, 'backToTopLabel', 'Back to top ↑'))}</button></footer>`;
     case 'skeleton':
       return transformSkeleton(val(node, 'rawHtml'));
     default:
@@ -264,6 +268,7 @@ ${html}
             {selected.type === 'structured-list' && <>{field('Items (Title | description per line)', 'items', undefined, 'textarea')}{field('Numbering', 'ordered', ['true', 'false'])}</>}
             {selected.type === 'image-caption' && <>{field('Image URL', 'src')}{field('Alt text', 'alt')}{field('Caption', 'caption')}{field('Aspect ratio', 'ratio', ['landscape', 'square', 'auto'])}{field('Image width', 'width', ['full', 'wide', 'narrow'])}</>}
             {selected.type === 'project-image-grid' && <>{field('Columns', 'columns', ['1', '2', '3'])}{field('Gap', 'gap', ['1', '2', '3', '4', '5', '6'])}<p className="builder-field-note">Select this grid and use “Add child” to add image-caption elements.</p></>}
+            {selected.type === 'footer' && <>{field('First text', 'leftText')}{field('Second text', 'rightText')}{field('Button label', 'backToTopLabel')}</>}
             {selected.type === 'skeleton' && <>{field('Skeleton name', 'title')}{field('Skeleton HTML', 'rawHtml', undefined, 'textarea')}</>}
             {canContain(selected.type) && <p className="builder-field-note">Container selected. Choose an element above, then use “Add child” to nest it inside this container.</p>}
           </div> : <p className="builder-empty-selection">Select an element in the tree to see its controls. Add any element above to start composing.</p>}
