@@ -202,7 +202,7 @@
 
 .jakpot-root h1{ font-size: var(--jakpot-font-size-700); }
 .jakpot-root h2{ font-size: var(--jakpot-font-size-600); }
-.jakpot-root h3{ font-size: var(--jakpot-font-size-500); }
+.jakpot-root h3{ font-size: var(--jakpot-font-size-300); }
 .jakpot-root h4{ font-size: var(--jakpot-font-size-400); }
 
 .jakpot-root p{ margin: 0; }
@@ -394,7 +394,7 @@
 
 .jakpot-root .jakpot-py-1{ padding-block: var(--jakpot-space-1); }
 .jakpot-root .jakpot-py-2{ padding-block: var(--jakpot-space-2); }
-.jakpot-root .jakpot-py-3{ padding-block: var(--jakpot-space-3); }
+.jakpot-root .jakpot-py-3{ padding-block: var(--jakpot-space-2); }
 .jakpot-root .jakpot-py-4{ padding-block: var(--jakpot-space-4); }
 .jakpot-root .jakpot-py-5{ padding-block: var(--jakpot-space-5); }
 .jakpot-root .jakpot-py-6{ padding-block: var(--jakpot-space-6); }
@@ -403,7 +403,7 @@
 .jakpot-root .jakpot-py-12{ padding-block: var(--jakpot-space-12); }
 
 /* Gaps and grids */
-.jakpot-root .jakpot-gap-1{ gap: var(--jakpot-space-1); }
+.jakpot-root .jakpot-gap-1{ gap: 0; }
 .jakpot-root .jakpot-gap-2{ gap: var(--jakpot-space-2); }
 .jakpot-root .jakpot-gap-3{ gap: var(--jakpot-space-3); }
 .jakpot-root .jakpot-gap-4{ gap: var(--jakpot-space-4); }
@@ -1335,8 +1335,8 @@
 
 .jakpot-root .jakpot-structured-list__title{
   color: var(--jakpot-color-text-primary);
-  font-family: var(--jakpot-font-body);
-  font-size: var(--jakpot-font-size-300);
+  font-family: var(--jakpot-font-display);
+  font-size: var(--jakpot-font-size-400);
   font-weight: var(--jakpot-font-weight-semibold);
   line-height: var(--jakpot-line-height-heading);
 }
