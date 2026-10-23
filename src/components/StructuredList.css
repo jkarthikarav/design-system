@@ -22,7 +22,7 @@
   grid-template-columns: 64px minmax(0, 1fr);
   gap: var(--space-2);
   align-items: start;
-  padding-block: var(--space-3);
+  padding-block: var(--space-2);
   color: var(--color-text-primary);
   text-decoration: none;
 }
@@ -30,7 +30,7 @@
 .structured-list__index {
   color: var(--color-action-accent);
   font-family: var(--font-display);
-  font-size: var(--font-size-500);
+  font-size: var(--font-size-300);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
   font-variant-numeric: tabular-nums;
@@ -39,14 +39,14 @@
 .structured-list__content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: 0;
   min-width: 0;
 }
 
 .structured-list__title {
   color: var(--color-text-primary);
-  font-family: var(--font-body);
-  font-size: var(--font-size-300);
+  font-family: var(--font-display);
+  font-size: var(--type-card-heading);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-heading);
 }
@@ -79,6 +79,6 @@
   }
 
   .structured-list__index {
-    font-size: var(--font-size-400);
+    font-size: var(--font-size-300);
   }
 }
