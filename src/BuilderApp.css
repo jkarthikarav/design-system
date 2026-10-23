@@ -26,11 +26,11 @@
 .builder-field-note{font-size:11px;line-height:1.55;color:var(--color-text-muted);margin:-4px 0 16px}
 .builder-empty-selection{font-size:12px;line-height:1.6;color:var(--color-text-muted);padding:14px 0}
 .builder-empty-canvas{min-height:300px;display:grid;place-items:center;padding:30px;color:var(--color-text-muted);font-size:14px;text-align:center}
-.builder-skeleton-preview{width:fit-content;max-width:100%;min-width:0;overflow-x:auto;overflow-y:visible;max-height:none;padding:20px;background:var(--color-bg-canvas);border:1px solid var(--color-border-subtle);border-radius:6px;pointer-events:none}.builder-skeleton-preview-content{display:flow-root;width:fit-content;max-width:100%;min-width:0}.builder-skeleton-preview-content>.jakpot-grid{width:fit-content;max-width:100%}.builder-skeleton-preview-content>.jakpot-section{width:fit-content;max-width:100%}
+.builder-skeleton-preview{width:fit-content;height:fit-content;max-width:100%;min-width:0;min-height:0;overflow-x:auto;overflow-y:visible;max-height:none;padding:20px;background:var(--color-bg-canvas);border:1px solid var(--color-border-subtle);border-radius:6px;pointer-events:none}.builder-skeleton-preview-content{display:flow-root;width:fit-content;max-width:100%;min-width:0}.builder-skeleton-preview-content>.jakpot-grid{width:fit-content;max-width:100%}.builder-skeleton-preview-content>.jakpot-section{width:fit-content;max-width:100%}
 .builder-skeleton-preview img{max-width:100%;height:auto;object-fit:contain}
 .builder-skeleton-preview *{max-width:100%}
 .builder-skeleton-actions{margin-top:auto;padding-top:8px}
-.builder-catalogue-card{overflow:hidden}
+.builder-catalogue-card{height:fit-content;min-height:0;overflow:hidden}
 .builder-catalogue-card .builder-secondary-button{font-size:11px;min-height:34px;padding:7px 10px}
 .builder-catalogue-card .builder-card-kicker{overflow-wrap:anywhere}
 @media(max-width:760px){.builder-add-row{grid-template-columns:minmax(0,1fr)}.builder-add-row>.builder-primary-button{width:100%}.builder-element-tree{max-height:220px}}
