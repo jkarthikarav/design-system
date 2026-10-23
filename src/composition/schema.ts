@@ -10,7 +10,7 @@ export const compositionSchema = {
     allowedChildren: [
       'section-header', 'description-group', 'typography', 'button', 'tag',
       'grid', 'project-link-card', 'case-study-card', 'structured-list',
-      'image-caption', 'project-image-grid', 'footer', 'skeleton',
+      'image-caption', 'project-image-grid', 'skeleton',
     ],
   },
   'section-header': { label: 'Section header', acceptsChildren: false, allowedChildren: [] },
@@ -22,9 +22,9 @@ export const compositionSchema = {
     label: 'Grid',
     acceptsChildren: true,
     allowedChildren: [
-      'section-header', 'description-group', 'typography', 'button', 'tag',
+      'description-group', 'typography', 'button', 'tag',
       'project-link-card', 'case-study-card', 'structured-list', 'image-caption',
-      'project-image-grid', 'skeleton',
+      'skeleton',
     ],
   },
   'project-link-card': { label: 'Project link card', acceptsChildren: false, allowedChildren: [] },
