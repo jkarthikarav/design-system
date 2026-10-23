@@ -242,7 +242,7 @@ ${html}
       <a className="builder-storybook-link" href="https://jkarthikarav.github.io/design-system/" target="_blank" rel="noreferrer">Storybook ↗</a>
     </header>
     <main className="builder-main">
-      <section className="builder-intro"><div><p className="builder-eyebrow">DESIGN SYSTEM WORKSPACE</p><h1>Build with JAKpot.</h1><p>Compose any supported design-system element, configure its own properties, and export semantic HTML using the shared stylesheet.</p></div><div className="builder-intro-note"><span className="builder-status-dot"></span> Live preview · Element-level controls · HTML export</div></section>
+      <section className="builder-intro"><div><h1>Build with JAKpot.</h1><p>Compose any supported design-system element, configure its own properties, and export semantic HTML using the shared stylesheet.</p></div></section>
 
       {tab === 'catalogue' ? <section className="builder-catalogue">
         <div className="builder-section-heading"><div><p className="builder-eyebrow">SKELETON LIBRARY</p><h2>All reviewed skeletons</h2></div><p>{skeletons.length ? `${skeletons.length.toLocaleString()} loaded` : 'Loading catalogue…'}</p></div>
@@ -261,7 +261,7 @@ ${html}
         <pre className="builder-code"><code>{exportHtml}</code></pre>
       </section> : <div className="builder-workspace">
         <aside className="builder-controls">
-          <div className="builder-section-heading"><div><p className="builder-eyebrow">ELEMENT TREE</p><h2>Compose</h2></div><button className="builder-reset" onClick={() => { setNodes([]); setSelectedId(null); }}>Clear</button></div>
+          <div className="builder-section-heading"><div><h2>Compose</h2></div><button className="builder-reset" onClick={() => { setNodes([]); setSelectedId(null); }}>Clear</button></div>
           <div className="builder-add-row"><label className="builder-field"><span>Element to add</span><select value={newType} onChange={(event) => setNewType(event.target.value as ElementType)}>{Object.entries(elementOptions.reduce<Record<string, typeof elementOptions>>((groups, item) => { (groups[item.group] ||= []).push(item); return groups; }, {})).map(([group, items]) => <optgroup key={group} label={group}>{items.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</optgroup>)}</select></label><button className="builder-primary-button" onClick={() => addNode(newType)}>Add element +</button></div>
           {selected && canContain(selected.type) && <div className="builder-add-row builder-add-child-row"><label className="builder-field"><span>Child element to add</span><select value={selectedChildType ?? ''} onChange={(event) => setNewChildType(event.target.value as ElementType)}>{Object.entries(availableChildOptions.reduce<Record<string, typeof availableChildOptions>>((groups, item) => { (groups[item.group] ||= []).push(item); return groups; }, {})).map(([group, items]) => <optgroup key={group} label={group}>{items.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</optgroup>)}</select></label><button className="builder-secondary-button" disabled={!selectedChildType} onClick={() => selectedChildType && addNode(selectedChildType, selected.id)}>Add child to selected {nodeLabel(selected).toLowerCase()} +</button></div>}
           <div className="builder-element-tree">{flattened.map(({ node, depth }) => <div className="builder-tree-row" key={node.id} style={{ paddingLeft: 10 + depth * 18 }}><button className={selectedId === node.id ? 'builder-tree-item selected' : 'builder-tree-item'} onClick={() => setSelectedId(node.id)}><span className="builder-tree-type">{nodeLabel(node)}</span><span className="builder-tree-name">{val(node, 'title') || val(node, 'label') || val(node, 'lead') || val(node, 'text') || val(node, 'eyebrow') || 'Untitled element'}</span></button><button className="builder-tree-remove" aria-label={`Remove ${nodeLabel(node)}`} onClick={() => { setNodes((old) => removeFromTree(old, node.id)); if (selectedId === node.id) setSelectedId(null); }}>×</button></div>)}</div>
@@ -286,12 +286,12 @@ ${html}
           <div className="builder-control-footer"><button className="builder-primary-button" onClick={() => setTab('export')}>Review HTML export <span>→</span></button><p>Only the selected element's relevant controls are shown.</p></div>
         </aside>
         <section className="builder-preview-panel">
-          <div className="builder-preview-heading"><div><p className="builder-eyebrow">LIVE CANVAS</p><h2>Composed elements</h2></div><span className="builder-preview-badge"><span></span> Updated live</span></div>
+          <div className="builder-preview-heading"><div><p className="builder-eyebrow">LIVE CANVAS</p><h2>Composed elements</h2></div></div>
           <div className="builder-preview-canvas"><div className="builder-preview-content jakpot-root" dangerouslySetInnerHTML={{ __html: html || '<div class="builder-empty-canvas">Add an element to begin building.</div>' }} /></div>
           <div className="builder-preview-footer"><span>{flattened.length} element{flattened.length === 1 ? '' : 's'} on canvas</span><button onClick={copy}>{copied ? 'Copied HTML ✓' : 'Copy HTML'}</button></div>
         </section>
       </div>}
-      <footer className="builder-footer"><span>JAKpot Design System</span><span>Build freely from elements, not predefined Storybook patterns.</span></footer>
+      <footer className="builder-footer"><span>JAKpot Design System</span></footer>
     </main>
   </div>;
 }
