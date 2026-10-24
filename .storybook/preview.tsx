@@ -90,7 +90,7 @@ function addVanillaSource(source: string, context: StoryCodeContext): string {
     html = '<!-- Vanilla HTML equivalent: use the same component classes and token utilities. -->\n<!-- Example: <div class="grid grid--columns-2 grid--gap-4">...</div> -->';
   }
 
-  return source + '\n\n/* ========================================\n   Vanilla HTML — same classes and token styles\n   ======================================== */\n' + html;
+  return source + '\n\n' + html;
 }
 
 const preview: Preview = {
