@@ -10,9 +10,6 @@ export interface ButtonProps
 
 /**
  * React API for the shared button styles.
- *
- * The rendered class names intentionally match the vanilla HTML API:
- * <button class="button button-primary">...</button>
  */
 export function Button({
   variant = 'primary',
