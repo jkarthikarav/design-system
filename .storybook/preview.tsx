@@ -90,6 +90,10 @@ function addVanillaSource(source: string, context: StoryCodeContext): string {
     html = '<!-- Vanilla HTML equivalent: use the same component classes and token utilities. -->\n<!-- Example: <div class="grid grid--columns-2 grid--gap-4">...</div> -->';
   }
 
+  // Storybook may run the source transform more than once. Avoid appending
+  // the same vanilla HTML example again when it is already present.
+  if (source.includes(html)) return source;
+
   return source + '\n\n' + html;
 }
 
