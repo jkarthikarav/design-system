@@ -93,7 +93,7 @@ function addVanillaSource(source: string, context: StoryCodeContext): string {
   // Storybook applies this transform twice on Autodocs pages. The renderer
   // emits the transformed snippet, then the Docs Source block transforms it
   // again. A stable marker makes the transformation idempotent.
-  const marker = '<!-- jakpot-vanilla-source -->';
+  const marker = '<!-- vanilla-css-classes -->';
   if (source.includes(marker)) return source;
 
   return source + '\n\n' + marker + '\n' + html;
