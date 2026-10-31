@@ -1,5 +1,6 @@
 import './ProjectLinkCard.css';
 import { Button } from './Button';
+import { Icon, type IconSize } from './Icon';
 
 export interface ProjectLinkCardProps {
   title: string;
@@ -7,7 +8,10 @@ export interface ProjectLinkCardProps {
   description?: string;
   logoSrc?: string;
   logoAlt?: string;
-  variant?: 'neutral' | 'inverse';
+  variant?: 'neutral' | 'inverse' | 'icon';
+  iconSrc?: string;
+  iconAlt?: string;
+  iconSize?: IconSize;
   showButton?: boolean;
   buttonLabel?: string;
   onExplore?: () => void;
@@ -20,6 +24,9 @@ export function ProjectLinkCard({
   logoSrc,
   logoAlt = '',
   variant = 'neutral',
+  iconSrc,
+  iconAlt = '',
+  iconSize = '24',
   showButton = true,
   buttonLabel = 'Explore project',
   onExplore,
@@ -38,7 +45,9 @@ export function ProjectLinkCard({
             src={logoSrc}
             alt={logoAlt}
           />
-        ) : eyebrow ? (
+        ) : variant === 'icon' && iconSrc ? (
+          <Icon className="project-link-card__icon" src={iconSrc} alt={iconAlt} size={iconSize} />
+        ) : eyebrow && variant !== 'icon' ? (
           <span className="project-link-card__eyebrow">
             {eyebrow}
           </span>

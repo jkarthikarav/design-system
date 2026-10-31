@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['neutral', 'inverse'],
+      options: ['neutral', 'inverse', 'icon'],
     },
     title: {
       control: 'text',
@@ -29,6 +29,9 @@ const meta = {
     logoAlt: {
       control: 'text',
     },
+    iconSrc: { control: 'text', description: 'Path or URL for the manually supplied icon image. Used by the icon variant.' },
+    iconAlt: { control: 'text' },
+    iconSize: { control: 'select', options: ['16', '18', '20', '24', '32'] },
     buttonLabel: {
       control: 'text',
     },
@@ -126,4 +129,16 @@ description:
 'A project card that presents information without a button or clickable behavior.',
 showButton: false,
 },
+};
+
+export const Icon: Story = {
+  args: {
+    variant: 'icon',
+    iconSrc: '/icons/your-icon.svg',
+    iconAlt: 'Project icon',
+    iconSize: '24',
+    title: 'Project title',
+    description: 'A short description of the project and its value.',
+    buttonLabel: 'Explore project',
+  },
 };

@@ -17,6 +17,7 @@ const elementOptions: { value: ElementType; label: string; group: string }[] = [
   { value: 'grid', label: 'Grid', group: 'Structure' },
   { value: 'button', label: 'Button', group: 'Actions' },
   { value: 'tag', label: 'Tag', group: 'Content' },
+  { value: 'icon', label: 'Icon', group: 'Media' },
   { value: 'project-link-card', label: 'Project link card', group: 'Cards' },
   { value: 'case-study-card', label: 'Case study card', group: 'Cards' },
   { value: 'structured-list', label: 'Structured list', group: 'Content' },
@@ -32,8 +33,9 @@ const starterProps: Record<ElementType, NodeProps> = {
   typography: { text: 'Write your text here.', variant: 'description-medium', align: 'left', width: 'full' },
   button: { label: 'Primary action', href: '#', variant: 'primary' },
   tag: { label: 'Category', variant: 'default' },
+  icon: { src: '', alt: '', size: '20' },
   grid: { columns: 2, gap: 3 },
-  'project-link-card': { eyebrow: 'PROJECT TYPE', title: 'Project title', description: 'A short description of the project and its value.', actionLabel: 'Explore project', href: '#', variant: 'neutral' },
+  'project-link-card': { eyebrow: 'PROJECT TYPE', iconSrc: '', iconAlt: '', iconSize: '24', title: 'Project title', description: 'A short description of the project and its value.', actionLabel: 'Explore project', href: '#', variant: 'neutral' },
   'case-study-card': { eyebrow: 'CASE STUDY', title: 'Case study title', description: 'A concise summary of the work.', highlights: 'Research | Understand user needs\nDesign | Explore and test solutions\nDelivery | Ship the experience', date: '2026', role: 'Product design', variant: 'default', actionLabel: 'Explore', href: '#' },
   'structured-list': { items: 'Discover | Understand the offer\nExplore | Review the available options\nContinue | Take the next step', ordered: 'true' },
   'image-caption': { src: 'https://placehold.co/1200x800?text=Preview+image', alt: 'Describe the image', caption: 'Image caption', ratio: 'landscape', width: 'full' },
@@ -108,10 +110,19 @@ function renderNode(node: BuilderNode): string {
       return `<a class="jakpot-button jakpot-button--${esc(val(node, 'variant', 'primary'))}" href="${esc(val(node, 'href', '#'))}">${esc(val(node, 'label', 'Action'))}</a>`;
     case 'tag':
       return `<span class="jakpot-tag jakpot-tag--${esc(val(node, 'variant', 'default'))}">${esc(val(node, 'label', 'Category'))}</span>`;
+    case 'icon': {
+      const src = val(node, 'src');
+      return src ? `<img class="jakpot-icon jakpot-icon--${esc(val(node, 'size', '20'))}" src="${esc(src)}" alt="${esc(val(node, 'alt'))}">` : '<!-- Add an image source to display the icon. -->';
+    }
     case 'grid':
       return `<div class="jakpot-grid jakpot-grid--columns-${esc(val(node, 'columns', '2'))} jakpot-grid--gap-${esc(val(node, 'gap', '3'))}">${children || '<!-- Add child elements to this grid. -->'}</div>`;
-    case 'project-link-card':
-      return `<article class="jakpot-project-link-card jakpot-project-link-card--${esc(val(node, 'variant', 'neutral'))}"><div class="jakpot-project-link-card__top"><p class="jakpot-project-link-card__eyebrow">${esc(val(node, 'eyebrow'))}</p><h3 class="jakpot-typography jakpot-typography--card-heading jakpot-project-link-card__title">${esc(val(node, 'title'))}</h3><p class="jakpot-typography jakpot-typography--card-description jakpot-project-link-card__description">${esc(val(node, 'description'))}</p></div><div class="jakpot-project-link-card__action"><a class="jakpot-button jakpot-button--primary" href="${esc(val(node, 'href', '#'))}">${esc(val(node, 'actionLabel', 'Explore project'))}</a></div></article>`;
+    case 'project-link-card': {
+      const variant = val(node, 'variant', 'neutral');
+      const topMeta = variant === 'icon'
+        ? (val(node, 'iconSrc') ? `<img class="jakpot-icon jakpot-icon--${esc(val(node, 'iconSize', '24'))} jakpot-project-link-card__icon" src="${esc(val(node, 'iconSrc'))}" alt="${esc(val(node, 'iconAlt'))}">` : '')
+        : `<p class="jakpot-project-link-card__eyebrow">${esc(val(node, 'eyebrow'))}</p>`;
+      return `<article class="jakpot-project-link-card jakpot-project-link-card--${esc(variant)}"><div class="jakpot-project-link-card__top">${topMeta}<h3 class="jakpot-typography jakpot-typography--card-heading jakpot-project-link-card__title">${esc(val(node, 'title'))}</h3><p class="jakpot-typography jakpot-typography--card-description jakpot-project-link-card__description">${esc(val(node, 'description'))}</p></div><div class="jakpot-project-link-card__action"><a class="jakpot-button jakpot-button--primary" href="${esc(val(node, 'href', '#'))}">${esc(val(node, 'actionLabel', 'Explore project'))}</a></div></article>`;
+    }
     case 'case-study-card': {
       const highlights = val(node, 'highlights').split('\n').filter(Boolean).map((line) => {
         const [heading, ...rest] = line.split('|');
@@ -273,8 +284,9 @@ ${html}
             {selected.type === 'typography' && <>{field('Text', 'text', undefined, 'textarea')}{field('Typography style', 'variant', ['hero-heading', 'section-heading', 'card-heading', 'hero-subheading', 'section-subheading', 'description-large', 'description-medium', 'card-description', 'image-caption', 'eyebrow'])}{field('Alignment', 'align', ['left', 'center'])}{field('Text width', 'width', ['full', 'wide', 'narrow'])}</>}
             {selected.type === 'button' && <>{field('Label', 'label')}{field('Link URL', 'href')}{field('Style', 'variant', ['primary', 'secondary', 'tertiary'])}</>}
             {selected.type === 'tag' && <>{field('Label', 'label')}{field('Style', 'variant', ['default', 'accent', 'inverse'])}</>}
+            {selected.type === 'icon' && <>{field('Image source', 'src')}{field('Alt text', 'alt')}{field('Size', 'size', ['16', '18', '20', '24', '32'])}</>}
             {selected.type === 'grid' && <>{field('Columns', 'columns', ['1', '2', '3'])}{field('Gap', 'gap', ['1', '2', '3', '4', '5', '6'])}</>}
-            {selected.type === 'project-link-card' && <>{field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Action label', 'actionLabel')}{field('Link URL', 'href')}{field('Card style', 'variant', ['neutral', 'inverse'])}</>}
+            {selected.type === 'project-link-card' && <>{field('Card style', 'variant', ['neutral', 'inverse', 'icon'])}{val(selected, 'variant', 'neutral') === 'icon' ? <>{field('Icon image source', 'iconSrc')}{field('Icon alt text', 'iconAlt')}{field('Icon size', 'iconSize', ['16', '18', '20', '24', '32'])}</> : field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Action label', 'actionLabel')}{field('Link URL', 'href')}</>}
             {selected.type === 'case-study-card' && <>{field('Card variant', 'variant', ['default', 'outcome'])}{field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Explore label', 'actionLabel')}{field('Explore URL', 'href')}{field('Highlights (Heading | description per line)', 'highlights', undefined, 'textarea')}{val(selected, 'variant', 'default') !== 'outcome' && <>{field('Date', 'date')}{field('Role', 'role')}</>}</>}
             {selected.type === 'structured-list' && <>{field('Items (Title | description per line)', 'items', undefined, 'textarea')}{field('Numbering', 'ordered', ['true', 'false'])}</>}
             {selected.type === 'image-caption' && <>{field('Image URL', 'src')}{field('Alt text', 'alt')}{field('Caption', 'caption')}{field('Aspect ratio', 'ratio', ['landscape', 'square', 'auto'])}{field('Image width', 'width', ['full', 'wide', 'narrow'])}</>}

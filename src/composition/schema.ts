@@ -8,7 +8,7 @@ export const compositionSchema = {
     label: 'Section',
     acceptsChildren: true,
     allowedChildren: [
-      'section-header', 'description-group', 'typography', 'button', 'tag',
+      'section-header', 'description-group', 'typography', 'button', 'tag', 'icon', 'icon',
       'grid', 'project-link-card', 'case-study-card', 'structured-list',
       'image-caption', 'project-image-grid', 'skeleton',
     ],
@@ -18,6 +18,7 @@ export const compositionSchema = {
   typography: { label: 'Typography / text', acceptsChildren: false, allowedChildren: [] },
   button: { label: 'Button', acceptsChildren: false, allowedChildren: [] },
   tag: { label: 'Tag', acceptsChildren: false, allowedChildren: [] },
+  icon: { label: 'Icon', acceptsChildren: false, allowedChildren: [] },
   grid: {
     label: 'Grid',
     acceptsChildren: true,

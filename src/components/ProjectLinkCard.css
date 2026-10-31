@@ -101,3 +101,11 @@
 .project-link-card--inverse .button-primary:hover:not(:disabled) {
   background: var(--amber-100);
 }
+
+
+.project-link-card--icon {
+  color: var(--color-text-primary);
+  background: var(--color-bg-raised);
+}
+
+.project-link-card__icon { flex-shrink: 0; }
