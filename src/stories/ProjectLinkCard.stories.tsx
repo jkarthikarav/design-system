@@ -134,7 +134,7 @@ showButton: false,
 export const Icon: Story = {
   args: {
     variant: 'icon',
-    iconSrc: '/icons/your-icon.svg',
+    iconSrc: '',
     iconAlt: 'Project icon',
     iconSize: '24',
     title: 'Project title',
