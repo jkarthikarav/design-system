@@ -39,15 +39,15 @@ export function ProjectLinkCard({
   return (
     <article className={classes}>
       <div className="project-link-card__top">
-        {logoSrc ? (
+        {variant === 'icon' ? (
+          iconSrc ? <Icon className="project-link-card__icon" src={iconSrc} alt={iconAlt} size={iconSize} /> : null
+        ) : logoSrc ? (
           <img
             className="project-link-card__logo"
             src={logoSrc}
             alt={logoAlt}
           />
-        ) : variant === 'icon' && iconSrc ? (
-          <Icon className="project-link-card__icon" src={iconSrc} alt={iconAlt} size={iconSize} />
-        ) : eyebrow && variant !== 'icon' ? (
+        ) : eyebrow ? (
           <span className="project-link-card__eyebrow">
             {eyebrow}
           </span>
