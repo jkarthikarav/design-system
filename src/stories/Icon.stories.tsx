@@ -17,7 +17,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  args: { src: '/icons/your-icon.svg', alt: 'Icon description', size: '20' },
+  args: { src: '', alt: 'Icon description', size: '20' },
 };
 
 export const SizeScale: Story = {
@@ -31,5 +31,5 @@ export const SizeScale: Story = {
       ))}
     </div>
   ),
-  args: { src: '/icons/your-icon.svg', alt: 'Icon size comparison' },
+  args: { src: '', alt: 'Icon size comparison' },
 };
