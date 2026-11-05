@@ -13,7 +13,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary', 'accent'],
+      options: ['primary', 'secondary', 'tertiary'],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -27,12 +27,6 @@ export const Primary: Story = {};
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-  },
-};
-
-export const Accent: Story = {
-  args: {
-    variant: 'accent',
   },
 };
 

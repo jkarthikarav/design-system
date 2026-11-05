@@ -528,18 +528,6 @@
   box-shadow: var(--jakpot-shadow-2);
 }
 
-/* Accent */
-.jakpot-root .jakpot-button-accent,.jakpot-root .jakpot-button--accent{
-  color: var(--jakpot-color-action-primary);
-  background: var(--jakpot-color-action-accent);
-  box-shadow: var(--jakpot-shadow-1);
-}
-
-.jakpot-root .jakpot-button-accent:hover:not(:disabled),.jakpot-root .jakpot-button--accent:hover:not(:disabled){
-  background: var(--jakpot-amber-100);
-  box-shadow: var(--jakpot-shadow-2);
-}
-
 /* Secondary */
 .jakpot-root .jakpot-button-secondary,.jakpot-root .jakpot-button--secondary{
   color: var(--jakpot-color-action-primary);
