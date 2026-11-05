@@ -66,6 +66,20 @@
   box-shadow: var(--shadow-2);
 }
 
+/* Accent */
+.button-accent,
+.button--accent {
+  color: var(--color-action-primary);
+  background: var(--color-action-accent);
+  box-shadow: var(--shadow-1);
+}
+
+.button-accent:hover:not(:disabled),
+.button--accent:hover:not(:disabled) {
+  background: var(--amber-100);
+  box-shadow: var(--shadow-2);
+}
+
 /* Secondary */
 .button-secondary,
 .button--secondary {
