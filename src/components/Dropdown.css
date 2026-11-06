@@ -25,6 +25,10 @@
   transform: rotate(180deg);
 }
 
+.jakpot-dropdown__panel[hidden] {
+  display: none;
+}
+
 .jakpot-dropdown__panel {
   position: absolute;
   top: calc(100% + 8px);
