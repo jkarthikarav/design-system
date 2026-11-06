@@ -16,8 +16,6 @@ const config: StorybookConfig = {
     '../src/stories/SectionHeader.stories.tsx',
     '../src/stories/StructuredList.stories.tsx',
     '../src/stories/Tag.stories.tsx',
-    '../src/stories/Typography.stories.tsx',
-    '../src/composition/schema.stories.tsx',
   ],
   addons: [
     '@chromatic-com/storybook',
