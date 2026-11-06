@@ -1,0 +1,20 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Accessibility" />
+
+<div className="jakpot-landing jakpot-landing--subpage">
+  <header className="jakpot-landing__intro">
+    <h1>Accessibility</h1>
+    <p className="jakpot-landing__lead">Accessibility is part of how JAKpot components and styles should be used.</p>
+    <a className="jakpot-landing__back" href="?path=/docs/foundations--docs">← Back to Foundations</a>
+  </header>
+  <section className="jakpot-landing__section">
+    <dl className="jakpot-landing__token-list">
+  <div><dt>Keyboard focus</dt><dd>Interactive elements receive a visible focus outline.</dd></div>
+  <div><dt>Reduced motion</dt><dd>Motion is reduced when a visitor has enabled the operating-system preference.</dd></div>
+  <div><dt>Skip link utility</dt><dd>The public stylesheet includes a <code>jakpot-skip-link</code> utility for pages that implement a skip-to-content link.</dd></div>
+  <div><dt>Visually hidden utility</dt><dd>The public stylesheet includes a <code>jakpot-visually-hidden</code> utility for text that should remain available to assistive technology without being visually displayed.</dd></div>
+</dl>
+<p className="jakpot-landing__supporting">The skip-link and visually hidden utilities are stylesheet helpers; they are not controls or features currently exposed in the Builder. Pages using JAKpot should still provide meaningful headings, labels, alternative text, and keyboard-operable interactions.</p>
+  </section>
+</div>
