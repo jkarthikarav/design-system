@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import './Dropdown.css';
+import { Button } from './Button';
 
 export type DropdownVariant = 'multi-select' | 'single-select';
 export type DropdownValue = string | string[];
@@ -70,9 +71,10 @@ export function Dropdown({
 
   return (
     <div className={`jakpot-dropdown jakpot-dropdown--${variant} ${className}`.trim()} ref={rootRef}>
-      <button
+      <Button
         type="button"
-        className="jakpot-dropdown__trigger button button-secondary"
+        variant="secondary"
+        className="jakpot-dropdown__trigger"
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((current) => !current)}
@@ -81,7 +83,7 @@ export function Dropdown({
         <svg className="jakpot-dropdown__chevron" viewBox="0 0 16 16" aria-hidden="true">
           <path d="m3.5 6 4.5 4 4.5-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-      </button>
+      </Button>
       <div className="jakpot-dropdown__panel" id={id} hidden={!open}>
           {variant === 'multi-select' && (
             <div className="jakpot-dropdown__actions">
