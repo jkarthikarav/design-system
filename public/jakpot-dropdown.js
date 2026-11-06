@@ -4,6 +4,7 @@
   function create({ label, options = [], variant = 'single-select', value, onChange = function () {}, placeholder = 'Select an option' }) {
     const multi = variant === 'multi-select';
     let selected = multi ? [...(Array.isArray(value) ? value : [])] : (typeof value === 'string' ? value : '');
+    let disabledOptions = new Set();
     const root = document.createElement('div');
     root.className = 'jakpot-dropdown jakpot-dropdown--' + variant;
 
@@ -54,6 +55,7 @@
       optionButtons.forEach(({ button, option }) => {
         const active = multi ? selected.includes(option) : selected === option;
         button.classList.toggle('is-selected', active);
+        button.disabled = disabledOptions.has(option);
         button.setAttribute('aria-pressed', String(active));
       });
       updateSummary();
@@ -136,7 +138,7 @@
         availableOptions.forEach((option) => {
           const button = document.createElement('button');
           button.type = 'button';
-          button.className = 'jakpot-dropdown__option';
+          button.className = 'jakpot-dropdown__option' + (multi ? ' jakpot-dropdown__option--tag' : '');
           button.textContent = option;
           button.setAttribute('aria-pressed', 'false');
           button.addEventListener('click', () => {
@@ -154,6 +156,10 @@
           selected = '';
           onChange('');
         }
+        renderOptions();
+      },
+      setDisabledOptions: (nextOptions) => {
+        disabledOptions = new Set(Array.isArray(nextOptions) ? nextOptions : []);
         renderOptions();
       },
       close,
