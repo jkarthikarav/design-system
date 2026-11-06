@@ -1494,7 +1494,7 @@
    ========================================================== */
 .jakpot-root .jakpot-dropdown{position:relative;display:inline-flex;min-width:0;font-family:var(--jakpot-font-body)}
 .jakpot-root .jakpot-dropdown__trigger{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;min-width:150px;text-align:left}
-.jakpot-root .jakpot-dropdown__chevron{width:16px;height:16px;flex:0 0 auto;transition:transform 140ms ease}
+.jakpot-root .jakpot-dropdown__chevron{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:0 0 auto;font-size:18px;line-height:1;transition:transform 140ms ease}
 .jakpot-root .jakpot-dropdown__trigger[aria-expanded="true"] .jakpot-dropdown__chevron{transform:rotate(180deg)}
 .jakpot-root .jakpot-dropdown__panel{position:absolute;top:calc(100% + 8px);left:0;z-index:30;width:max-content;min-width:240px;max-width:min(360px,calc(100vw - 32px));max-height:340px;overflow-y:auto;padding:12px;color:var(--jakpot-color-text-primary);background:var(--jakpot-color-bg-raised);border:1px solid var(--jakpot-color-border-subtle);border-radius:var(--jakpot-radius-md);box-shadow:var(--jakpot-shadow-2)}
 .jakpot-root .jakpot-dropdown__panel[hidden]{display:none}
