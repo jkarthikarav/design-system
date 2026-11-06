@@ -70,15 +70,11 @@
     if (multi) {
       const actions = document.createElement('div');
       actions.className = 'jakpot-dropdown__actions';
-      const selectAll = document.createElement('button');
-      selectAll.type = 'button';
-      selectAll.textContent = 'Select all';
-      selectAll.addEventListener('click', () => updateValue(availableOptions));
       const unselectAll = document.createElement('button');
       unselectAll.type = 'button';
       unselectAll.textContent = 'Unselect all';
       unselectAll.addEventListener('click', () => updateValue([]));
-      actions.append(selectAll, unselectAll);
+      actions.appendChild(unselectAll);
       panel.appendChild(actions);
     }
 
