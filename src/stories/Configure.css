@@ -40,3 +40,10 @@
 .jakpot-landing *::after {
   border: 0 !important;
 }
+
+.jakpot-landing__foundation-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px;max-width:900px}
+.jakpot-landing__foundation-links .button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:var(--color-text-inverse);font-family:inherit;font-size:14px;font-weight:600;line-height:1.2;padding:13px 18px;border-radius:5px}
+.jakpot-landing__foundation-links .button-primary{background:var(--color-action-primary)}
+.jakpot-landing__foundation-links .button-primary:hover{background:var(--color-action-primary-hover)}
+.jakpot-landing__back{display:inline-block;margin-top:2px;color:var(--color-text-primary);font-size:14px;font-weight:600}
+.jakpot-landing--subpage .jakpot-landing__section{padding-top:8px}
