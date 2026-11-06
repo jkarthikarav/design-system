@@ -25,7 +25,7 @@
 @media(max-width:600px){.jakpot-landing{padding-top:4px}.jakpot-landing__lead{font-size:16px}.jakpot-landing__contents{gap:12px 18px}.jakpot-landing__section{padding:32px 0}}
 
 
-.jakpot-landing__table-wrap{width:100%;overflow-x:auto;margin:20px 0 0}
+.jakpot-landing__table-wrap{width:100%;overflow-x:auto;margin:20px 0 36px}
 .jakpot-landing__color-table{width:100%;border-collapse:collapse;text-align:left;font-size:14px;line-height:1.6}
 .jakpot-landing__color-table th,.jakpot-landing__color-table td{padding:14px 16px;vertical-align:top}
 .jakpot-landing__color-table thead th{font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--color-text-primary)}
