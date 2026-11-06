@@ -6,6 +6,11 @@ const meta = {
   component: StructuredList,
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component: '**Making a list item keyboard-focusable with internal links**\n\nIf an item needs to participate in DOM-order keyboard navigation, add the `domorder` class and `tabIndex={0}` to its `<li>`. Put individual links inside the item content; do not wrap the entire list item or row in an `<a>` element.\n\n```tsx\n<li className="structured-list__item domorder" tabIndex={0}>\n  <div className="structured-list__row">\n    <span className="structured-list__index" aria-hidden="true">01</span>\n    <span className="structured-list__content">\n      <span className="structured-list__title">Resource title</span>\n      <span className="structured-list__description">\n        Read the <a href="/resource">resource details</a> or <a href="/contact">contact the team</a>.\n      </span>\n    </span>\n  </div>\n</li>\n```',
+      },
+    },
   },
 } satisfies Meta<typeof StructuredList>;
 

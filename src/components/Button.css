@@ -91,3 +91,17 @@
 .button--tertiary:hover:not(:disabled) {
   background: var(--color-bg-subtle);
 }
+
+/* Danger */
+.button-danger,
+.button--danger {
+  color: var(--neutral-0);
+  background: var(--color-status-error);
+  box-shadow: var(--shadow-1);
+}
+
+.button-danger:hover:not(:disabled),
+.button--danger:hover:not(:disabled) {
+  filter: brightness(0.9);
+  box-shadow: var(--shadow-2);
+}

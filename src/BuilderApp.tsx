@@ -15,7 +15,6 @@ const elementOptions: { value: ElementType; label: string; group: string }[] = [
   { value: 'description-group', label: 'Description group', group: 'Content' },
   { value: 'typography', label: 'Typography / text', group: 'Content' },
   { value: 'grid', label: 'Grid', group: 'Structure' },
-  { value: 'button', label: 'Button', group: 'Actions' },
   { value: 'tag', label: 'Tag', group: 'Content' },
   { value: 'icon', label: 'Icon', group: 'Media' },
   { value: 'project-link-card', label: 'Project link card', group: 'Cards' },
@@ -31,7 +30,6 @@ const starterProps: Record<ElementType, NodeProps> = {
   'section-header': { eyebrow: 'SECTION EYEBROW', title: 'Section heading', description: 'A separate description belonging to the section header.', variant: 'with-description' },
   'description-group': { lead: 'A leading statement for this content group.', supporting: 'Supporting description for this group.\nA second independent supporting paragraph.', width: 'wide' },
   typography: { text: 'Write your text here.', variant: 'description-medium', align: 'left', width: 'full' },
-  button: { label: 'Primary action', href: '#', variant: 'primary' },
   tag: { label: 'Category', variant: 'default' },
   icon: { src: '', alt: '', size: '20' },
   grid: { columns: 2, gap: 3 },
@@ -87,6 +85,10 @@ function typography(text: string, variant: string, align = 'left', width = 'full
   const tag = ['hero-heading', 'section-heading'].includes(safeVariant) ? (safeVariant === 'hero-heading' ? 'h1' : 'h2') : safeVariant === 'card-heading' ? 'h3' : 'p';
   return `<${tag} class="jakpot-typography jakpot-typography--${safeVariant} jakpot-typography--${className(align)} jakpot-typography--width-${className(width)}">${esc(text)}</${tag}>`;
 }
+function renderSlotButton(node: BuilderNode, prefix: string) {
+  if (val(node, `${prefix}Enabled`) !== 'true') return '';
+  return `<a class="jakpot-button jakpot-button--${esc(val(node, `${prefix}Variant`, 'primary'))}" href="${esc(val(node, `${prefix}Href`, '#'))}">${esc(val(node, `${prefix}Label`, 'Action'))}</a>`;
+}
 function transformSkeleton(raw: string) {
   return raw.replace(/class="([^"]+)"/g, (_match, classes: string) =>
     'class="' + classes.split(/\s+/).map((name) => name.startsWith('jakpot-') ? name : 'jakpot-' + name).join(' ') + '"');
@@ -99,15 +101,17 @@ function renderNode(node: BuilderNode): string {
     case 'section-header': {
       const variant = val(node, 'variant', 'with-description');
       const eyebrow = variant === 'with-description' && val(node, 'eyebrow') ? typography(val(node, 'eyebrow'), 'eyebrow') : '';
-      const description = variant !== 'title-only' && val(node, 'description') ? `<div class="jakpot-section-header__description">${typography(val(node, 'description'), 'description-medium')}</div>` : '';
-      return `<header class="jakpot-section-header jakpot-section-header--${esc(variant)}"><div class="jakpot-section-header__main">${eyebrow}${typography(val(node, 'title', 'Section heading'), 'section-heading')}</div>${description}</header>`;
+      const afterHeading = renderSlotButton(node, 'buttonAfterHeading');
+      const afterDescription = renderSlotButton(node, 'buttonAfterDescription');
+      const description = variant !== 'title-only' && val(node, 'description')
+        ? `<div class="jakpot-section-header__description">${typography(val(node, 'description'), 'description-medium')}${afterDescription}</div>`
+        : '';
+      return `<header class="jakpot-section-header jakpot-section-header--${esc(variant)}"><div class="jakpot-section-header__main">${eyebrow}${typography(val(node, 'title', 'Section heading'), 'section-heading')}${afterHeading}</div>${description}</header>`;
     }
     case 'description-group':
-      return `<div class="jakpot-description-group jakpot-description-group--${esc(val(node, 'width', 'wide'))}">${typography(val(node, 'lead'), 'description-large')}<div class="jakpot-description-group__supporting">${val(node, 'supporting').split('\n').filter(Boolean).map((line) => typography(line, 'description-medium')).join('')}</div></div>`;
+      return `<div class="jakpot-description-group jakpot-description-group--${esc(val(node, 'width', 'wide'))}">${typography(val(node, 'lead'), 'description-large')}${renderSlotButton(node, 'buttonBetweenLeadAndSupporting')}<div class="jakpot-description-group__supporting">${val(node, 'supporting').split('\n').filter(Boolean).map((line) => typography(line, 'description-medium')).join('')}</div></div>`;
     case 'typography':
       return typography(val(node, 'text'), val(node, 'variant', 'description-medium'), val(node, 'align', 'left'), val(node, 'width', 'full'));
-    case 'button':
-      return `<a class="jakpot-button jakpot-button--${esc(val(node, 'variant', 'primary'))}" href="${esc(val(node, 'href', '#'))}">${esc(val(node, 'label', 'Action'))}</a>`;
     case 'tag':
       return `<span class="jakpot-tag jakpot-tag--${esc(val(node, 'variant', 'default'))}">${esc(val(node, 'label', 'Category'))}</span>`;
     case 'icon': {
@@ -224,6 +228,17 @@ ${html}
     const link = document.createElement('a');
     link.href = url; link.download = 'jakpot-component.html'; link.click(); URL.revokeObjectURL(url);
   };
+  const checkboxField = (label: string, key: string) => selected ? (
+    <label className="builder-checkbox-field" key={key}>
+      <input type="checkbox" checked={val(selected, key) === 'true'} onChange={(event) => setProp(key, event.target.checked ? 'true' : 'false')} />
+      <span>{label}</span>
+    </label>
+  ) : null;
+  const slotFields = (prefix: string) => <>
+    {field('Button label', `${prefix}Label`)}
+    {field('Button URL', `${prefix}Href`)}
+    {field('Button style', `${prefix}Variant`, ['primary', 'secondary', 'tertiary', 'danger'])}
+  </>;
   const field = (label: string, key: string, options?: string[], kind: 'input' | 'textarea' = 'input') => {
     if (!selected) return null;
     const value = val(selected, key);
@@ -279,10 +294,9 @@ ${html}
           {selected ? <div className="builder-selected-controls">
             <div className="builder-section-heading"><div><p className="builder-eyebrow">SELECTED ELEMENT</p><h2>{nodeLabel(selected)}</h2></div><button className="builder-reset" onClick={() => setNodes((old) => updateInTree(old, selected.id, (node) => ({ ...node, props: { ...starterProps[node.type] } })))}>Reset</button></div>
             {selected.type === 'section' && <>{field('Background', 'background', ['beige', 'white'])}{field('Content width', 'width', ['full', 'wide', 'narrow'])}</>}
-            {selected.type === 'section-header' && <>{field('Eyebrow', 'eyebrow')}{field('Heading', 'title')}{field('Header description', 'description', undefined, 'textarea')}{field('Header layout', 'variant', ['with-description', 'without-eyebrow', 'title-only'])}<p className="builder-field-note">This description belongs only to the SectionHeader. DescriptionGroup content is edited independently.</p></>}
-            {selected.type === 'description-group' && <>{field('Leading text', 'lead', undefined, 'textarea')}{field('Supporting descriptions (one per line)', 'supporting', undefined, 'textarea')}{field('Content width', 'width', ['wide', 'narrow'])}</>}
+            {selected.type === 'section-header' && <>{field('Eyebrow', 'eyebrow')}{field('Heading', 'title')}{field('Header description', 'description', undefined, 'textarea')}{field('Header layout', 'variant', ['with-description', 'without-eyebrow', 'title-only'])}<p className="builder-field-note">This description belongs only to the SectionHeader. DescriptionGroup content is edited independently.</p><div className="builder-slot-controls"><p className="builder-field-note">Optional buttons</p>{checkboxField('Add button below heading', 'buttonAfterHeadingEnabled')}{val(selected, 'buttonAfterHeadingEnabled') === 'true' && slotFields('buttonAfterHeading')}{checkboxField('Add button below description', 'buttonAfterDescriptionEnabled')}{val(selected, 'buttonAfterDescriptionEnabled') === 'true' && slotFields('buttonAfterDescription')}</div></>}
+            {selected.type === 'description-group' && <>{field('Leading text', 'lead', undefined, 'textarea')}{field('Supporting descriptions (one per line)', 'supporting', undefined, 'textarea')}{field('Content width', 'width', ['wide', 'narrow'])}<div className="builder-slot-controls"><p className="builder-field-note">Optional button</p>{checkboxField('Add button between leading and supporting text', 'buttonBetweenLeadAndSupportingEnabled')}{val(selected, 'buttonBetweenLeadAndSupportingEnabled') === 'true' && slotFields('buttonBetweenLeadAndSupporting')}</div></>}
             {selected.type === 'typography' && <>{field('Text', 'text', undefined, 'textarea')}{field('Typography style', 'variant', ['hero-heading', 'section-heading', 'card-heading', 'hero-subheading', 'section-subheading', 'description-large', 'description-medium', 'card-description', 'image-caption', 'eyebrow'])}{field('Alignment', 'align', ['left', 'center'])}{field('Text width', 'width', ['full', 'wide', 'narrow'])}</>}
-            {selected.type === 'button' && <>{field('Label', 'label')}{field('Link URL', 'href')}{field('Style', 'variant', ['primary', 'secondary', 'tertiary'])}</>}
             {selected.type === 'tag' && <>{field('Label', 'label')}{field('Style', 'variant', ['default', 'accent', 'inverse'])}</>}
             {selected.type === 'icon' && <>{field('Image source', 'src')}{field('Alt text', 'alt')}{field('Size', 'size', ['16', '18', '20', '24', '32'])}</>}
             {selected.type === 'grid' && <>{field('Columns', 'columns', ['1', '2', '3'])}{field('Gap', 'gap', ['1', '2', '3', '4', '5', '6'])}</>}

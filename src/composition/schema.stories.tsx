@@ -31,6 +31,11 @@ export const AllowedComposition: Story = {
           ) : (
             <p style={{ margin: 0 }}>Leaf element — cannot contain children.</p>
           )}
+          {'optionalSlots' in component && component.optionalSlots.length > 0 && (
+            <p style={{ margin: '6px 0 0' }}>
+              Optional Builder slots: {component.optionalSlots.map((slot) => slot.label).join(', ')}
+            </p>
+          )}
         </section>
       ))}
     </div>

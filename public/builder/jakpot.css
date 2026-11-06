@@ -550,6 +550,18 @@
   background: var(--jakpot-color-bg-subtle);
 }
 
+/* Danger */
+.jakpot-root .jakpot-button-danger,.jakpot-root .jakpot-button--danger{
+  color: var(--jakpot-neutral-0);
+  background: var(--jakpot-color-status-error);
+  box-shadow: var(--jakpot-shadow-1);
+}
+
+.jakpot-root .jakpot-button-danger:hover:not(:disabled),.jakpot-root .jakpot-button--danger:hover:not(:disabled){
+  filter: brightness(0.9);
+  box-shadow: var(--jakpot-shadow-2);
+}
+
 /* ==========================================================
    COMPONENT · Tag
    ========================================================== */

@@ -8,22 +8,32 @@ export const compositionSchema = {
     label: 'Section',
     acceptsChildren: true,
     allowedChildren: [
-      'section-header', 'description-group', 'typography', 'button', 'tag', 'icon', 'icon',
+      'section-header', 'description-group', 'typography', 'tag', 'icon',
       'grid', 'project-link-card', 'case-study-card', 'structured-list',
       'image-caption', 'project-image-grid', 'skeleton',
     ],
   },
-  'section-header': { label: 'Section header', acceptsChildren: false, allowedChildren: [] },
-  'description-group': { label: 'Description group', acceptsChildren: false, allowedChildren: [] },
+  'section-header': {
+    label: 'Section header', acceptsChildren: false, allowedChildren: [],
+    optionalSlots: [
+      { key: 'buttonAfterHeading', label: 'Button below heading' },
+      { key: 'buttonAfterDescription', label: 'Button below description' },
+    ],
+  },
+  'description-group': {
+    label: 'Description group', acceptsChildren: false, allowedChildren: [],
+    optionalSlots: [
+      { key: 'buttonBetweenLeadAndSupporting', label: 'Button between leading and supporting text' },
+    ],
+  },
   typography: { label: 'Typography / text', acceptsChildren: false, allowedChildren: [] },
-  button: { label: 'Button', acceptsChildren: false, allowedChildren: [] },
   tag: { label: 'Tag', acceptsChildren: false, allowedChildren: [] },
   icon: { label: 'Icon', acceptsChildren: false, allowedChildren: [] },
   grid: {
     label: 'Grid',
     acceptsChildren: true,
     allowedChildren: [
-      'description-group', 'typography', 'button', 'tag',
+      'description-group', 'typography', 'tag',
       'project-link-card', 'case-study-card', 'structured-list', 'image-caption',
       'skeleton',
     ],

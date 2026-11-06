@@ -13,7 +13,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary'],
+      options: ['primary', 'secondary', 'tertiary', 'danger'],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -33,6 +33,13 @@ export const Secondary: Story = {
 export const Tertiary: Story = {
   args: {
     variant: 'tertiary',
+  },
+};
+
+export const Danger: Story = {
+  args: {
+    children: 'Reset',
+    variant: 'danger',
   },
 };
 
