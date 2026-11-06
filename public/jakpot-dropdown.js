@@ -13,10 +13,21 @@
     trigger.setAttribute('aria-expanded', 'false');
 
     const summary = document.createElement('span');
-    const chevron = document.createElement('span');
-    chevron.className = 'jakpot-dropdown__chevron';
+    const chevron = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    chevron.setAttribute('class', 'jakpot-dropdown__chevron');
+    chevron.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    chevron.setAttribute('width', '18');
+    chevron.setAttribute('height', '18');
+    chevron.setAttribute('viewBox', '0 0 24 24');
+    chevron.setAttribute('fill', 'none');
+    chevron.setAttribute('stroke', 'currentColor');
+    chevron.setAttribute('stroke-width', '2');
+    chevron.setAttribute('stroke-linecap', 'round');
+    chevron.setAttribute('stroke-linejoin', 'round');
     chevron.setAttribute('aria-hidden', 'true');
-    chevron.textContent = '⌄';
+    const chevronPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    chevronPath.setAttribute('d', 'm6 9 6 6 6-6');
+    chevron.appendChild(chevronPath);
     trigger.append(summary, chevron);
 
     const panel = document.createElement('div');
