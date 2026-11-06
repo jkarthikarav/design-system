@@ -72,7 +72,7 @@ export function Dropdown({
     <div className={`jakpot-dropdown jakpot-dropdown--${variant} ${className}`.trim()} ref={rootRef}>
       <button
         type="button"
-        className="jakpot-dropdown__trigger jakpot-button jakpot-button--secondary"
+        className="jakpot-dropdown__trigger button button-secondary"
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((current) => !current)}
