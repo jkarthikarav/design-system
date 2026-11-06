@@ -1503,6 +1503,7 @@
 .jakpot-root .jakpot-dropdown__options{display:flex;flex-direction:column;align-items:stretch;gap:4px}
 .jakpot-root .jakpot-dropdown--multi-select .jakpot-dropdown__options{flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:8px}
 .jakpot-root .jakpot-dropdown__option{width:100%;padding:9px 10px;color:var(--jakpot-color-text-primary);background:transparent;border:0;border-radius:var(--jakpot-radius-sm);font-family:var(--jakpot-font-body);font-size:var(--jakpot-font-size-200);text-align:left;cursor:pointer}
+.jakpot-root .jakpot-dropdown__option:disabled{opacity:.45;cursor:not-allowed}
 .jakpot-root .jakpot-dropdown__option:hover,.jakpot-root .jakpot-dropdown__option.is-selected{color:var(--jakpot-color-text-primary);background:var(--jakpot-color-bg-subtle)}
 .jakpot-root .jakpot-dropdown__option--tag{width:auto;padding:6px 12px;border:1px solid var(--jakpot-color-border-subtle);border-radius:var(--jakpot-radius-full);font-family:var(--jakpot-font-label);font-weight:var(--jakpot-font-weight-medium);white-space:nowrap}
 .jakpot-root .jakpot-dropdown__option--tag.is-selected{color:var(--jakpot-color-text-inverse);background:var(--jakpot-color-bg-inverse);border-color:var(--jakpot-color-bg-inverse)}
