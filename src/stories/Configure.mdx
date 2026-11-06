@@ -20,11 +20,11 @@ import { SectionHeader } from "../components/SectionHeader";
   <section className="jakpot-landing__section" id="principles">
     <SectionHeader variant="without-eyebrow" title="Design principles" description="The decisions that shape how JAKpot looks, feels, and works." />
     <ol className="jakpot-landing__principles">
-      <li style="border-top: none;"><h3>Give space to breathe</h3><p>Use spacious layouts and generous spacing to help people feel comfortable, reduce visual overload, and make content easier to take in.</p></li>
-      <li style="border-top: none;"><h3>Keep it clear</h3><p>Use concise, direct copy. Every label, heading, and description should communicate what it needs to without unnecessary wording.</p></li>
-      <li style="border-top: none;"><h3>Build a familiar rhythm</h3><p>Repeat layout patterns and component behaviours so people can recognise structure, understand what to expect, and move through experiences comfortably.</p></li>
-      <li style="border-top: none;"><h3>Design for accessibility</h3><p>Make the system usable by people with different needs, abilities, and ways of interacting.</p></li>
-      <li style="border-top: none;"><h3>Build by combining</h3><p>Treat components as mix-and-match building blocks. Combine and arrange them to create different layouts and experiences without starting from scratch.</p></li>
+      <li><h3>Give space to breathe</h3><p>Use spacious layouts and generous spacing to help people feel comfortable, reduce visual overload, and make content easier to take in.</p></li>
+      <li><h3>Keep it clear</h3><p>Use concise, direct copy. Every label, heading, and description should communicate what it needs to without unnecessary wording.</p></li>
+      <li><h3>Build a familiar rhythm</h3><p>Repeat layout patterns and component behaviours so people can recognise structure, understand what to expect, and move through experiences comfortably.</p></li>
+      <li><h3>Design for accessibility</h3><p>Make the system usable by people with different needs, abilities, and ways of interacting.</p></li>
+      <li><h3>Build by combining</h3><p>Treat components as mix-and-match building blocks. Combine and arrange them to create different layouts and experiences without starting from scratch.</p></li>
     </ol>
   </section>
 
@@ -62,9 +62,9 @@ import { SectionHeader } from "../components/SectionHeader";
       <h3>Typography</h3>
       <p>JAKpot uses three typefaces, each with a distinct role.</p>
       <dl className="jakpot-landing__token-list">
-        <div style="border-top: none;"><dt>League Spartan</dt><dd>Display type for headings.</dd></div>
-        <div style="border-top: none;"><dt>Lexend</dt><dd>Body type for paragraphs and general content.</dd></div>
-        <div style="border-top: none;"><dt>Atkinson Hyperlegible Next</dt><dd>Supporting type for labels and compact text.</dd></div>
+        <div><dt>League Spartan</dt><dd>Display type for headings.</dd></div>
+        <div><dt>Lexend</dt><dd>Body type for paragraphs and general content.</dd></div>
+        <div><dt>Atkinson Hyperlegible Next</dt><dd>Supporting type for labels and compact text.</dd></div>
       </dl>
       <p className="jakpot-landing__supporting">Typography styles include hero and section headings, card headings, subheadings, large and medium descriptions, card descriptions, and image captions. Their sizes adapt at tablet and mobile breakpoints.</p>
     </div>
@@ -86,10 +86,10 @@ import { SectionHeader } from "../components/SectionHeader";
   <section className="jakpot-landing__section" id="accessibility">
     <SectionHeader variant="without-eyebrow" title="Accessibility" description="Accessibility is part of how JAKpot components and styles should be used." />
     <dl className="jakpot-landing__token-list">
-      <div style="border-top: none;"><dt>Keyboard focus</dt><dd>Interactive elements receive a visible focus outline.</dd></div>
-      <div style="border-top: none;"><dt>Reduced motion</dt><dd>Motion is reduced when a visitor has enabled the operating-system preference.</dd></div>
-      <div style="border-top: none;"><dt>Skip link utility</dt><dd>The public stylesheet includes a <code>jakpot-skip-link</code> utility for pages that implement a skip-to-content link.</dd></div>
-      <div style="border-top: none;"><dt>Visually hidden utility</dt><dd>The public stylesheet includes a <code>jakpot-visually-hidden</code> utility for text that should remain available to assistive technology without being visually displayed.</dd></div>
+      <div><dt>Keyboard focus</dt><dd>Interactive elements receive a visible focus outline.</dd></div>
+      <div><dt>Reduced motion</dt><dd>Motion is reduced when a visitor has enabled the operating-system preference.</dd></div>
+      <div><dt>Skip link utility</dt><dd>The public stylesheet includes a <code>jakpot-skip-link</code> utility for pages that implement a skip-to-content link.</dd></div>
+      <div><dt>Visually hidden utility</dt><dd>The public stylesheet includes a <code>jakpot-visually-hidden</code> utility for text that should remain available to assistive technology without being visually displayed.</dd></div>
     </dl>
     <p className="jakpot-landing__supporting">The skip-link and visually hidden utilities are stylesheet helpers; they are not controls or features currently exposed in the Builder. Pages using JAKpot should still provide meaningful headings, labels, alternative text, and keyboard-operable interactions.</p>
   </section>
@@ -105,10 +105,10 @@ import { SectionHeader } from "../components/SectionHeader";
       <h3>Component composition</h3>
       <p>The Builder and Storybook share one composition schema. It defines which elements can contain other elements, keeping the Builder's nesting controls aligned with the supported component structure.</p>
       <dl className="jakpot-landing__token-list">
-        <div style="border-top: none;"><dt>Section</dt><dd>Can contain section headers, description groups, text, buttons, tags, icons, grids, lists, image elements, cards, and skeleton elements.</dd></div>
-        <div style="border-top: none;"><dt>Grid</dt><dd>Can contain description groups, text, buttons, tags, lists, image captions, cards, and skeleton elements.</dd></div>
-        <div style="border-top: none;"><dt>Project image grid</dt><dd>Can contain image captions and skeleton elements.</dd></div>
-        <div style="border-top: none;"><dt>Individual elements</dt><dd>Section headers, description groups, typography, buttons, tags, icons, cards, structured lists, image captions, footer, and skeleton elements do not contain child elements.</dd></div>
+        <div><dt>Section</dt><dd>Can contain section headers, description groups, text, buttons, tags, icons, grids, lists, image elements, cards, and skeleton elements.</dd></div>
+        <div><dt>Grid</dt><dd>Can contain description groups, text, buttons, tags, lists, image captions, cards, and skeleton elements.</dd></div>
+        <div><dt>Project image grid</dt><dd>Can contain image captions and skeleton elements.</dd></div>
+        <div><dt>Individual elements</dt><dd>Section headers, description groups, typography, buttons, tags, icons, cards, structured lists, image captions, footer, and skeleton elements do not contain child elements.</dd></div>
       </dl>
       <p className="jakpot-landing__supporting">When composing a layout, choose a parent container first, then add only the child elements supported by that container. The Builder uses these rules to guide valid combinations.</p>
     </div>
