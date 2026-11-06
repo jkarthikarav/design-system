@@ -37,7 +37,10 @@ export function Dropdown({
       }
     };
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false);
+      if (event.key === 'Escape') {
+        setOpen(false);
+        rootRef.current?.querySelector('button')?.focus();
+      }
     };
     document.addEventListener('pointerdown', handlePointerDown);
     document.addEventListener('keydown', handleKeyDown);
@@ -79,8 +82,7 @@ export function Dropdown({
           <path d="m3.5 6 4.5 4 4.5-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
-      {open && (
-        <div className="jakpot-dropdown__panel" id={id}>
+      <div className="jakpot-dropdown__panel" id={id} hidden={!open}>
           {variant === 'multi-select' && (
             <div className="jakpot-dropdown__actions">
               <button type="button" onClick={() => onChange([...options])}>Select all</button>
@@ -105,8 +107,7 @@ export function Dropdown({
               );
             })}
           </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 }
