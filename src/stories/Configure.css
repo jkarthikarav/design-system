@@ -37,3 +37,10 @@
 .jakpot-landing__color-table td:nth-child(2){white-space:nowrap}
 .jakpot-landing__color-table td:last-child{color:var(--color-text-secondary);min-width:320px}
 @media(max-width:600px){.jakpot-landing__color-table th,.jakpot-landing__color-table td{padding:12px 10px}.jakpot-landing__color-table td:last-child{min-width:240px}}
+/* Foundations is intentionally border-free, including component internals and pseudo-elements. */
+.jakpot-landing,
+.jakpot-landing *,
+.jakpot-landing *::before,
+.jakpot-landing *::after {
+  border: 0 !important;
+}
