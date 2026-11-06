@@ -12,6 +12,7 @@ const config: StorybookConfig = {
     '../src/stories/Button.stories.tsx',
     '../src/stories/CaseStudyCard.stories.tsx',
     '../src/stories/DescriptionGroup.stories.tsx',
+    '../src/stories/Dropdown.stories.tsx',
     '../src/stories/Footer.stories.tsx',
     '../src/stories/Grid.stories.tsx',
     '../src/stories/Icon.stories.tsx',
