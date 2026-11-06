@@ -1,0 +1,29 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Technical overview" />
+
+<div className="jakpot-landing jakpot-landing--subpage">
+  <header className="jakpot-landing__intro">
+    <h1>Technical overview</h1>
+    <p className="jakpot-landing__lead">JAKpot combines design tokens, reusable components, a public stylesheet, and shared composition rules.</p>
+    <a className="jakpot-landing__back" href="?path=/docs/foundations--docs">← Back to Foundations</a>
+  </header>
+  <section className="jakpot-landing__section">
+    <div className="jakpot-landing__subsection">
+  <h3>Using the stylesheet</h3>
+  <p>Import the public stylesheet into your project to use JAKpot's tokens, global styles, utilities, and component styles. Its styles are scoped to the <code>jakpot-root</code> class, so apply that class to the root element of the area using JAKpot.</p>
+  <pre><code>@import url("https://jkarthikarav.github.io/design-system/builder/jakpot.css");</code></pre>
+</div>
+<div className="jakpot-landing__subsection">
+  <h3>Component composition</h3>
+  <p>The Builder and Storybook share one composition schema. It defines which elements can contain other elements, keeping the Builder's nesting controls aligned with the supported component structure.</p>
+  <dl className="jakpot-landing__token-list">
+    <div><dt>Section</dt><dd>Can contain section headers, description groups, text, buttons, tags, icons, grids, lists, image elements, cards, and skeleton elements.</dd></div>
+    <div><dt>Grid</dt><dd>Can contain description groups, text, buttons, tags, lists, image captions, cards, and skeleton elements.</dd></div>
+    <div><dt>Project image grid</dt><dd>Can contain image captions and skeleton elements.</dd></div>
+    <div><dt>Individual elements</dt><dd>Section headers, description groups, typography, buttons, tags, icons, cards, structured lists, image captions, footer, and skeleton elements do not contain child elements.</dd></div>
+  </dl>
+  <p className="jakpot-landing__supporting">When composing a layout, choose a parent container first, then add only the child elements supported by that container. The Builder uses these rules to guide valid combinations.</p>
+</div>
+  </section>
+</div>
