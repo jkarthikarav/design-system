@@ -1,0 +1,59 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Tokens" />
+
+<div className="jakpot-landing jakpot-landing--subpage">
+  <header className="jakpot-landing__intro">
+    <h1>Tokens</h1>
+    <p className="jakpot-landing__lead">Tokens define the visual values used throughout JAKpot. Use semantic names to choose values by their role, rather than relying on the underlying colour or scale.</p>
+    <a className="jakpot-landing__back" href="?path=/docs/foundations--docs">← Back to Foundations</a>
+  </header>
+  <section className="jakpot-landing__section">
+    <div className="jakpot-landing__subsection">
+  <h3>Colour</h3>
+  <p>Colour tokens are organised by purpose. These are the semantic roles available in the stylesheet.</p>
+  <div className="jakpot-landing__table-wrap">
+    <table className="jakpot-landing__color-table">
+      <thead><tr><th scope="col">Name</th><th scope="col">Value</th><th scope="col">Description</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><code>color-bg-canvas</code></th><td><code>#FAFAF7</code></td><td>Warm off-white canvas for the main page background.</td></tr>
+        <tr><th scope="row"><code>color-bg-raised</code></th><td><code>#FFFFFF</code></td><td>White background for raised surfaces and content areas.</td></tr>
+        <tr><th scope="row"><code>color-bg-inverse</code></th><td><code>#1B3618</code></td><td>Deep green background for inverse or high-contrast surfaces.</td></tr>
+        <tr><th scope="row"><code>color-bg-subtle</code></th><td><code>#F1F1EB</code></td><td>Subtle neutral background for secondary surfaces and code samples.</td></tr>
+        <tr><th scope="row"><code>color-text-primary</code></th><td><code>#1B3618</code></td><td>Primary text colour for prominent content and headings.</td></tr>
+        <tr><th scope="row"><code>color-text-secondary</code></th><td><code>#4A4A43</code></td><td>Secondary text colour for supporting descriptions and less prominent content.</td></tr>
+        <tr><th scope="row"><code>color-text-inverse</code></th><td><code>#FAFAF7</code></td><td>Text colour for use on dark or inverse backgrounds.</td></tr>
+        <tr><th scope="row"><code>color-text-muted</code></th><td><code>#686960</code></td><td>Muted text for tertiary information that should remain readable.</td></tr>
+        <tr><th scope="row"><code>color-border-subtle</code></th><td><code>#E1E2D9</code></td><td>Low-contrast borders and dividers that separate content gently.</td></tr>
+        <tr><th scope="row"><code>color-border-strong</code></th><td><code>#A6A89C</code></td><td>More prominent borders and outlines where stronger separation is needed.</td></tr>
+        <tr><th scope="row"><code>color-action-primary</code></th><td><code>#1B3618</code></td><td>Primary interactive colour for buttons and other main actions.</td></tr>
+        <tr><th scope="row"><code>color-action-primary-hover</code></th><td><code>#294B25</code></td><td>Hover state for primary interactive elements.</td></tr>
+        <tr><th scope="row"><code>color-action-accent</code></th><td><code>#E8A800</code></td><td>Accent colour for emphasis and selected highlights.</td></tr>
+        <tr><th scope="row"><code>color-focus</code></th><td><code>#A66F00</code></td><td>Visible keyboard focus indicator colour.</td></tr>
+        <tr><th scope="row"><code>color-status-success</code></th><td><code>#315D2A</code></td><td>Colour for success and positive status feedback.</td></tr>
+        <tr><th scope="row"><code>color-status-warning</code></th><td><code>#765400</code></td><td>Colour for warning and cautionary status feedback.</td></tr>
+        <tr><th scope="row"><code>color-status-error</code></th><td><code>#A12B22</code></td><td>Colour for error and destructive status feedback.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div className="jakpot-landing__subsection">
+  <h3>Typography</h3>
+  <p>JAKpot uses three typefaces, each with a distinct role.</p>
+  <dl className="jakpot-landing__token-list">
+    <div><dt>League Spartan</dt><dd>Display type for headings.</dd></div>
+    <div><dt>Lexend</dt><dd>Body type for paragraphs and general content.</dd></div>
+    <div><dt>Atkinson Hyperlegible Next</dt><dd>Supporting type for labels and compact text.</dd></div>
+  </dl>
+  <p className="jakpot-landing__supporting">Typography styles include hero and section headings, card headings, subheadings, large and medium descriptions, card descriptions, and image captions. Their sizes adapt at tablet and mobile breakpoints.</p>
+</div>
+<div className="jakpot-landing__subsection">
+  <h3>Spacing and layout</h3>
+  <p>The spacing scale follows an 8px grid, from 8px through 96px. Use the scale to create consistent gaps, padding, and section spacing. Layout tokens define the content width, while Section and Grid provide reusable width, column, and responsive behaviour.</p>
+</div>
+<div className="jakpot-landing__subsection">
+  <h3>Borders, elevation, and motion</h3>
+  <p>Use the radius scale for consistent corners, the three shadow levels to establish depth, and the fast and base transition tokens for interface feedback. Reduced-motion preferences are respected by the stylesheet.</p>
+</div>
+  </section>
+</div>
