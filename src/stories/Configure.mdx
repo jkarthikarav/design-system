@@ -33,13 +33,30 @@ import { SectionHeader } from "../components/SectionHeader";
     <div className="jakpot-landing__subsection">
       <h3>Colour</h3>
       <p>Colour tokens are organised by purpose. These are the semantic roles available in the stylesheet.</p>
-      <dl className="jakpot-landing__token-list">
-        <div style="border-top: none;"><dt>Background</dt><dd><code>color-bg-canvas</code>, <code>color-bg-raised</code>, <code>color-bg-inverse</code>, <code>color-bg-subtle</code></dd></div>
-        <div style="border-top: none;"><dt>Text</dt><dd><code>color-text-primary</code>, <code>color-text-secondary</code>, <code>color-text-inverse</code>, <code>color-text-muted</code></dd></div>
-        <div style="border-top: none;"><dt>Border</dt><dd><code>color-border-subtle</code>, <code>color-border-strong</code></dd></div>
-        <div style="border-top: none;"><dt>Actions</dt><dd><code>color-action-primary</code>, <code>color-action-primary-hover</code>, <code>color-action-accent</code></dd></div>
-        <div style="border-top: none;"><dt>Focus and status</dt><dd><code>color-focus</code>, <code>color-status-success</code>, <code>color-status-warning</code>, <code>color-status-error</code></dd></div>
-      </dl>
+      <div className="jakpot-landing__table-wrap">
+        <table className="jakpot-landing__color-table">
+          <thead><tr><th scope="col">Name</th><th scope="col">Value</th><th scope="col">Description</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><code>color-bg-canvas</code></th><td><code>#FAFAF7</code></td><td>Warm off-white canvas for the main page background.</td></tr>
+            <tr><th scope="row"><code>color-bg-raised</code></th><td><code>#FFFFFF</code></td><td>White background for raised surfaces and content areas.</td></tr>
+            <tr><th scope="row"><code>color-bg-inverse</code></th><td><code>#1B3618</code></td><td>Deep green background for inverse or high-contrast surfaces.</td></tr>
+            <tr><th scope="row"><code>color-bg-subtle</code></th><td><code>#F1F1EB</code></td><td>Subtle neutral background for secondary surfaces and code samples.</td></tr>
+            <tr><th scope="row"><code>color-text-primary</code></th><td><code>#1B3618</code></td><td>Primary text colour for prominent content and headings.</td></tr>
+            <tr><th scope="row"><code>color-text-secondary</code></th><td><code>#4A4A43</code></td><td>Secondary text colour for supporting descriptions and less prominent content.</td></tr>
+            <tr><th scope="row"><code>color-text-inverse</code></th><td><code>#FAFAF7</code></td><td>Text colour for use on dark or inverse backgrounds.</td></tr>
+            <tr><th scope="row"><code>color-text-muted</code></th><td><code>#686960</code></td><td>Muted text for tertiary information that should remain readable.</td></tr>
+            <tr><th scope="row"><code>color-border-subtle</code></th><td><code>#E1E2D9</code></td><td>Low-contrast borders and dividers that separate content gently.</td></tr>
+            <tr><th scope="row"><code>color-border-strong</code></th><td><code>#A6A89C</code></td><td>More prominent borders and outlines where stronger separation is needed.</td></tr>
+            <tr><th scope="row"><code>color-action-primary</code></th><td><code>#1B3618</code></td><td>Primary interactive colour for buttons and other main actions.</td></tr>
+            <tr><th scope="row"><code>color-action-primary-hover</code></th><td><code>#294B25</code></td><td>Hover state for primary interactive elements.</td></tr>
+            <tr><th scope="row"><code>color-action-accent</code></th><td><code>#E8A800</code></td><td>Accent colour for emphasis and selected highlights.</td></tr>
+            <tr><th scope="row"><code>color-focus</code></th><td><code>#A66F00</code></td><td>Visible keyboard focus indicator colour.</td></tr>
+            <tr><th scope="row"><code>color-status-success</code></th><td><code>#315D2A</code></td><td>Colour for success and positive status feedback.</td></tr>
+            <tr><th scope="row"><code>color-status-warning</code></th><td><code>#765400</code></td><td>Colour for warning and cautionary status feedback.</td></tr>
+            <tr><th scope="row"><code>color-status-error</code></th><td><code>#A12B22</code></td><td>Colour for error and destructive status feedback.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <div className="jakpot-landing__subsection">
       <h3>Typography</h3>
