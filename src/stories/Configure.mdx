@@ -1,5 +1,4 @@
 import { Meta } from "@storybook/addon-docs/blocks";
-import { SectionHeader } from "../components/SectionHeader";
 
 <Meta title="Foundations" />
 
@@ -18,7 +17,7 @@ import { SectionHeader } from "../components/SectionHeader";
   </header>
 
   <section className="jakpot-landing__section" id="principles">
-    <SectionHeader variant="without-eyebrow" title="Design principles" description="The decisions that shape how JAKpot looks, feels, and works." />
+    <div className="jakpot-landing__section-heading"><h3>Design principles</h3><p>The decisions that shape how JAKpot looks, feels, and works.</p></div>
     <dl className="jakpot-landing__token-list">
       <div><dt>Give space to breathe</dt><dd>Use spacious layouts and generous spacing to help people feel comfortable, reduce visual overload, and make content easier to take in.</dd></div>
       <div><dt>Keep it clear</dt><dd>Use concise, direct copy. Every label, heading, and description should communicate what it needs to without unnecessary wording.</dd></div>
@@ -29,7 +28,7 @@ import { SectionHeader } from "../components/SectionHeader";
   </section>
 
   <section className="jakpot-landing__section" id="tokens">
-    <SectionHeader variant="without-eyebrow" title="Tokens" description="Tokens define the visual values used throughout JAKpot. Use semantic names to choose values by their role, rather than relying on the underlying colour or scale." />
+    <div className="jakpot-landing__section-heading"><h3>Tokens</h3><p>Tokens define the visual values used throughout JAKpot. Use semantic names to choose values by their role, rather than relying on the underlying colour or scale.</p></div>
     <div className="jakpot-landing__subsection">
       <h3>Colour</h3>
       <p>Colour tokens are organised by purpose. These are the semantic roles available in the stylesheet.</p>
@@ -79,12 +78,12 @@ import { SectionHeader } from "../components/SectionHeader";
   </section>
 
   <section className="jakpot-landing__section" id="icons">
-    <SectionHeader variant="without-eyebrow" title="Icons" description="JAKpot provides an Icon component for displaying supplied icon assets consistently." />
+    <div className="jakpot-landing__section-heading"><h3>Icons</h3><p>JAKpot provides an Icon component for displaying supplied icon assets consistently.</p></div>
     <p>Provide the icon image source and appropriate alternative text. Available display sizes are 16, 18, 20, 24, and 32 pixels. Use icons to support a label or action, not as a substitute for clear wording.</p>
   </section>
 
   <section className="jakpot-landing__section" id="accessibility">
-    <SectionHeader variant="without-eyebrow" title="Accessibility" description="Accessibility is part of how JAKpot components and styles should be used." />
+    <div className="jakpot-landing__section-heading"><h3>Accessibility</h3><p>Accessibility is part of how JAKpot components and styles should be used.</p></div>
     <dl className="jakpot-landing__token-list">
       <div><dt>Keyboard focus</dt><dd>Interactive elements receive a visible focus outline.</dd></div>
       <div><dt>Reduced motion</dt><dd>Motion is reduced when a visitor has enabled the operating-system preference.</dd></div>
@@ -95,7 +94,7 @@ import { SectionHeader } from "../components/SectionHeader";
   </section>
 
   <section className="jakpot-landing__section" id="technical-overview">
-    <SectionHeader variant="without-eyebrow" title="Technical overview" description="JAKpot combines design tokens, reusable components, a public stylesheet, and shared composition rules." />
+    <div className="jakpot-landing__section-heading"><h3>Technical overview</h3><p>JAKpot combines design tokens, reusable components, a public stylesheet, and shared composition rules.</p></div>
     <div className="jakpot-landing__subsection">
       <h3>Using the stylesheet</h3>
       <p>Import the public stylesheet into your project to use JAKpot's tokens, global styles, utilities, and component styles. Its styles are scoped to the <code>jakpot-root</code> class, so apply that class to the root element of the area using JAKpot.</p>
@@ -115,7 +114,7 @@ import { SectionHeader } from "../components/SectionHeader";
   </section>
 
   <section className="jakpot-landing__section jakpot-landing__builder" id="builder">
-    <SectionHeader variant="without-eyebrow" title="JAKpot Builder" description="Put the system into practice. Compose layouts, configure content, preview the result, and export HTML for your project." />
+    <div className="jakpot-landing__section-heading"><h3>JAKpot Builder</h3><p>Put the system into practice. Compose layouts, configure content, preview the result, and export HTML for your project.</p></div>
     <a className="jakpot-landing__button" href="https://jkarthikarav.github.io/design-system/builder/" target="_blank" rel="noopener noreferrer">Open JAKpot Builder <span aria-hidden="true">↗</span></a>
   </section>
 </div>
