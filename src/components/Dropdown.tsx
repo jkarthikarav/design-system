@@ -63,7 +63,7 @@ export function Dropdown({
     ? (selected as string[]).length
       ? `${label} · ${(selected as string[]).length}`
       : label
-    : (selected as string) || label || placeholder;
+    : (selected as string) ? `${label}: ${selected as string}` : label || placeholder;
 
   return (
     <div className={`jakpot-dropdown jakpot-dropdown--${variant} ${className}`.trim()} ref={rootRef}>
