@@ -11,9 +11,8 @@
 .jakpot-landing__subsection{margin-top:36px}
 .jakpot-landing__subsection h3{margin:0 0 12px;font-family:var(--font-display);font-size:22px}
 .jakpot-landing__subsection > p{margin-bottom:16px}
-.jakpot-landing__principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin:28px 0 0;padding:0;list-style:none;counter-reset:principle}
-.jakpot-landing__principles li{padding:24px 0;counter-increment:principle}
-.jakpot-landing__principles li:before{content:"0" counter(principle);display:block;margin-bottom:12px;color:var(--color-action-accent);font-family:var(--font-label);font-size:13px;font-weight:700}
+.jakpot-landing__principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin:28px 0 0;padding:0;list-style:none}
+.jakpot-landing__principles li{padding:24px 0}
 .jakpot-landing__principles h3{margin:0 0 8px;font-family:var(--font-display);font-size:22px}
 .jakpot-landing__principles p{max-width:480px;color:var(--color-text-secondary);font-size:14px;line-height:1.65}
 .jakpot-landing__token-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin:20px 0 0}
