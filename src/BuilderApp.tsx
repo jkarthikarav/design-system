@@ -103,8 +103,11 @@ function renderNode(node: BuilderNode): string {
       const eyebrow = variant === 'with-description' && val(node, 'eyebrow') ? typography(val(node, 'eyebrow'), 'eyebrow') : '';
       const afterHeading = renderSlotButton(node, 'buttonAfterHeading');
       const afterDescription = renderSlotButton(node, 'buttonAfterDescription');
-      const description = variant !== 'title-only' && val(node, 'description')
-        ? `<div class="jakpot-section-header__description">${typography(val(node, 'description'), 'description-medium')}${afterDescription}</div>`
+      const descriptionText = variant !== 'title-only' && val(node, 'description')
+        ? typography(val(node, 'description'), 'description-medium')
+        : '';
+      const description = descriptionText || afterDescription
+        ? `<div class="jakpot-section-header__description">${descriptionText}${afterDescription}</div>`
         : '';
       return `<header class="jakpot-section-header jakpot-section-header--${esc(variant)}"><div class="jakpot-section-header__main">${eyebrow}${typography(val(node, 'title', 'Section heading'), 'section-heading')}${afterHeading}</div>${description}</header>`;
     }
