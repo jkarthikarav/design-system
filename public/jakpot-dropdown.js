@@ -48,6 +48,7 @@
     optionsWrap.setAttribute('role', 'group');
     optionsWrap.setAttribute('aria-label', label);
 
+    let availableOptions = [...options];
     const optionButtons = [];
     const renderOptions = () => {
       optionButtons.forEach(({ button, option }) => {
@@ -70,7 +71,7 @@
       const selectAll = document.createElement('button');
       selectAll.type = 'button';
       selectAll.textContent = 'Select all';
-      selectAll.addEventListener('click', () => updateValue(options));
+      selectAll.addEventListener('click', () => updateValue(availableOptions));
       const unselectAll = document.createElement('button');
       unselectAll.type = 'button';
       unselectAll.textContent = 'Unselect all';
@@ -127,6 +128,32 @@
       getValue: () => multi ? [...selected] : selected,
       setValue: (next) => {
         selected = multi ? [...(Array.isArray(next) ? next : [])] : (typeof next === 'string' ? next : '');
+        renderOptions();
+      },
+      setOptions: (nextOptions) => {
+        availableOptions = Array.isArray(nextOptions) ? [...nextOptions] : [];
+        optionButtons.splice(0).forEach(({ button }) => button.remove());
+        availableOptions.forEach((option) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'jakpot-dropdown__option';
+          button.textContent = option;
+          button.setAttribute('aria-pressed', 'false');
+          button.addEventListener('click', () => {
+            if (multi) {
+              updateValue(selected.includes(option) ? selected.filter((item) => item !== option) : [...selected, option]);
+            } else {
+              updateValue(selected === option ? '' : option);
+              close();
+            }
+          });
+          optionButtons.push({ button, option });
+          optionsWrap.appendChild(button);
+        });
+        if (!multi && selected && !availableOptions.includes(selected)) {
+          selected = '';
+          onChange('');
+        }
         renderOptions();
       },
       close,
