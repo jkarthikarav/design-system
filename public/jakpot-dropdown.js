@@ -1,4 +1,6 @@
 (function () {
+  let instanceCount = 0;
+
   function create({ label, options = [], variant = 'single-select', value, onChange = function () {}, placeholder = 'Select an option' }) {
     const multi = variant === 'multi-select';
     let selected = multi ? [...(Array.isArray(value) ? value : [])] : (typeof value === 'string' ? value : '');
@@ -18,13 +20,16 @@
     trigger.append(summary, chevron);
 
     const panel = document.createElement('div');
+    const panelId = 'jakpot-dropdown-panel-' + (++instanceCount);
+    panel.id = panelId;
+    trigger.setAttribute('aria-controls', panelId);
     panel.className = 'jakpot-dropdown__panel';
     panel.hidden = true;
 
     const updateSummary = () => {
       summary.textContent = multi
         ? (selected.length ? label + ' · ' + selected.length : label)
-        : (selected || label || placeholder);
+        : (selected ? label + ': ' + selected : label || placeholder);
     };
 
     const optionsWrap = document.createElement('div');
