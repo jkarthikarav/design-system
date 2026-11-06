@@ -87,7 +87,6 @@ export function Dropdown({
       <div className="jakpot-dropdown__panel" id={id} hidden={!open}>
           {variant === 'multi-select' && (
             <div className="jakpot-dropdown__actions">
-              <button type="button" onClick={() => onChange([...options])}>Select all</button>
               <button type="button" onClick={() => onChange([])}>Unselect all</button>
             </div>
           )}
