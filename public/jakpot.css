@@ -27,6 +27,14 @@
   --jakpot-teal-800: #176064;
   --jakpot-iris-800: #4C3470;
 
+  /* Alternate brand colour tints for light backgrounds */
+  --jakpot-aubergine-100: #F2E8F2;
+  --jakpot-cobalt-100: #E8F0F6;
+  --jakpot-raspberry-100: #F7E9EE;
+  --jakpot-persimmon-100: #F8ECE5;
+  --jakpot-teal-100: #E6F1F0;
+  --jakpot-iris-100: #EEEAF5;
+
   --jakpot-neutral-0: #FFFFFF;
   --jakpot-neutral-50: #FAFAF7;
   --jakpot-neutral-200: #E5E5DD;
@@ -481,6 +489,67 @@
 }
 .jakpot-bg-royal > div > *{
   color: var(--jakpot-neutral-0);
+}
+
+/* Light secondary backgrounds use dark text and retain their accent colour on icons */
+.jakpot-bg-brinjal-light{
+  background-color: var(--jakpot-aubergine-100);
+}
+.jakpot-bg-brinjal-light > div > *{
+  color: var(--jakpot-neutral-700);
+}
+.jakpot-bg-brinjal-light > div svg{
+  color: var(--jakpot-aubergine-700);
+}
+
+.jakpot-bg-china-light{
+  background-color: var(--jakpot-cobalt-100);
+}
+.jakpot-bg-china-light > div > *{
+  color: var(--jakpot-neutral-700);
+}
+.jakpot-bg-china-light > div svg{
+  color: var(--jakpot-cobalt-800);
+}
+
+.jakpot-bg-malyna-light{
+  background-color: var(--jakpot-raspberry-100);
+}
+.jakpot-bg-malyna-light > div > *{
+  color: var(--jakpot-neutral-700);
+}
+.jakpot-bg-malyna-light > div svg{
+  color: var(--jakpot-raspberry-800);
+}
+
+.jakpot-bg-burnt-light{
+  background-color: var(--jakpot-persimmon-100);
+}
+.jakpot-bg-burnt-light > div > *{
+  color: var(--jakpot-neutral-700);
+}
+.jakpot-bg-burnt-light > div svg{
+  color: var(--jakpot-persimmon-800);
+}
+
+.jakpot-bg-teal-light{
+  background-color: var(--jakpot-teal-100);
+}
+.jakpot-bg-teal-light > div > *{
+  color: var(--jakpot-neutral-700);
+}
+.jakpot-bg-teal-light > div svg{
+  color: var(--jakpot-teal-800);
+}
+
+.jakpot-bg-royal-light{
+  background-color: var(--jakpot-iris-100);
+}
+.jakpot-bg-royal-light > div > *{
+  color: var(--jakpot-neutral-700);
+}
+.jakpot-bg-royal-light > div svg{
+  color: var(--jakpot-iris-800);
 }
 .jakpot-root .jakpot-text-primary{ color: var(--jakpot-color-text-primary); }
 .jakpot-root .jakpot-text-secondary{ color: var(--jakpot-color-text-secondary); }
@@ -1614,13 +1683,3 @@
 .jakpot-root .jakpot-dropdown__option--tag.is-selected{color:var(--jakpot-color-text-inverse);background:var(--jakpot-color-bg-inverse);border-color:var(--jakpot-color-bg-inverse)}
 @media(max-width:600px){.jakpot-root .jakpot-dropdown__panel{max-width:calc(100vw - 40px)}}
 
-
-
-.jakpot-root .jakpot-project-link-card.jakpot-bg-brinjal > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-china > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-malyna > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-burnt > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-teal > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-royal > div > *{
-  color:var(--jakpot-neutral-0);
-}
