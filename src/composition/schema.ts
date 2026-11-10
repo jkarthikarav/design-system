@@ -9,7 +9,7 @@ export const compositionSchema = {
     acceptsChildren: true,
     allowedChildren: [
       'section-header', 'description-group', 'typography', 'tag', 'icon',
-      'grid', 'project-link-card', 'folder', 'case-study-card', 'structured-list',
+      'grid', 'project-link-card', 'case-study-card', 'structured-list',
       'image-caption', 'project-image-grid', 'skeleton',
     ],
   },
@@ -34,12 +34,11 @@ export const compositionSchema = {
     acceptsChildren: true,
     allowedChildren: [
       'description-group', 'typography', 'tag',
-      'project-link-card', 'folder', 'case-study-card', 'structured-list', 'image-caption',
+      'project-link-card', 'case-study-card', 'structured-list', 'image-caption',
       'skeleton',
     ],
   },
   'project-link-card': { label: 'Project link card', acceptsChildren: false, allowedChildren: [] },
-  folder: { label: 'Folder', acceptsChildren: false, allowedChildren: [] },
   'case-study-card': { label: 'Case study card', acceptsChildren: false, allowedChildren: [] },
   'structured-list': { label: 'Structured list', acceptsChildren: false, allowedChildren: [] },
   'image-caption': { label: 'Image with caption', acceptsChildren: false, allowedChildren: [] },

@@ -18,7 +18,6 @@ const elementOptions: { value: ElementType; label: string; group: string }[] = [
   { value: 'tag', label: 'Tag', group: 'Content' },
   { value: 'icon', label: 'Icon', group: 'Media' },
   { value: 'project-link-card', label: 'Project link card', group: 'Cards' },
-  { value: 'folder', label: 'Folder', group: 'Cards' },
   { value: 'case-study-card', label: 'Case study card', group: 'Cards' },
   { value: 'structured-list', label: 'Structured list', group: 'Content' },
   { value: 'image-caption', label: 'Image with caption', group: 'Media' },
@@ -35,7 +34,6 @@ const starterProps: Record<ElementType, NodeProps> = {
   icon: { src: '', alt: '', size: '20' },
   grid: { columns: 2, gap: 3 },
   'project-link-card': { eyebrow: 'PROJECT TYPE', iconSrc: '', iconAlt: '', iconSize: '24', title: 'Project title', description: 'A short description of the project and its value.', actionLabel: 'Explore project', href: '#', variant: 'neutral' },
-  folder: { title: 'Folder title', description: 'A short description of this destination.', logoSrc: '', logoAlt: '', href: '#', logoMinHeight: '256' },
   'case-study-card': { eyebrow: 'CASE STUDY', title: 'Case study title', description: 'A concise summary of the work.', highlights: 'Research | Understand user needs\nDesign | Explore and test solutions\nDelivery | Ship the experience', date: '2026', role: 'Product design', variant: 'default', actionLabel: 'Explore', href: '#' },
   'structured-list': { items: 'Discover | Understand the offer\nExplore | Review the available options\nContinue | Take the next step', ordered: 'true' },
   'image-caption': { src: 'https://placehold.co/1200x800?text=Preview+image', alt: 'Describe the image', caption: 'Image caption', ratio: 'landscape', width: 'full' },
@@ -125,12 +123,6 @@ function renderNode(node: BuilderNode): string {
     }
     case 'grid':
       return `<div class="jakpot-grid jakpot-grid--columns-${esc(val(node, 'columns', '2'))} jakpot-grid--gap-${esc(val(node, 'gap', '3'))}">${children || '<!-- Add child elements to this grid. -->'}</div>`;
-    case 'folder': {
-      const logo = val(node, 'logoSrc') ? '<img class="jakpot-folder__logo" src="' + esc(val(node, 'logoSrc')) + '" alt="' + esc(val(node, 'logoAlt')) + '" style="min-height:' + esc(val(node, 'logoMinHeight', '256')) + 'px">' : '';
-      const top = '<svg class="jakpot-folder__top" viewBox="0 0 320 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48V38Q0 28 10 28H64Q72 28 80 21L99 5Q104 0 112 0H308Q320 0 320 12V48Z"/></svg>';
-      const bottom = '<svg class="jakpot-folder__bottom" viewBox="0 0 320 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H320V36Q320 48 308 48H40Q32 48 25 41L5 21Q0 16 0 8Z"/></svg>';
-      return '<a class="jakpot-folder" href="' + esc(val(node, 'href', '#')) + '">' + top + '<div class="jakpot-folder__content"><h3 class="jakpot-folder__title">' + esc(val(node, 'title', 'Folder title')) + '</h3><div class="jakpot-folder__details"><p class="jakpot-folder__description">' + esc(val(node, 'description')) + '</p>' + logo + '</div></div>' + bottom + '</a>';
-    }
     case 'project-link-card': {
       const variant = val(node, 'variant', 'neutral');
       const topMeta = variant === 'icon'
@@ -311,7 +303,6 @@ ${html}
             {selected.type === 'tag' && <>{field('Label', 'label')}{field('Style', 'variant', ['default', 'accent', 'inverse'])}</>}
             {selected.type === 'icon' && <>{field('Image source', 'src')}{field('Alt text', 'alt')}{field('Size', 'size', ['16', '18', '20', '24', '32'])}</>}
             {selected.type === 'grid' && <>{field('Columns', 'columns', ['1', '2', '3'])}{field('Gap', 'gap', ['1', '2', '3', '4', '5', '6'])}</>}
-            {selected.type === 'folder' && <>{field('Heading', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Logo image source', 'logoSrc')}{field('Logo alt text', 'logoAlt')}{field('Logo minimum height (px)', 'logoMinHeight')}{field('Folder URL', 'href')}<p className="builder-field-note">Folders rotate through the six secondary colours when placed in a JAKpot grid.</p></>}
             {selected.type === 'project-link-card' && <>{field('Card style', 'variant', ['neutral', 'inverse', 'icon'])}{val(selected, 'variant', 'neutral') === 'icon' ? <>{field('Icon image source', 'iconSrc')}{field('Icon alt text', 'iconAlt')}{field('Icon size', 'iconSize', ['16', '18', '20', '24', '32'])}</> : field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Action label', 'actionLabel')}{field('Link URL', 'href')}</>}
             {selected.type === 'case-study-card' && <>{field('Card variant', 'variant', ['default', 'outcome'])}{field('Eyebrow', 'eyebrow')}{field('Title', 'title')}{field('Description', 'description', undefined, 'textarea')}{field('Explore label', 'actionLabel')}{field('Explore URL', 'href')}{field('Highlights (Heading | description per line)', 'highlights', undefined, 'textarea')}{val(selected, 'variant', 'default') !== 'outcome' && <>{field('Date', 'date')}{field('Role', 'role')}</>}</>}
             {selected.type === 'structured-list' && <>{field('Items (Title | description per line)', 'items', undefined, 'textarea')}{field('Numbering', 'ordered', ['true', 'false'])}</>}
