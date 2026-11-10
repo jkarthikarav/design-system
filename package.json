@@ -40,5 +40,5 @@
     "@vitest/coverage-v8": "latest",
     "playwright": "latest"
   },
-  "latestUpdate": "Patch 2.2.18 Add Folder Component and Builder Support"
+  "latestUpdate": "Patch 2.2.19 Fix Folder Story Build Error"
 }

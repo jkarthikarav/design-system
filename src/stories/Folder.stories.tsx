@@ -33,5 +33,5 @@ export const ThreeColumnGrid: Story = {
       </div>
     </div>
   ),
-  args: { href: '#', description: 'A short description.' },
+  args: { title: 'Folder title', href: '#', description: 'A short description.' },
 };
