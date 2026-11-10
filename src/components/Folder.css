@@ -12,4 +12,10 @@
 .jakpot-grid > .jakpot-folder:nth-child(6n + 4 of .jakpot-folder) { --folder-fill:var(--burnt-800); }
 .jakpot-grid > .jakpot-folder:nth-child(6n + 5 of .jakpot-folder) { --folder-fill:var(--teal-800); }
 .jakpot-grid > .jakpot-folder:nth-child(6n of .jakpot-folder) { --folder-fill:var(--royal-800); }
+.grid > .jakpot-folder:nth-child(6n + 1 of .jakpot-folder) { --folder-fill:var(--brinjal-700); }
+.grid > .jakpot-folder:nth-child(6n + 2 of .jakpot-folder) { --folder-fill:var(--china-800); }
+.grid > .jakpot-folder:nth-child(6n + 3 of .jakpot-folder) { --folder-fill:var(--malyna-800); }
+.grid > .jakpot-folder:nth-child(6n + 4 of .jakpot-folder) { --folder-fill:var(--burnt-800); }
+.grid > .jakpot-folder:nth-child(6n + 5 of .jakpot-folder) { --folder-fill:var(--teal-800); }
+.grid > .jakpot-folder:nth-child(6n of .jakpot-folder) { --folder-fill:var(--royal-800); }
 @media(max-width:600px) { .jakpot-folder__content { flex-direction:column; align-items:flex-start; gap:var(--space-3); padding:var(--space-3); } .jakpot-folder__details { width:100%; justify-content:flex-end; } .jakpot-folder__description { max-width:none; } .jakpot-folder__logo { max-width:min(100%,40vw); } }

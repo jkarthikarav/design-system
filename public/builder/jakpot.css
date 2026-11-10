@@ -1652,4 +1652,10 @@
 .jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 4 of .jakpot-folder) { --folder-fill:var(--jakpot-burnt-800); }
 .jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 5 of .jakpot-folder) { --folder-fill:var(--jakpot-teal-800); }
 .jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n of .jakpot-folder) { --folder-fill:var(--jakpot-royal-800); }
+.jakpot-root .grid > .jakpot-folder:nth-child(6n + 1 of .jakpot-folder) { --folder-fill:var(--jakpot-brinjal-700); }
+.jakpot-root .grid > .jakpot-folder:nth-child(6n + 2 of .jakpot-folder) { --folder-fill:var(--jakpot-china-800); }
+.jakpot-root .grid > .jakpot-folder:nth-child(6n + 3 of .jakpot-folder) { --folder-fill:var(--jakpot-malyna-800); }
+.jakpot-root .grid > .jakpot-folder:nth-child(6n + 4 of .jakpot-folder) { --folder-fill:var(--jakpot-burnt-800); }
+.jakpot-root .grid > .jakpot-folder:nth-child(6n + 5 of .jakpot-folder) { --folder-fill:var(--jakpot-teal-800); }
+.jakpot-root .grid > .jakpot-folder:nth-child(6n of .jakpot-folder) { --folder-fill:var(--jakpot-royal-800); }
 @media(max-width:600px) { .jakpot-root .jakpot-folder__content { flex-direction:column; align-items:flex-start; gap:var(--jakpot-space-3); padding:var(--jakpot-space-3); } .jakpot-root .jakpot-folder__details { width:100%; justify-content:flex-end; } .jakpot-root .jakpot-folder__description { max-width:none; } .jakpot-root .jakpot-folder__logo { max-width:min(100%,40vw); } }

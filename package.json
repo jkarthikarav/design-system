@@ -40,5 +40,5 @@
     "@vitest/coverage-v8": "latest",
     "playwright": "latest"
   },
-  "latestUpdate": "Patch 2.2.20 Align Folder Builder Colour Tokens"
+  "latestUpdate": "Patch 2.2.21 Support React Grid Folder Colours"
 }
