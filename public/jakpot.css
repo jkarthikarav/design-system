@@ -1619,3 +1619,21 @@
 .jakpot-root .jakpot-dropdown__option--tag{width:auto;padding:6px 12px;border:1px solid var(--jakpot-color-border-subtle);border-radius:var(--jakpot-radius-full);font-family:var(--jakpot-font-label);font-weight:var(--jakpot-font-weight-medium);white-space:nowrap}
 .jakpot-root .jakpot-dropdown__option--tag.is-selected{color:var(--jakpot-color-text-inverse);background:var(--jakpot-color-bg-inverse);border-color:var(--jakpot-color-bg-inverse)}
 @media(max-width:600px){.jakpot-root .jakpot-dropdown__panel{max-width:calc(100vw - 40px)}}
+
+
+/* Alternate background utilities on ProjectLinkCard */
+.jakpot-root .jakpot-project-link-card.jakpot-bg-aubergine{background-color:var(--jakpot-aubergine-700)}
+.jakpot-root .jakpot-project-link-card.jakpot-bg-cobalt{background-color:var(--jakpot-cobalt-800)}
+.jakpot-root .jakpot-project-link-card.jakpot-bg-raspberry{background-color:var(--jakpot-raspberry-800)}
+.jakpot-root .jakpot-project-link-card.jakpot-bg-persimmon{background-color:var(--jakpot-persimmon-800)}
+.jakpot-root .jakpot-project-link-card.jakpot-bg-teal{background-color:var(--jakpot-teal-800)}
+.jakpot-root .jakpot-project-link-card.jakpot-bg-iris{background-color:var(--jakpot-iris-800)}
+
+.jakpot-root .jakpot-project-link-card.jakpot-bg-aubergine > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-cobalt > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-raspberry > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-persimmon > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-teal > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-iris > div > *{
+  color:var(--jakpot-neutral-0);
+}
