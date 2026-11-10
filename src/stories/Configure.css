@@ -63,3 +63,14 @@
 .jakpot-landing__swatch-details span{color:var(--color-text-secondary);font-size:12px;line-height:1.5}
 .jakpot-landing__palette-tokens{margin-top:56px}
 .jakpot-landing__palette-tokens .jakpot-landing__table-wrap{margin-top:18px}
+
+.jakpot-landing__typeface-list{display:flex;flex-direction:column;gap:32px}
+.jakpot-landing__typeface{display:flex;flex-direction:column;gap:12px;min-width:0}
+.jakpot-landing__typeface-heading h4{margin:0 0 4px;font-family:var(--font-display);font-size:20px;font-weight:600}
+.jakpot-landing__typeface-heading span{color:var(--color-text-muted);font-size:13px}
+.jakpot-landing__typeface > p{max-width:820px;color:var(--color-text-secondary);font-size:14px;line-height:1.65}
+.jakpot-landing__typeface-specimen{display:flex;flex-direction:column;gap:8px;overflow-wrap:anywhere;padding:20px 0;color:var(--color-text-primary);font-size:clamp(18px,2.4vw,28px);line-height:1.35}
+.jakpot-landing__typeface-specimen--display{font-family:var(--font-display)}
+.jakpot-landing__typeface-specimen--body{font-family:var(--font-body)}
+.jakpot-landing__typeface-specimen--label{font-family:var(--font-label)}
+@media(max-width:600px){.jakpot-landing__typeface-specimen{font-size:18px}}

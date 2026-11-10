@@ -11,14 +11,50 @@ import { Meta } from "@storybook/addon-docs/blocks";
   <section className="jakpot-landing__section">
     <div className="jakpot-landing__subsection">
       <div>
-        <h3>Typography</h3>
-        <p>JAKpot uses three typefaces, each with a distinct role.</p>
+        <h3>Primary typefaces</h3>
+        <p>JAKpot uses three typefaces to establish a consistent typographic identity across its applications. Each typeface has a distinct role, creating a clear hierarchy between headings, body content and supporting information.</p>
       </div>
-      <dl className="jakpot-landing__token-list">
-        <div><dt>League Spartan</dt><dd>Display type for headings.</dd></div>
-        <div><dt>Lexend</dt><dd>Body type for paragraphs and general content.</dd></div>
-        <div><dt>Atkinson Hyperlegible Next</dt><dd>Supporting type for labels and compact text.</dd></div>
-      </dl>
+      <div className="jakpot-landing__typeface-list">
+        <div className="jakpot-landing__typeface">
+          <div className="jakpot-landing__typeface-heading">
+            <h4>League Spartan</h4>
+            <span>Display typeface · Headings</span>
+          </div>
+          <p>Used for prominent headings, section titles, card headings and subheadings. Its strong geometric forms give JAKpot its distinctive visual character.</p>
+          <div className="jakpot-landing__typeface-specimen jakpot-landing__typeface-specimen--display">
+            <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            <span>abcdefghijklmnopqrstuvwxyz</span>
+            <span>0123456789</span>
+            <span>! &quot; # $ % &amp; ' ( )</span>
+          </div>
+        </div>
+        <div className="jakpot-landing__typeface">
+          <div className="jakpot-landing__typeface-heading">
+            <h4>Lexend</h4>
+            <span>Primary sans serif · Body text</span>
+          </div>
+          <p>Used for paragraphs, descriptions and general interface content. Its clean, approachable letterforms support comfortable reading across different screen sizes.</p>
+          <div className="jakpot-landing__typeface-specimen jakpot-landing__typeface-specimen--body">
+            <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            <span>abcdefghijklmnopqrstuvwxyz</span>
+            <span>0123456789</span>
+            <span>! &quot; # $ % &amp; ' ( )</span>
+          </div>
+        </div>
+        <div className="jakpot-landing__typeface">
+          <div className="jakpot-landing__typeface-heading">
+            <h4>Atkinson Hyperlegible Next</h4>
+            <span>Supporting typeface · Labels and compact text</span>
+          </div>
+          <p>Used for labels, image captions and compact supporting information. Its distinctive letterforms help improve character recognition and readability, particularly at smaller sizes.</p>
+          <div className="jakpot-landing__typeface-specimen jakpot-landing__typeface-specimen--label">
+            <span>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+            <span>abcdefghijklmnopqrstuvwxyz</span>
+            <span>0123456789</span>
+            <span>! &quot; # $ % &amp; ' ( )</span>
+          </div>
+        </div>
+      </div>
       <p className="jakpot-landing__supporting">Typography styles include hero and section headings, card headings, subheadings, large and medium descriptions, card descriptions, and image captions. Their sizes adapt at tablet and mobile breakpoints.</p>
     </div>
 
