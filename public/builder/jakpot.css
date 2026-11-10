@@ -27,6 +27,14 @@
   --jakpot-teal-800: #176064;
   --jakpot-iris-800: #4C3470;
 
+  /* Current semantic names for Folder component colours */
+  --jakpot-brinjal-700: var(--jakpot-aubergine-700);
+  --jakpot-china-800: var(--jakpot-cobalt-800);
+  --jakpot-malyna-800: var(--jakpot-raspberry-800);
+  --jakpot-burnt-800: var(--jakpot-persimmon-800);
+  --jakpot-royal-800: var(--jakpot-iris-800);
+
+
   /* Alternate brand colour tints for light backgrounds */
   --jakpot-aubergine-100: #F2E8F2;
   --jakpot-cobalt-100: #E8F0F6;
@@ -1630,7 +1638,7 @@
 /* ==========================================================
    COMPONENT · Folder
    ========================================================== */
-.jakpot-root .jakpot-folder { --folder-fill:var(--jakpot-aubergine-700); display:flex; flex-direction:column; align-items:stretch; width:100%; min-width:0; color:var(--jakpot-neutral-0); text-decoration:none; overflow:hidden; }
+.jakpot-root .jakpot-folder { --folder-fill:var(--jakpot-brinjal-700); display:flex; flex-direction:column; align-items:stretch; width:100%; min-width:0; color:var(--jakpot-neutral-0); text-decoration:none; overflow:hidden; }
 .jakpot-root .jakpot-folder__top,.jakpot-root .jakpot-folder__bottom { display:block; width:100%; height:48px; flex:0 0 48px; overflow:visible; fill:var(--folder-fill); }
 .jakpot-root .jakpot-folder__content { display:flex; align-items:center; justify-content:space-between; gap:var(--jakpot-space-4); min-width:0; padding:var(--jakpot-space-4); color:var(--jakpot-neutral-0); background:var(--folder-fill); }
 .jakpot-root .jakpot-folder__title { flex:1 1 auto; min-width:0; color:inherit; text-align:left; overflow-wrap:anywhere; }
@@ -1638,10 +1646,10 @@
 .jakpot-root .jakpot-folder__description { max-width:28ch; color:inherit; text-align:right; overflow-wrap:anywhere; }
 .jakpot-root .jakpot-folder__logo { display:block; flex:0 1 auto; width:auto; min-width:0; min-height:var(--folder-logo-min-height,256px); max-width:100%; object-fit:contain; object-position:right center; }
 .jakpot-root .jakpot-folder:focus-visible { outline:3px solid var(--jakpot-color-focus); outline-offset:4px; }
-.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 1 of .jakpot-folder) { --folder-fill:var(--jakpot-aubergine-700); }
-.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 2 of .jakpot-folder) { --folder-fill:var(--jakpot-cobalt-800); }
-.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 3 of .jakpot-folder) { --folder-fill:var(--jakpot-raspberry-800); }
-.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 4 of .jakpot-folder) { --folder-fill:var(--jakpot-persimmon-800); }
+.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 1 of .jakpot-folder) { --folder-fill:var(--jakpot-brinjal-700); }
+.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 2 of .jakpot-folder) { --folder-fill:var(--jakpot-china-800); }
+.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 3 of .jakpot-folder) { --folder-fill:var(--jakpot-malyna-800); }
+.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 4 of .jakpot-folder) { --folder-fill:var(--jakpot-burnt-800); }
 .jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n + 5 of .jakpot-folder) { --folder-fill:var(--jakpot-teal-800); }
-.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n of .jakpot-folder) { --folder-fill:var(--jakpot-iris-800); }
+.jakpot-root .jakpot-grid > .jakpot-folder:nth-child(6n of .jakpot-folder) { --folder-fill:var(--jakpot-royal-800); }
 @media(max-width:600px) { .jakpot-root .jakpot-folder__content { flex-direction:column; align-items:flex-start; gap:var(--jakpot-space-3); padding:var(--jakpot-space-3); } .jakpot-root .jakpot-folder__details { width:100%; justify-content:flex-end; } .jakpot-root .jakpot-folder__description { max-width:none; } .jakpot-root .jakpot-folder__logo { max-width:min(100%,40vw); } }
