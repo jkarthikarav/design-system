@@ -19,6 +19,14 @@
   --jakpot-green-900: #1B3618;
   --jakpot-amber-500: #E8A800;
 
+  /* Alternate brand colours — darkened to support AAA white text */
+  --jakpot-aubergine-700: #4A154B;
+  --jakpot-cobalt-800: #174B70;
+  --jakpot-raspberry-800: #85304C;
+  --jakpot-persimmon-800: #8A3D1D;
+  --jakpot-teal-800: #176064;
+  --jakpot-iris-800: #4C3470;
+
   --jakpot-neutral-0: #FFFFFF;
   --jakpot-neutral-50: #FAFAF7;
   --jakpot-neutral-200: #E5E5DD;
@@ -436,6 +444,50 @@
 .jakpot-root .jakpot-bg-raised{ background-color: var(--jakpot-color-bg-raised); }
 .jakpot-root .jakpot-bg-subtle{ background-color: var(--jakpot-color-bg-subtle); }
 .jakpot-root .jakpot-bg-inverse{ background-color: var(--jakpot-color-bg-inverse); }
+
+/* Alternate backgrounds use white text, meeting WCAG AAA (7:1+) */
+.jakpot-root .jakpot-bg-aubergine{
+  background-color: var(--jakpot-aubergine-700);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
+}
+.jakpot-root .jakpot-bg-cobalt{
+  background-color: var(--jakpot-cobalt-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
+}
+.jakpot-root .jakpot-bg-raspberry{
+  background-color: var(--jakpot-raspberry-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
+}
+.jakpot-root .jakpot-bg-persimmon{
+  background-color: var(--jakpot-persimmon-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
+}
+.jakpot-root .jakpot-bg-teal{
+  background-color: var(--jakpot-teal-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
+}
+.jakpot-root .jakpot-bg-iris{
+  background-color: var(--jakpot-iris-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
+}
 .jakpot-root .jakpot-text-primary{ color: var(--jakpot-color-text-primary); }
 .jakpot-root .jakpot-text-secondary{ color: var(--jakpot-color-text-secondary); }
 .jakpot-root .jakpot-text-inverse{ color: var(--jakpot-color-text-inverse); }
