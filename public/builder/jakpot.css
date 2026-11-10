@@ -452,79 +452,112 @@
 .jakpot-root .jakpot-bg-raised{ background-color: var(--jakpot-color-bg-raised); }
 .jakpot-root .jakpot-bg-subtle{ background-color: var(--jakpot-color-bg-subtle); }
 .jakpot-root .jakpot-bg-inverse{ background-color: var(--jakpot-color-bg-inverse); }
-/* Alternate secondary backgrounds set text colour on the element itself */
+
+/* Alternate secondary backgrounds set semantic text colours for their contents */
 .jakpot-root .jakpot-bg-brinjal{
   background-color: var(--jakpot-aubergine-700);
-  color: var(--jakpot-neutral-0);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-root .jakpot-bg-china{
   background-color: var(--jakpot-cobalt-800);
-  color: var(--jakpot-neutral-0);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-root .jakpot-bg-malyna{
   background-color: var(--jakpot-raspberry-800);
-  color: var(--jakpot-neutral-0);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-root .jakpot-bg-burnt{
   background-color: var(--jakpot-persimmon-800);
-  color: var(--jakpot-neutral-0);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-root .jakpot-bg-teal{
   background-color: var(--jakpot-teal-800);
-  color: var(--jakpot-neutral-0);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-root .jakpot-bg-royal{
   background-color: var(--jakpot-iris-800);
-  color: var(--jakpot-neutral-0);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 
 /* Light secondary backgrounds use dark text and retain their accent colour on icons */
 .jakpot-root .jakpot-bg-brinjal-light{
   background-color: var(--jakpot-aubergine-100);
-  color: var(--jakpot-neutral-700);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-root .jakpot-bg-brinjal-light svg{
   color: var(--jakpot-aubergine-700);
 }
 .jakpot-root .jakpot-bg-china-light{
   background-color: var(--jakpot-cobalt-100);
-  color: var(--jakpot-neutral-700);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-root .jakpot-bg-china-light svg{
   color: var(--jakpot-cobalt-800);
 }
 .jakpot-root .jakpot-bg-malyna-light{
   background-color: var(--jakpot-raspberry-100);
-  color: var(--jakpot-neutral-700);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-root .jakpot-bg-malyna-light svg{
   color: var(--jakpot-raspberry-800);
 }
 .jakpot-root .jakpot-bg-burnt-light{
   background-color: var(--jakpot-persimmon-100);
-  color: var(--jakpot-neutral-700);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-root .jakpot-bg-burnt-light svg{
   color: var(--jakpot-persimmon-800);
 }
 .jakpot-root .jakpot-bg-teal-light{
   background-color: var(--jakpot-teal-100);
-  color: var(--jakpot-neutral-700);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-root .jakpot-bg-teal-light svg{
   color: var(--jakpot-teal-800);
 }
 .jakpot-root .jakpot-bg-royal-light{
   background-color: var(--jakpot-iris-100);
-  color: var(--jakpot-neutral-700);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-root .jakpot-bg-royal-light svg{
   color: var(--jakpot-iris-800);
 }
-
-.jakpot-root .jakpot-text-primary{ color: var(--jakpot-color-text-primary); }
-.jakpot-root .jakpot-text-secondary{ color: var(--jakpot-color-text-secondary); }
-.jakpot-root .jakpot-text-inverse{ color: var(--jakpot-color-text-inverse); }
 
 /* Token-backed radius */
 .jakpot-root .jakpot-rounded-sm{ border-radius: var(--jakpot-radius-sm); }
@@ -1194,7 +1227,6 @@
 .jakpot-root .jakpot-project-link-card__description{
   font-size: var(--jakpot-font-size-200);
   line-height: var(--jakpot-line-height-body);
-  color: var(--jakpot-color-text-secondary);
 }
 
 /* Primary button is green-on-green inside an inverse card, so flip it to amber */
