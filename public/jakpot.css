@@ -1206,6 +1206,16 @@
   color: var(--jakpot-color-text-inverse);
 }
 
+/* Preserve white text when dark secondary backgrounds are used on ProjectLinkCards */
+.jakpot-root .jakpot-project-link-card.jakpot-bg-brinjal > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-china > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-malyna > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-burnt > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-teal > div > *,
+.jakpot-root .jakpot-project-link-card.jakpot-bg-royal > div > *{
+  color: var(--jakpot-neutral-0);
+}
+
 .jakpot-root .jakpot-project-link-card__logo{
   display: block;
   width: 56px;
