@@ -456,36 +456,60 @@
 /* Alternate backgrounds use white text, meeting WCAG AAA (7:1+) */
 .jakpot-bg-brinjal{
   background-color: var(--jakpot-aubergine-700);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-bg-brinjal > div > *{
   color: var(--jakpot-neutral-0);
 }
 .jakpot-bg-china{
   background-color: var(--jakpot-cobalt-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-bg-china > div > *{
   color: var(--jakpot-neutral-0);
 }
 .jakpot-bg-malyna{
   background-color: var(--jakpot-raspberry-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-bg-malyna > div > *{
   color: var(--jakpot-neutral-0);
 }
 .jakpot-bg-burnt{
   background-color: var(--jakpot-persimmon-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-bg-burnt > div > *{
   color: var(--jakpot-neutral-0);
 }
 .jakpot-bg-teal{
   background-color: var(--jakpot-teal-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-bg-teal > div > *{
   color: var(--jakpot-neutral-0);
 }
 .jakpot-bg-royal{
   background-color: var(--jakpot-iris-800);
+  --jakpot-color-text-primary: var(--jakpot-neutral-0);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-0);
+  --jakpot-color-text-muted: var(--jakpot-neutral-0);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-0);
 }
 .jakpot-bg-royal > div > *{
   color: var(--jakpot-neutral-0);
@@ -494,6 +518,10 @@
 /* Light secondary backgrounds use dark text and retain their accent colour on icons */
 .jakpot-bg-brinjal-light{
   background-color: var(--jakpot-aubergine-100);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-bg-brinjal-light > div > *{
   color: var(--jakpot-neutral-700);
@@ -504,6 +532,10 @@
 
 .jakpot-bg-china-light{
   background-color: var(--jakpot-cobalt-100);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-bg-china-light > div > *{
   color: var(--jakpot-neutral-700);
@@ -514,6 +546,10 @@
 
 .jakpot-bg-malyna-light{
   background-color: var(--jakpot-raspberry-100);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-bg-malyna-light > div > *{
   color: var(--jakpot-neutral-700);
@@ -524,6 +560,10 @@
 
 .jakpot-bg-burnt-light{
   background-color: var(--jakpot-persimmon-100);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-bg-burnt-light > div > *{
   color: var(--jakpot-neutral-700);
@@ -534,6 +574,10 @@
 
 .jakpot-bg-teal-light{
   background-color: var(--jakpot-teal-100);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-bg-teal-light > div > *{
   color: var(--jakpot-neutral-700);
@@ -544,6 +588,10 @@
 
 .jakpot-bg-royal-light{
   background-color: var(--jakpot-iris-100);
+  --jakpot-color-text-primary: var(--jakpot-neutral-700);
+  --jakpot-color-text-secondary: var(--jakpot-neutral-700);
+  --jakpot-color-text-muted: var(--jakpot-neutral-700);
+  --jakpot-color-text-inverse: var(--jakpot-neutral-700);
 }
 .jakpot-bg-royal-light > div > *{
   color: var(--jakpot-neutral-700);
@@ -1206,15 +1254,6 @@
   color: var(--jakpot-color-text-inverse);
 }
 
-/* Preserve white text when dark secondary backgrounds are used on ProjectLinkCards */
-.jakpot-root .jakpot-project-link-card.jakpot-bg-brinjal > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-china > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-malyna > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-burnt > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-teal > div > *,
-.jakpot-root .jakpot-project-link-card.jakpot-bg-royal > div > *{
-  color: var(--jakpot-neutral-0);
-}
 
 .jakpot-root .jakpot-project-link-card__logo{
   display: block;
