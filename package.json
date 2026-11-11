@@ -40,5 +40,5 @@
     "@vitest/coverage-v8": "latest",
     "playwright": "latest"
   },
-  "latestUpdate": "Patch 2.2.23 Reorganise Storybook documentation"
+  "latestUpdate": "Patch 2.2.24 Set Storybook sidebar order"
 }
