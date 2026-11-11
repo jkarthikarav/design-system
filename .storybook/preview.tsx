@@ -101,6 +101,11 @@ function addVanillaSource(source: string, context: StoryCodeContext): string {
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ['Docs', 'Design principles', 'Tokens', 'Builder', 'Accessibility'],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
